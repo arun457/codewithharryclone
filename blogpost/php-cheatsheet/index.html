@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from www.codewithharry.com/blogpost/php-cheatsheet/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 13:44:12 GMT -->
+<head>
+  <meta charset="utf-8">
+  <title>Php Cheatsheet - CodeWithHarry</title>
+  <base >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v87/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <script data-ad-client="ca-pub-9655830461045889" async="" src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-60726752-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-60726752-3');
+  </script>
+<link rel="stylesheet" href="../../styles.bc31d58d1fffbdf64e6b.css"><style ng-transition="serverApp">.content[_ngcontent-sc76]{min-height:calc(100vh - 56px - 80px)}</style><style ng-transition="serverApp">[_nghost-sc73]{position:relative;display:block;pointer-events:none}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{transition:350ms linear;display:block;position:absolute;top:5px;left:0}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]   .ngx-spinner-icon[_ngcontent-sc73]{width:14px;height:14px;border:2px solid transparent;border-top-color:inherit;border-left-color:inherit;border-radius:50%;-webkit-animation:.4s linear infinite loading-bar-spinner;animation:.4s linear infinite loading-bar-spinner}[_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{transition:width 350ms;position:absolute;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}[dir=rtl]   [_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{right:0;left:unset}[fixed=true][_nghost-sc73]{z-index:10002}[fixed=true][_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{position:fixed}[fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{position:fixed;top:10px;left:10px}[dir=rtl]   [fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{right:10px;left:unset}@-webkit-keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}</style><style ng-transition="serverApp">.brandLogo[_ngcontent-sc74]{max-width:39px;margin:0 13px}li[_ngcontent-sc74]   a.nav-link[_ngcontent-sc74]{color:#fff}.notificationImg[_ngcontent-sc74]{width:30px;filter:invert(1)}.notification-bell[_ngcontent-sc74]{position:absolute;right:0}.dropdown-toggle[_ngcontent-sc74]{font-weight:700}.dropdown-menu-notify[_ngcontent-sc74]{overflow-y:scroll;overflow-x:hidden;max-height:400px;top:60px;right:-1px;left:unset;width:460px;box-shadow:0 5px 7px -1px #c1c1c1;padding:0}ul[_ngcontent-sc74]   ul[_ngcontent-sc74]   a[_ngcontent-sc74]{background:transparent}.dropdown-menu-notify[_ngcontent-sc74]:before{content:"";position:absolute;top:-20px;right:12px;border:10px solid transparent;border-bottom-color:#fff}.head-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:3px 3px 0 0}.footer-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:0 0 3px 3px}.notification-box-notify[_ngcontent-sc74]{padding:10px 0}.bg-gray-notify[_ngcontent-sc74]{background-color:#eee}@media (max-width:640px){.dropdown-menu-notify[_ngcontent-sc74]{top:50px;left:-16px;width:290px}.nav-notify[_ngcontent-sc74]{display:block}.nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74], .nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74]   a[_ngcontent-sc74]{padding-left:0}.message-notify[_ngcontent-sc74]{font-size:13px}}.loginError[_ngcontent-sc74]{color:red;padding:3px 2px}div.alert[_ngcontent-sc74]{margin:0}input.ng-touched.ng-invalid[_ngcontent-sc74], textarea.ng-touched.ng-invalid[_ngcontent-sc74]{border-color:red}.forgot[_ngcontent-sc74]{font-size:14px;color:#000;text-align:left;text-decoration:underline;cursor:pointer;padding:16px 0}.googleAuth[_ngcontent-sc74]{width:46%;cursor:pointer;border:1px solid #000;border-radius:3px;background:#60a3dd;margin-top:1px}.or[_ngcontent-sc74]{font-weight:500;font-size:19px}.modal-header[_ngcontent-sc74]{display:flex;align-items:center;justify-content:center;flex-direction:column}.modal-header[_ngcontent-sc74]   span[_ngcontent-sc74]{position:absolute;top:15px;right:20px}.navbar-brand[_ngcontent-sc74]{margin:0;padding:0}</style><style ng-transition="serverApp">footer[_ngcontent-sc75]{color:#fff}</style><style ng-transition="serverApp">div.code-toolbar{position:relative}div.code-toolbar>.toolbar{position:absolute;top:.3em;right:.2em;transition:opacity .3s ease-in-out;opacity:0}div.code-toolbar:focus-within>.toolbar,div.code-toolbar:hover>.toolbar{opacity:1}div.code-toolbar>.toolbar .toolbar-item{display:inline-block}div.code-toolbar>.toolbar a{cursor:pointer}div.code-toolbar>.toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}div.code-toolbar>.toolbar a,div.code-toolbar>.toolbar button,div.code-toolbar>.toolbar span{color:#bbb;font-size:.8em;padding:0 .5em;background:#f5f2f0;background:hsla(0,0%,87.8%,.2);box-shadow:0 2px 0 0 rgba(0,0,0,.2);border-radius:.5em}div.code-toolbar>.toolbar a:focus,div.code-toolbar>.toolbar a:hover,div.code-toolbar>.toolbar button:focus,div.code-toolbar>.toolbar button:hover,div.code-toolbar>.toolbar span:focus,div.code-toolbar>.toolbar span:hover{color:inherit;text-decoration:none}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.showReplies{color:#00f;cursor:pointer;font-size:14px;padding:8px 16px}pre{display:block;color:#212529;font-family:Inter}.commentContainerMain{margin:33px 0}#content p{font-family:helvetica;margin:17px 0}#content p,.contentBox{font-size:15pt}.commentContainer{font-size:14pt;font-family:helvetica}.commentError{font-size:10pt;margin:8px}@media screen and (max-width:768px){.commentImg{display:none!important}div.toolbar-item button{margin-right:0}#video-box2 pre code{font-size:10px}pre[class*=language-]{font-size:6pt}img{max-width:100%;height:auto}.contentBox{word-wrap:break-word}#content h1{font-size:27px}}.contentBox img{border:2px solid #e6e6e6;padding:7px;border-radius:12px}h2,h3,h4,h5,h6{margin:25px 0 9px}.commentPre{overflow-x:auto;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}</style><style ng-transition="serverApp"></style><meta name="keywords" content="php cheatsheet for php beginners"><meta name="description" content="Php Cheatsheet for all php developers"></head>
+
+<body>
+  <app-root _nghost-sc76="" ng-version="11.2.11"><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><app-header _ngcontent-sc76="" _nghost-sc74=""><!----><nav _ngcontent-sc74="" class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-sc74="" routerlink="/" class="navbar-brand" href="../../index.html"><img _ngcontent-sc74="" height="39px" width="39px" src="../../assets/img/logo.png" alt="CodeWithHarry" class="brandLogo"></a><button _ngcontent-sc74="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-sc74="" class="navbar-toggler-icon"></span></button><div _ngcontent-sc74="" id="navbarSupportedContent" class="collapse navbar-collapse"><ul _ngcontent-sc74="" class="navbar-nav mr-auto"><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/" class="nav-link" href="../../index.html">Home</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/videos" class="nav-link" href="../../videos/index.html">Videos</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/blog" class="nav-link" href="../../blog/index.html">Blog</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/contact" class="nav-link" href="../../contact/index.html">Contact Me</a></li></ul><form _ngcontent-sc74="" novalidate="" class="form-inline my-2 my-lg-0 mr-3 ng-untouched ng-pristine ng-valid"><input _ngcontent-sc74="" type="text" placeholder="Search" aria-label="Search" name="query" class="form-control mr-sm-2 ng-untouched ng-pristine ng-valid" value=""><button _ngcontent-sc74="" type="submit" class="btn btn-danger my-2 my-sm-0">Search</button></form><div _ngcontent-sc74="" class="mx-0"><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-danger mr-2">Login</button><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#signupModal" class="btn btn-danger">SignUp</button></div><!----><!----></div></nav><div _ngcontent-sc74="" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleLogin.png" alt="Login with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="loginModalTitle" class="modal-title">Login via username</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="username">Username</label><input _ngcontent-sc74="" type="text" id="username" placeholder="Enter your username" name="username" pattern="[a-zA-Z0-9 ]*" maxlength="10" minlength="2" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="loginpassword">Password</label><input _ngcontent-sc74="" type="password" id="loginpassword" placeholder="Enter your password" name="loginpassword" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><button _ngcontent-sc74="" type="submit" id="loginsubmit" class="btn btn-danger mt-2" disabled=""><!----> Login</button></form><!----><!----><!----><div _ngcontent-sc74="" class="forgot"><span _ngcontent-sc74="">Forgot Password?</span></div></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div><div _ngcontent-sc74="" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleSignUp.png" alt="Signup with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="signupModal" class="modal-title">SignUp for an account</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="uname">Username</label><input _ngcontent-sc74="" type="text" id="signupUserName" placeholder="Enter your username" name="signupUserName" pattern="[a-zA-Z0-9_ ]*" maxlength="10" minlength="4" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><small _ngcontent-sc74="" id="unamehelp" class="form-text text-muted px-1"> Your unique username must 4 - 10 characters (only lowecase letters, numbers &amp; underscores allowed) with no spaces </small></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupName">Name</label><input _ngcontent-sc74="" type="text" id="signupName" name="signupName" placeholder="Enter your Name" maxlength="30" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="email">Your Email</label><div _ngcontent-sc74="" class="mx-0"><div _ngcontent-sc74="" class="col-md-8 px-0"><input _ngcontent-sc74="" type="email" placeholder="Enter your Email" id="signupEmail" name="signupEmail" required="" email="" maxlength="40" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><!----></div><div _ngcontent-sc74="" class="col-md-4 my-1 px-0"><button _ngcontent-sc74="" type="button" id="otpbtn" class="btn btn-danger btn-sm mt-2" disabled=""><!----> Send OTP</button></div></div></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="otp">Enter OTP</label><input _ngcontent-sc74="" type="number" id="signupOTP" placeholder="Enter OTP" name="signupOTP" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupPassword1">Choose a password (At least 4 characters)</label><input _ngcontent-sc74="" type="password" id="signupPassword1" name="signupPassword1" placeholder="Choose a password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group mb-0"><label _ngcontent-sc74="" for="signupPassword2">Retype your password</label><input _ngcontent-sc74="" type="password" id="signupPassword2" name="signupPassword2" placeholder="Retype your password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><!----><!----><!----><!----><button _ngcontent-sc74="" type="submit" class="btn btn-danger mt-4" disabled=""><!----> SignUp</button></form></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div></app-header><div _ngcontent-sc76="" class="content"><router-outlet _ngcontent-sc76=""></router-outlet><app-blog-page><div class="wrapper container main-container my-4"><div id="content"><app-adsense adtype="adia" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><!----><!----><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9655830461045889" data-ad-slot="6621930351" class="adsbygoogle" style="display: block; text-align: center;"></ins></div><!----><!----></div></app-adsense><h1>Php Cheatsheet <a target="_blank" href="https://www.codewithharry.com/dashboard/blogs/php-cheatsheet"><!----></a></h1><div class="text-center"><!----><span class="sr-only">Loading...</span></div><div class="contentBox"><div><h2>Basics</h2>
+<h3>Hello World</h3>
+<p>echo function is used to display or print output</p>
+<pre class="language-php"><code>&lt;?php echo "Hello World!"; ?&gt;</code></pre>
+<h2>Comments</h2>
+<p>Commets are used to make the code more understandable for programmer, they are not executed by compiler or interpreter.</p>
+<h3>One Liner</h3>
+<p>This is a singleline comment</p>
+<pre class="language-php"><code>// Twinkle Twinkle Little Star</code></pre>
+<h3>Another One Liner</h3>
+<p>This is a single-line comment</p>
+<pre class="language-php"><code># Chocolate dedo mujhe yaar</code></pre>
+<h3>Multiline</h3>
+<p>This is a multiline comment</p>
+<pre class="language-php"><code>/* Code With 
+Harry */</code></pre>
+<h2>Vardump</h2>
+<p>This function dumps information about one or more variables.</p>
+<pre class="language-php"><code>&lt;?php var_dump(var1, var2, ...); ?&gt;</code></pre>
+<h2>Variables</h2>
+<p>Variables are "containers" for storing information.</p>
+<h3>Defining Variables</h3>
+<pre class="language-php"><code>&lt;?php
+$Title = "PHP Cheat Sheet By CodeWithHarry";
+?&gt;</code></pre>
+<h2>Datatypes</h2>
+<p>Datatype is a type of data</p>
+<h3>String</h3>
+<p>A string is a sequence of characters, like "Hello world!".</p>
+<pre class="language-php"><code>&lt;?php 
+$x = "Harry"; 
+echo $x; 
+?&gt;</code></pre>
+<h3>Integer</h3>
+<p>An integer is a number without any decimal part.</p>
+<pre class="language-php"><code>&lt;?php
+$x = 1234;
+var_dump($x);
+?&gt;</code></pre>
+<h3>Float</h3>
+<p>A float is a number with a decimal point or a number in exponential form.</p>
+<pre class="language-php"><code>&lt;?php 
+$x = 1.2345; 
+var_dump($x); 
+?&gt;</code></pre>
+<h3>Array</h3>
+<p>An array stores multiple values in one single variable</p>
+<pre class="language-php"><code>&lt;?php
+$names = array("Harry","Rohan","Shubham");
+var_dump($names);
+?&gt;</code></pre>
+<h3>Class</h3>
+<p>A class is a template for objects</p>
+<pre class="language-php"><code>&lt;?php 
+class Harry{ 
+// code goes here... 
+} 
+?&gt;</code></pre>
+<h3>Object</h3>
+<p>An object is an instance of the class.</p>
+<pre class="language-php"><code>&lt;?php 
+class Bike { 
+public $color; 
+public $model; 
+public function __construct($color, $model) { 
+$this-&gt;color = $color; 
+$this-&gt;model = $model; 
+} 
+public function message() { 
+return "My bike is a " . $this-&gt;color . " " . $this-&gt;model . "!"; 
+} 
+} 
+
+$myBike = new Bike("red", "Honda"); 
+echo $myBike -&gt; message(); 
+?&gt;</code></pre>
+<h2>Escape Characters</h2>
+<p>Escape sequences are used for escaping a character during string parsing. It is also used for giving special meaning to represent line breaks, tabs, alerts and more.</p>
+<h3>Line feed</h3>
+<p>It adds a newline</p>
+<pre class="language-php"><code>\n</code></pre>
+<h3>Carriage return</h3>
+<p>It inserts a carriage return in the text at this point.</p>
+<pre class="language-php"><code>\r</code></pre>
+<h3>Horizontal tab</h3>
+<p>It gives a horizontal tab space</p>
+<pre class="language-php"><code>\t</code></pre>
+<h3>Vertical tab</h3>
+<p>It gives a vertical tab space</p>
+<pre class="language-php"><code>\v</code></pre>
+<h3>Escape</h3>
+<p>It is used for escape characters</p>
+<pre class="language-php"><code>\e</code></pre>
+<h3>Form feed</h3>
+<p>It is commonly used as page separators but now is also used as section separators.</p>
+<pre class="language-php"><code>\f</code></pre>
+<h3>Backslash</h3>
+<p>It adds a backslash</p>
+<pre class="language-php"><code>\\</code></pre>
+<h3>Dollar sign</h3>
+<p>Print the next character as a dollar, not as part of a variable</p>
+<pre class="language-php"><code>\$</code></pre>
+<h3>Single quote</h3>
+<p>Print the next character as a single quote, not a string closer</p>
+<pre class="language-php"><code>\'</code></pre>
+<h3>Double quote</h3>
+<p>Print the next character as a double quote, not a string closer</p>
+<pre class="language-php"><code>\"</code></pre>
+<h2>Operators</h2>
+<p>Operators are symbols that tell the compiler or interpreter to perform specific mathematical or logical manipulations. These are of several types.</p>
+<pre class="language-php"><code></code></pre>
+<h2>Arithmetic Operators</h2>
+<h3>Addition</h3>
+<p>Sum of $x and $y</p>
+<pre class="language-php"><code>$x + $y</code></pre>
+<h2>&nbsp;</h2>
+<h3>Subtraction</h3>
+<p>Difference of $x and $y</p>
+<pre class="language-php"><code>$x - $y</code></pre>
+<h3>Multiplication</h3>
+<p>Product of $x and $y</p>
+<pre class="language-php"><code>$x * $y</code></pre>
+<h3>Division</h3>
+<p>Quotient of $x and $y</p>
+<pre class="language-php"><code>$x / $y</code></pre>
+<h3>Modulus</h3>
+<p>The remainder of $x divided by $y</p>
+<pre class="language-php"><code>$x % $y</code></pre>
+<h3>Exponentiation</h3>
+<p>Result of raising $x to the $y'th power</p>
+<pre class="language-php"><code>$x ** $y</code></pre>
+<h2>PHP Assignment Operators</h2>
+<p>The PHP assignment operators are used with numeric values to write a value to a variable.</p>
+<h3>x = y</h3>
+<p>The left operand gets set to the value of the expression on the right</p>
+<pre class="language-php"><code>x = y</code></pre>
+<h3>x += y</h3>
+<p>Addition</p>
+<pre class="language-php"><code>x = x + y</code></pre>
+<h3>x -= y</h3>
+<p>Subtraction</p>
+<pre class="language-php"><code>x = x - y</code></pre>
+<h3>x *= y</h3>
+<p>Multiplication</p>
+<pre class="language-php"><code>x = x * y</code></pre>
+<h3>x /= y</h3>
+<p>Division</p>
+<pre class="language-php"><code>x = x / y</code></pre>
+<h3>x %= y</h3>
+<p>Modulus</p>
+<pre class="language-php"><code>x = x % y</code></pre>
+<h2>PHP Comparison Operators</h2>
+<h3>Equal</h3>
+<p>Returns true if $x is equal to $y</p>
+<pre class="language-php"><code>$x == $y</code></pre>
+<h3>Identical</h3>
+<p>Returns true if $x is equal to $y, and they are of the same type</p>
+<pre class="language-php"><code>$x === $y</code></pre>
+<h3>Not equal</h3>
+<p>Returns true if $x is not equal to $y</p>
+<pre class="language-php"><code>$x != $y</code></pre>
+<h3>Not equal</h3>
+<p>Returns true if $x is not equal to $y</p>
+<pre class="language-php"><code>$x &lt;&gt; $y</code></pre>
+<h3>Not identical</h3>
+<p>Returns true if $x is not equal to $y, or they are not of the same type</p>
+<pre class="language-php"><code>$x !== $y</code></pre>
+<h3>Greater than</h3>
+<p>Returns true if $x is greater than $y</p>
+<pre class="language-php"><code>$x &gt; $y</code></pre>
+<h3>Less than</h3>
+<p>Returns true if $x is less than $y</p>
+<pre class="language-php"><code>$x &lt; $y</code></pre>
+<h3>Greater than or equal to</h3>
+<p>Returns true if $x is greater than or equal to $y</p>
+<pre class="language-php"><code>$x &gt;= $y</code></pre>
+<h3>Less than or equal to</h3>
+<p>Returns true if $x is less than or equal to $y</p>
+<pre class="language-php"><code>$x &lt;= $y</code></pre>
+<h2>PHP Increment / Decrement Operators</h2>
+<h3>Pre-increment</h3>
+<p>Increments $x by one, then returns $x</p>
+<pre class="language-php"><code>=++$x</code></pre>
+<h3>Post-increment</h3>
+<p>Returns $x, then increments $x by one</p>
+<pre class="language-php"><code>$x++</code></pre>
+<h3>Pre-decrement</h3>
+<p>Decrements $x by one, then returns $x</p>
+<pre class="language-php"><code>--$x</code></pre>
+<h3>Post-decrement</h3>
+<p>Returns $x, then decrements $x by one</p>
+<pre class="language-php"><code>$x--</code></pre>
+<h2>PHP Logical Operators</h2>
+<h3>And</h3>
+<p>True if both $x and $y are true</p>
+<pre class="language-php"><code>$x and $y</code></pre>
+<h3>Or</h3>
+<p>True if either $x or $y is true</p>
+<pre class="language-php"><code>$x or $y</code></pre>
+<h3>Xor</h3>
+<p>True if either $x or $y is true, but not both</p>
+<pre class="language-php"><code>$x xor $y</code></pre>
+<h3>And</h3>
+<p>True if both $x and $y are true</p>
+<pre class="language-php"><code>$x &amp;&amp; $y</code></pre>
+<h3>Or</h3>
+<p>True if either $x or $y is true</p>
+<pre class="language-php"><code>$x || $y</code></pre>
+<h3>Not</h3>
+<p>True if $x is not true</p>
+<pre class="language-php"><code>!$x</code></pre>
+<h2>PHP String Operators</h2>
+<h3>Concatenation</h3>
+<p>Concatenation of $txt1 and $txt2</p>
+<pre class="language-php"><code>$txt1 . $txt2</code></pre>
+<h3>Concatenation assignment</h3>
+<p>Appends $txt2 to $txt1</p>
+<pre class="language-php"><code>$txt1 .= $txt2</code></pre>
+<h2>PHP Array Operators</h2>
+<h3>Union</h3>
+<p>Union of $x and $y</p>
+<pre class="language-php"><code>$x + $y</code></pre>
+<h3>Equality</h3>
+<p>Returns true if $x and $y have the same key/value pairs</p>
+<pre class="language-php"><code>$x == $y</code></pre>
+<h3>Identity</h3>
+<p>Returns true if $x and $y have the same key/value pairs in the same order and of the same types</p>
+<pre class="language-php"><code>$x === $y</code></pre>
+<h3>Inequality</h3>
+<p>Returns true if $x is not equal to $y</p>
+<pre class="language-php"><code>$x != $y</code></pre>
+<h3>Inequality</h3>
+<p>Returns true if $x is not equal to $y</p>
+<pre class="language-php"><code>$x &lt;&gt; $y</code></pre>
+<h3>Non-identity</h3>
+<p>Returns true if $x is not identical to $y</p>
+<pre class="language-php"><code>$x !== $y</code></pre>
+<h2>PHP Conditional Assignment Operators</h2>
+<h3>Ternary</h3>
+<p>Returns the value of $x. The value of $x is expr2 if expr1 = TRUE. The value of $x is expr3 if expr1 = FALSE</p>
+<pre class="language-php"><code>$x = expr1 ? expr2 : expr3</code></pre>
+<h2>Conditional Statements</h2>
+<p>Conditional statements are used to perform operations based on some condition.</p>
+<h3>If Statement</h3>
+<p>if statement checks the condition and if it is True, then the block of if statement executes; otherwise, control skips that block of code.</p>
+<pre class="language-php"><code>if (condition) { 
+// code to execute if condition is met 
+}</code></pre>
+<h3>If..Else</h3>
+<p>if the condition of if block evaluates to True, then if block executes otherwise else block executes</p>
+<pre class="language-php"><code>if (condition) { 
+// code to execute if condition is met 
+} else { 
+// code to execute if condition is not met 
+}</code></pre>
+<h3>If..Elseif..Else</h3>
+<p>It executes different codes for more than two conditions</p>
+<pre class="language-php"><code>if (condition) { 
+// code to execute if condition is met 
+} elseif (condition) { 
+// code to execute if this condition is met 
+} else { 
+// code to execute if none of the conditions are met 
+}</code></pre>
+<h3>Switch Statement</h3>
+<p>It allows a variable to be tested for equality against a list of values (cases).</p>
+<pre class="language-php"><code>switch (n) { 
+case x: 
+code to execute if n=x; 
+break; 
+case y: 
+code to execute if n=y; 
+break; 
+case z: 
+code to execute if n=z; 
+break; 
+// add more cases as needed 
+default: 
+code to execute if n is neither of the above; 
+}</code></pre>
+<h2>Loops</h2>
+<p>Iterative statements or Loops facilitate programmers to execute any block of code lines repeatedly.</p>
+<h3>For Loop</h3>
+<p>It is used to iterate the statements several times. It is frequently used to traverse the data structures like the array and linked list.</p>
+<pre class="language-php"><code>for (starting counter value; ending counter value; increment by which 
+to increase) { 
+// code to execute goes here 
+}</code></pre>
+<h3>Foreach Loop</h3>
+<p>The foreach loop loops through a block of code for each element in an array.</p>
+<pre class="language-php"><code>foreach ($InsertYourArrayName as $value) { 
+// code to execute goes here 
+}</code></pre>
+<h3>While Loop</h3>
+<p>It iterate the block of code as long as a specified condition is True or vice versa</p>
+<pre class="language-php"><code>while (condition that must apply) { 
+// code to execute goes here 
+}</code></pre>
+<h3>Do-While Loop</h3>
+<p>This loop is very similar to the while loop with one difference, i.e., the body of the do-while loop is executed at least once even if the condition is False. It is an exit-controlled loop.</p>
+<pre class="language-php"><code>do { 
+// code to execute goes here; 
+} while (condition that must apply);</code></pre>
+<h2>Predefined Variables</h2>
+<p>PHP provides a large number of predefined variables to all scripts. The variables represent everything from external variables to built-in environment variables, last error messages etc. All this information is defined in some predefined variables.</p>
+<h3>$GLOBALS</h3>
+<p>$GLOBALS is a PHP super global variable which is used to access global variables from anywhere in the PHP script.</p>
+<pre class="language-php"><code>&lt;?php 
+$a = 10; 
+$b = 15; 
+
+function addition() { 
+$GLOBALS['c'] = $GLOBALS['a'] + $GLOBALS['b']; 
+} 
+addition(); 
+echo $c; 
+?&gt;</code></pre>
+<h3>$_SERVER</h3>
+<p>Returns the filename of the currently executing script. $_SERVER is a PHP super global variable which holds information about headers, paths, and script locations.</p>
+<pre class="language-php"><code>$_SERVER['PHP_SELF']</code></pre>
+<p>Returns the version of the Common Gateway Interface (CGI) the server is using</p>
+<pre class="language-php"><code>$_SERVER['GATEWAY_INTERFACE']</code></pre>
+<p>Returns the IP address of the host server</p>
+<pre class="language-php"><code>$_SERVER['SERVER_ADDR']</code></pre>
+<p>Returns the name of the host server (such as www.codewithharry.com)</p>
+<pre class="language-php"><code>$_SERVER['SERVER_NAME']</code></pre>
+<p>Returns the server identification string (such as Apache/2.2.24)</p>
+<pre class="language-php"><code>$_SERVER['SERVER_SOFTWARE']</code></pre>
+<p>Returns the name and revision of the information protocol (such as HTTP/1.1)</p>
+<pre class="language-php"><code>$_SERVER['SERVER_PROTOCOL']</code></pre>
+<p>Returns the request method used to access the page (such as POST)</p>
+<pre class="language-php"><code>$_SERVER['REQUEST_METHOD']</code></pre>
+<p>Returns the timestamp of the start of the request (such as 1377687496)</p>
+<pre class="language-php"><code>$_SERVER['REQUEST_TIME']</code></pre>
+<p>Returns the query string if the page is accessed via a query string</p>
+<pre class="language-php"><code>$_SERVER['QUERY_STRING']</code></pre>
+<p>Returns the Accept header from the current request</p>
+<pre class="language-php"><code>$_SERVER['HTTP_ACCEPT']</code></pre>
+<p>Returns the Accept_Charset header from the current request (such as utf-8,ISO-8859-1)</p>
+<pre class="language-php"><code>$_SERVER['HTTP_ACCEPT_CHARSET']</code></pre>
+<p>Returns the Host header from the current request</p>
+<pre class="language-php"><code>$_SERVER['HTTP_HOST']</code></pre>
+<p>Returns the complete URL of the current page (not reliable because not all user-agents support it)</p>
+<pre class="language-php"><code>$_SERVER['HTTP_REFERER']</code></pre>
+<p>Is the script queried through a secure HTTP protocol?</p>
+<pre class="language-php"><code>$_SERVER['HTTPS']</code></pre>
+<p>Returns the IP address from where the user is viewing the current page</p>
+<pre class="language-php"><code>$_SERVER['REMOTE_ADDR']</code></pre>
+<p>Returns the Hostname from where the user is viewing the current page</p>
+<pre class="language-php"><code>$_SERVER['REMOTE_HOST']</code></pre>
+<p>Returns the port being used on the user's machine to communicate with the web server</p>
+<pre class="language-php"><code>$_SERVER['REMOTE_PORT']</code></pre>
+<p>Returns the absolute pathname of the currently executing script</p>
+<pre class="language-php"><code>$_SERVER['SCRIPT_FILENAME']</code></pre>
+<p>Returns the value given to the SERVER_ADMIN directive in the web server configuration file (if your script runs on a virtual host, it will be the value defined for that virtual host) (such as someone@codewithharry.com)</p>
+<pre class="language-php"><code>$_SERVER['SERVER_ADMIN']</code></pre>
+<p>Returns the port on the server machine being used by the webserver for communication (such as 80)</p>
+<pre class="language-php"><code>$_SERVER['SERVER_PORT']</code></pre>
+<p>Returns the server version and virtual hostname which are added to server-generated pages</p>
+<pre class="language-php"><code>$_SERVER['SERVER_SIGNATURE']</code></pre>
+<p>Returns the file system based path to the current script</p>
+<pre class="language-php"><code>$_SERVER['PATH_TRANSLATED']</code></pre>
+<p>Returns the path of the current script</p>
+<pre class="language-php"><code>$_SERVER['SCRIPT_NAME']</code></pre>
+<p>Returns the URI of the current page</p>
+<pre class="language-php"><code>$_SERVER['SCRIPT_URI']</code></pre>
+<h3>$_GET</h3>
+<p>PHP $_GET is a PHP super global variable which is used to collect form data after submitting an HTML form with method="get".</p>
+<pre class="language-php"><code>&lt;?php 
+echo "Hello" . $_GET['Example'] . " at " . $_GET['web']; 
+?&gt;</code></pre>
+<h3>$_POST</h3>
+<p>PHP $_POST is a PHP super global variable which is used to collect form data after submitting an HTML form with method="post". $_POST is also widely used to pass variables.</p>
+<pre class="language-php"><code>&lt;html&gt;
+&lt;body&gt;
+&lt;form method="post" action="&lt;?php echo $_SERVER['PHP_SELF'];?&gt;"&gt;
+Name: &lt;input type="text" name="fname"&gt;
+&lt;input type="submit"&gt;
+&lt;/form&gt;
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$name = $_POST['fname'];
+if (empty($name)) {
+echo "Please Enter your name";
+} else {
+echo $name;
+}
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>$_REQUEST</h3>
+<p>PHP $_REQUEST is a PHP super global variable which is used to collect data after submitting an HTML form.</p>
+<pre class="language-php"><code>&lt;html&gt;
+&lt;body&gt;
+&lt;form method="post" action="&lt;?php echo $_SERVER['PHP_SELF'];?&gt;"&gt;
+Name: &lt;input type="text" name="fname"&gt;
+&lt;input type="submit"&gt;
+&lt;/form&gt;
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$name = $_REQUEST['fname'];
+if (empty($name)) {
+echo "Name is empty";
+} else {
+echo $name;
+}
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>Variable-handling Functions</h2>
+<p>The PHP variable handling functions are part of the PHP core. No installation is required to use these functions.</p>
+<h3>boolval</h3>
+<p>Boolval is used to get the boolean value of a variable</p>
+<pre class="language-php"><code>&lt;?php 
+echo '0: '.(boolval(0) ? 'true' : 'false')."\n"; 
+echo '42: '.(boolval(42) ? 'true' : 'false')."\n"; 
+echo '0.0: '.(boolval(0.0) ? 'true' : 'false')."\n"; 
+echo '4.2: '.(boolval(4.2) ? 'true' : 'false')."\n"; 
+echo '"": '.(boolval("") ? 'true' : 'false')."\n"; 
+echo '"string": '.(boolval("string") ? 'true' : 'false')."\n"; 
+echo '"0": '.(boolval("0") ? 'true' : 'false')."\n"; 
+echo '"1": '.(boolval("1") ? 'true' : 'false')."\n"; 
+echo '[1, 2]: '.(boolval([1, 2]) ? 'true' : 'false')."\n"; 
+echo '[]: '.(boolval([]) ? 'true' : 'false')."\n"; 
+echo 'stdClass: '.(boolval(new stdClass) ? 'true' : 'false')."\n"; 
+?&gt;</code></pre>
+<h3>isset</h3>
+<p>It is used to check whether a variable is empty. It also checks whether the variable is set/declared:</p>
+<pre class="language-php"><code>&lt;?php 
+$x = 0; 
+// True because $x is set 
+if (isset($x)) { 
+echo "Variable 'x' is set"; 
+} 
+</code></pre>
+<h3>unset</h3>
+<p>It unsets variables.</p>
+<pre class="language-php"><code>&lt;?php 
+$a = "Namaste world!"; 
+echo "The value of 'a' before unset: " . $a ; 
+unset($a); 
+echo "The value of 'a' after unset: " . $a; 
+?&gt;</code></pre>
+<h3>debug_zval_dump</h3>
+<p>debug_zval_dump is used to dump a string representation of an internal zval structure to output</p>
+<pre class="language-php"><code>&lt;?php 
+$var1 = 'Hello'; 
+$var1 .= ' World'; 
+$var2 = $var1; 
+
+debug_zval_dump($var1); 
+?&gt;</code></pre>
+<h3>empty</h3>
+<p>Empty is used to check whether a variable is empty or not.</p>
+<pre class="language-php"><code>&lt;?php 
+$var = 0; 
+
+// Evaluates to true because $var is empty 
+if (empty($var)) { 
+echo '$var is either 0, empty, or not set at all'; 
+} 
+
+// Evaluates as true because $var is set 
+if (isset($var)) { 
+echo '$var is set even though it is empty'; 
+} 
+?&gt;</code></pre>
+<h3>floatval</h3>
+<p>It returns the float value of different variables:</p>
+<pre class="language-php"><code>&lt;?php 
+$var = '122.34343The'; 
+$float_value_of_var = floatval($var); 
+echo $float_value_of_var; // 122.34343 
+?&gt;</code></pre>
+<h3>get_defined_vars</h3>
+<p>It returns all defined variables, as an array:</p>
+<pre class="language-php"><code>&lt;?php 
+$b = array(1, 1, 2, 3, 5, 8); 
+
+$arr = get_defined_vars(); 
+
+// print $b 
+print_r($arr["b"]); 
+
+/* print path to the PHP interpreter (if used as a CGI) 
+* e.g. /usr/local/bin/php */ 
+echo $arr["_"]; 
+
+// print the command-line parameters if any 
+print_r($arr["argv"]); 
+
+// print all the server vars 
+print_r($arr["_SERVER"]); 
+
+// print all the available keys for the arrays of variables 
+print_r(array_keys(get_defined_vars())); 
+?&gt;</code></pre>
+<h3>get_resource_type</h3>
+<p>It returns the resource type:</p>
+<pre class="language-php"><code>&lt;?php 
+// prints: stream 
+$fp = fopen("foo", "w"); 
+echo get_resource_type($fp) . "\n"; 
+
+// prints: curl 
+$c = curl_init (); 
+echo get_resource_type($c) . "\n"; // works prior to PHP 8.0.0 as since 8.0 curl_init returns a CurlHandle object 
+?&gt;</code></pre>
+<h3>gettype</h3>
+<p>It returns the type of different variables:</p>
+<pre class="language-php"><code>&lt;?php 
+$a = 3; 
+echo gettype($a) ; 
+?&gt;</code></pre>
+<h3>intval</h3>
+<p>It returns the integer value of different variables:</p>
+<pre class="language-php"><code>&lt;?php 
+echo intval(42); ?&gt;</code></pre>
+<h3>is_array</h3>
+<p>To check whether a variable is an array or not:</p>
+<pre class="language-php"><code>&lt;?php 
+$a = "Hello"; 
+echo "a is " . is_array($a) ;?&gt;</code></pre>
+<h2>Array</h2>
+<p>An array stores multiple values in one single variable.</p>
+<h3>Declaring an Array</h3>
+<pre class="language-php"><code>&lt;?php
+$cms = array("Harry", "Lovish", "Rohan");
+echo "Who needs chocolate? Is it" . $cms[0] . ", " .
+$cms[1] . " or " . $cms[2] . "?";
+?&gt;</code></pre>
+<h2>Functions</h2>
+<p>A function is a block of statements that can be used repeatedly in a program</p>
+<h3>Defining Functions</h3>
+<pre class="language-php"><code>function NameOfTheFunction() { 
+//place PHP code here 
+}</code></pre>
+<h2>MySQLi Functions</h2>
+<p>These functions allow you to access MySQL database server.</p>
+<h3>mysqli_connect() Function</h3>
+<p>It opens a non-persistent MySQL connection</p>
+<pre class="language-php"><code>mysqli_connect()</code></pre>
+<h3>mysqli_affected_rows() Function</h3>
+<p>It returns the number of affected rows</p>
+<pre class="language-php"><code>mysqli_affected_rows()</code></pre>
+<h3>mysqli_connect_error() Function</h3>
+<p>It shows the Error description for the connection error</p>
+<pre class="language-php"><code>mysqli_connect_error()</code></pre>
+<h3>mysqli_fetch_all() Function</h3>
+<p>It fetches all result rows as an array</p>
+<pre class="language-php"><code>mysqli_fetch_all()</code></pre>
+<h3>mysqli_fetch_array() Function</h3>
+<p>It fetches a result row as an associative, a numeric array, or both</p>
+<pre class="language-php"><code>mysqli_fetch_array()</code></pre>
+<h3>mysqli_fetch_assoc() Function</h3>
+<p>It fetches a result row as an associative array</p>
+<pre class="language-php"><code>mysqli_fetch_assoc()</code></pre>
+<h3>mysqli_fetch_row() Function</h3>
+<p>It fetches one row from a result set and returns it as an enumerated array</p>
+<pre class="language-php"><code>mysqli_fetch_row()</code></pre>
+<h3>mysqli_kill() Function</h3>
+<p>It kills a MySQL thread</p>
+<pre class="language-php"><code>mysqli_kill()</code></pre>
+<h3>mysqli_close() Function</h3>
+<p>It closes a database connection</p>
+<pre class="language-php"><code>mysqli_close()</code></pre></div><!----><!----><!----></div><app-adsense adtype="adia" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><!----><!----><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9655830461045889" data-ad-slot="6621930351" class="adsbygoogle" style="display: block; text-align: center;"></ins></div><!----><!----></div></app-adsense><hr><div class="container my-4"><div id="comments" class="container px-0"><div class="commentContainerMain"><h2>You need to be logged in to post a comment!</h2></div><!----><h2>Comments</h2><p class="mx-1"> No comments to display. Be the first person to post a comment! </p><!----><!----></div><!----><div class="container my-4 px-0"><!----></div></div></div></div></app-blog-page><!----></div><app-footer _ngcontent-sc76="" _nghost-sc75=""><footer _ngcontent-sc75="" class="container-fluid bg-dark my-0 py-3 text-light"><p _ngcontent-sc75="" class="mb-0 text-center">Copyright © 2020-2021 CodeWithHarry.com</p></footer></app-footer></app-root>
+<script src="../../runtime.7b63b9fd40098a2e8207.js" defer=""></script><script src="../../polyfills.00096ed7d93ed26ee6df.js" defer=""></script><script src="../../scripts.2558b03aa1b9660ed84d.js" defer=""></script><script src="../../main.bd8a3a7a366ac101c3dc.js" defer=""></script>
+
+
+<script id="serverApp-state" type="application/json">{&q;G.https://api.codewithharry.com/blog/getblog/php-cheatsheet?&q;:{&q;body&q;:{&q;title&q;:&q;Php Cheatsheet&q;,&q;content&q;:&q;&l;h2&g;Basics&l;/h2&g;\n&l;h3&g;Hello World&l;/h3&g;\n&l;p&g;echo function is used to display or print output&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php echo \&q;Hello World!\&q;; ?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Comments&l;/h2&g;\n&l;p&g;Commets are used to make the code more understandable for programmer, they are not executed by compiler or interpreter.&l;/p&g;\n&l;h3&g;One Liner&l;/h3&g;\n&l;p&g;This is a singleline comment&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;// Twinkle Twinkle Little Star&l;/code&g;&l;/pre&g;\n&l;h3&g;Another One Liner&l;/h3&g;\n&l;p&g;This is a single-line comment&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;# Chocolate dedo mujhe yaar&l;/code&g;&l;/pre&g;\n&l;h3&g;Multiline&l;/h3&g;\n&l;p&g;This is a multiline comment&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;/* Code With \nHarry */&l;/code&g;&l;/pre&g;\n&l;h2&g;Vardump&l;/h2&g;\n&l;p&g;This function dumps information about one or more variables.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php var_dump(var1, var2, ...); ?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Variables&l;/h2&g;\n&l;p&g;Variables are \&q;containers\&q; for storing information.&l;/p&g;\n&l;h3&g;Defining Variables&l;/h3&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php\n$Title = \&q;PHP Cheat Sheet By CodeWithHarry\&q;;\n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Datatypes&l;/h2&g;\n&l;p&g;Datatype is a type of data&l;/p&g;\n&l;h3&g;String&l;/h3&g;\n&l;p&g;A string is a sequence of characters, like \&q;Hello world!\&q;.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$x = \&q;Harry\&q;; \necho $x; \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;Integer&l;/h3&g;\n&l;p&g;An integer is a number without any decimal part.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php\n$x = 1234;\nvar_dump($x);\n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;Float&l;/h3&g;\n&l;p&g;A float is a number with a decimal point or a number in exponential form.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$x = 1.2345; \nvar_dump($x); \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;Array&l;/h3&g;\n&l;p&g;An array stores multiple values in one single variable&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php\n$names = array(\&q;Harry\&q;,\&q;Rohan\&q;,\&q;Shubham\&q;);\nvar_dump($names);\n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;Class&l;/h3&g;\n&l;p&g;A class is a template for objects&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \nclass Harry{ \n// code goes here... \n} \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;Object&l;/h3&g;\n&l;p&g;An object is an instance of the class.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \nclass Bike { \npublic $color; \npublic $model; \npublic function __construct($color, $model) { \n$this-&a;gt;color = $color; \n$this-&a;gt;model = $model; \n} \npublic function message() { \nreturn \&q;My bike is a \&q; . $this-&a;gt;color . \&q; \&q; . $this-&a;gt;model . \&q;!\&q;; \n} \n} \n\n$myBike = new Bike(\&q;red\&q;, \&q;Honda\&q;); \necho $myBike -&a;gt; message(); \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Escape Characters&l;/h2&g;\n&l;p&g;Escape sequences are used for escaping a character during string parsing. It is also used for giving special meaning to represent line breaks, tabs, alerts and more.&l;/p&g;\n&l;h3&g;Line feed&l;/h3&g;\n&l;p&g;It adds a newline&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\n&l;/code&g;&l;/pre&g;\n&l;h3&g;Carriage return&l;/h3&g;\n&l;p&g;It inserts a carriage return in the text at this point.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\r&l;/code&g;&l;/pre&g;\n&l;h3&g;Horizontal tab&l;/h3&g;\n&l;p&g;It gives a horizontal tab space&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\t&l;/code&g;&l;/pre&g;\n&l;h3&g;Vertical tab&l;/h3&g;\n&l;p&g;It gives a vertical tab space&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\v&l;/code&g;&l;/pre&g;\n&l;h3&g;Escape&l;/h3&g;\n&l;p&g;It is used for escape characters&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\e&l;/code&g;&l;/pre&g;\n&l;h3&g;Form feed&l;/h3&g;\n&l;p&g;It is commonly used as page separators but now is also used as section separators.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\f&l;/code&g;&l;/pre&g;\n&l;h3&g;Backslash&l;/h3&g;\n&l;p&g;It adds a backslash&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\\\&l;/code&g;&l;/pre&g;\n&l;h3&g;Dollar sign&l;/h3&g;\n&l;p&g;Print the next character as a dollar, not as part of a variable&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\$&l;/code&g;&l;/pre&g;\n&l;h3&g;Single quote&l;/h3&g;\n&l;p&g;Print the next character as a single quote, not a string closer&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\&s;&l;/code&g;&l;/pre&g;\n&l;h3&g;Double quote&l;/h3&g;\n&l;p&g;Print the next character as a double quote, not a string closer&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;\\\&q;&l;/code&g;&l;/pre&g;\n&l;h2&g;Operators&l;/h2&g;\n&l;p&g;Operators are symbols that tell the compiler or interpreter to perform specific mathematical or logical manipulations. These are of several types.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&l;/code&g;&l;/pre&g;\n&l;h2&g;Arithmetic Operators&l;/h2&g;\n&l;h3&g;Addition&l;/h3&g;\n&l;p&g;Sum of $x and $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x + $y&l;/code&g;&l;/pre&g;\n&l;h2&g;&a;nbsp;&l;/h2&g;\n&l;h3&g;Subtraction&l;/h3&g;\n&l;p&g;Difference of $x and $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x - $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Multiplication&l;/h3&g;\n&l;p&g;Product of $x and $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x * $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Division&l;/h3&g;\n&l;p&g;Quotient of $x and $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x / $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Modulus&l;/h3&g;\n&l;p&g;The remainder of $x divided by $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x % $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Exponentiation&l;/h3&g;\n&l;p&g;Result of raising $x to the $y&s;th power&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x ** $y&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP Assignment Operators&l;/h2&g;\n&l;p&g;The PHP assignment operators are used with numeric values to write a value to a variable.&l;/p&g;\n&l;h3&g;x = y&l;/h3&g;\n&l;p&g;The left operand gets set to the value of the expression on the right&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;x = y&l;/code&g;&l;/pre&g;\n&l;h3&g;x += y&l;/h3&g;\n&l;p&g;Addition&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;x = x + y&l;/code&g;&l;/pre&g;\n&l;h3&g;x -= y&l;/h3&g;\n&l;p&g;Subtraction&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;x = x - y&l;/code&g;&l;/pre&g;\n&l;h3&g;x *= y&l;/h3&g;\n&l;p&g;Multiplication&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;x = x * y&l;/code&g;&l;/pre&g;\n&l;h3&g;x /= y&l;/h3&g;\n&l;p&g;Division&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;x = x / y&l;/code&g;&l;/pre&g;\n&l;h3&g;x %= y&l;/h3&g;\n&l;p&g;Modulus&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;x = x % y&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP Comparison Operators&l;/h2&g;\n&l;h3&g;Equal&l;/h3&g;\n&l;p&g;Returns true if $x is equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x == $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Identical&l;/h3&g;\n&l;p&g;Returns true if $x is equal to $y, and they are of the same type&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x === $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Not equal&l;/h3&g;\n&l;p&g;Returns true if $x is not equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x != $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Not equal&l;/h3&g;\n&l;p&g;Returns true if $x is not equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;lt;&a;gt; $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Not identical&l;/h3&g;\n&l;p&g;Returns true if $x is not equal to $y, or they are not of the same type&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x !== $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Greater than&l;/h3&g;\n&l;p&g;Returns true if $x is greater than $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;gt; $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Less than&l;/h3&g;\n&l;p&g;Returns true if $x is less than $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;lt; $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Greater than or equal to&l;/h3&g;\n&l;p&g;Returns true if $x is greater than or equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;gt;= $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Less than or equal to&l;/h3&g;\n&l;p&g;Returns true if $x is less than or equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;lt;= $y&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP Increment / Decrement Operators&l;/h2&g;\n&l;h3&g;Pre-increment&l;/h3&g;\n&l;p&g;Increments $x by one, then returns $x&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;=++$x&l;/code&g;&l;/pre&g;\n&l;h3&g;Post-increment&l;/h3&g;\n&l;p&g;Returns $x, then increments $x by one&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x++&l;/code&g;&l;/pre&g;\n&l;h3&g;Pre-decrement&l;/h3&g;\n&l;p&g;Decrements $x by one, then returns $x&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;--$x&l;/code&g;&l;/pre&g;\n&l;h3&g;Post-decrement&l;/h3&g;\n&l;p&g;Returns $x, then decrements $x by one&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x--&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP Logical Operators&l;/h2&g;\n&l;h3&g;And&l;/h3&g;\n&l;p&g;True if both $x and $y are true&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x and $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Or&l;/h3&g;\n&l;p&g;True if either $x or $y is true&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x or $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Xor&l;/h3&g;\n&l;p&g;True if either $x or $y is true, but not both&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x xor $y&l;/code&g;&l;/pre&g;\n&l;h3&g;And&l;/h3&g;\n&l;p&g;True if both $x and $y are true&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;amp;&a;amp; $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Or&l;/h3&g;\n&l;p&g;True if either $x or $y is true&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x || $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Not&l;/h3&g;\n&l;p&g;True if $x is not true&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;!$x&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP String Operators&l;/h2&g;\n&l;h3&g;Concatenation&l;/h3&g;\n&l;p&g;Concatenation of $txt1 and $txt2&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$txt1 . $txt2&l;/code&g;&l;/pre&g;\n&l;h3&g;Concatenation assignment&l;/h3&g;\n&l;p&g;Appends $txt2 to $txt1&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$txt1 .= $txt2&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP Array Operators&l;/h2&g;\n&l;h3&g;Union&l;/h3&g;\n&l;p&g;Union of $x and $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x + $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Equality&l;/h3&g;\n&l;p&g;Returns true if $x and $y have the same key/value pairs&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x == $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Identity&l;/h3&g;\n&l;p&g;Returns true if $x and $y have the same key/value pairs in the same order and of the same types&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x === $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Inequality&l;/h3&g;\n&l;p&g;Returns true if $x is not equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x != $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Inequality&l;/h3&g;\n&l;p&g;Returns true if $x is not equal to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x &a;lt;&a;gt; $y&l;/code&g;&l;/pre&g;\n&l;h3&g;Non-identity&l;/h3&g;\n&l;p&g;Returns true if $x is not identical to $y&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x !== $y&l;/code&g;&l;/pre&g;\n&l;h2&g;PHP Conditional Assignment Operators&l;/h2&g;\n&l;h3&g;Ternary&l;/h3&g;\n&l;p&g;Returns the value of $x. The value of $x is expr2 if expr1 = TRUE. The value of $x is expr3 if expr1 = FALSE&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$x = expr1 ? expr2 : expr3&l;/code&g;&l;/pre&g;\n&l;h2&g;Conditional Statements&l;/h2&g;\n&l;p&g;Conditional statements are used to perform operations based on some condition.&l;/p&g;\n&l;h3&g;If Statement&l;/h3&g;\n&l;p&g;if statement checks the condition and if it is True, then the block of if statement executes; otherwise, control skips that block of code.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;if (condition) { \n// code to execute if condition is met \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;If..Else&l;/h3&g;\n&l;p&g;if the condition of if block evaluates to True, then if block executes otherwise else block executes&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;if (condition) { \n// code to execute if condition is met \n} else { \n// code to execute if condition is not met \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;If..Elseif..Else&l;/h3&g;\n&l;p&g;It executes different codes for more than two conditions&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;if (condition) { \n// code to execute if condition is met \n} elseif (condition) { \n// code to execute if this condition is met \n} else { \n// code to execute if none of the conditions are met \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;Switch Statement&l;/h3&g;\n&l;p&g;It allows a variable to be tested for equality against a list of values (cases).&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;switch (n) { \ncase x: \ncode to execute if n=x; \nbreak; \ncase y: \ncode to execute if n=y; \nbreak; \ncase z: \ncode to execute if n=z; \nbreak; \n// add more cases as needed \ndefault: \ncode to execute if n is neither of the above; \n}&l;/code&g;&l;/pre&g;\n&l;h2&g;Loops&l;/h2&g;\n&l;p&g;Iterative statements or Loops facilitate programmers to execute any block of code lines repeatedly.&l;/p&g;\n&l;h3&g;For Loop&l;/h3&g;\n&l;p&g;It is used to iterate the statements several times. It is frequently used to traverse the data structures like the array and linked list.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;for (starting counter value; ending counter value; increment by which \nto increase) { \n// code to execute goes here \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;Foreach Loop&l;/h3&g;\n&l;p&g;The foreach loop loops through a block of code for each element in an array.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;foreach ($InsertYourArrayName as $value) { \n// code to execute goes here \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;While Loop&l;/h3&g;\n&l;p&g;It iterate the block of code as long as a specified condition is True or vice versa&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;while (condition that must apply) { \n// code to execute goes here \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;Do-While Loop&l;/h3&g;\n&l;p&g;This loop is very similar to the while loop with one difference, i.e., the body of the do-while loop is executed at least once even if the condition is False. It is an exit-controlled loop.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;do { \n// code to execute goes here; \n} while (condition that must apply);&l;/code&g;&l;/pre&g;\n&l;h2&g;Predefined Variables&l;/h2&g;\n&l;p&g;PHP provides a large number of predefined variables to all scripts. The variables represent everything from external variables to built-in environment variables, last error messages etc. All this information is defined in some predefined variables.&l;/p&g;\n&l;h3&g;$GLOBALS&l;/h3&g;\n&l;p&g;$GLOBALS is a PHP super global variable which is used to access global variables from anywhere in the PHP script.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$a = 10; \n$b = 15; \n\nfunction addition() { \n$GLOBALS[&s;c&s;] = $GLOBALS[&s;a&s;] + $GLOBALS[&s;b&s;]; \n} \naddition(); \necho $c; \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;$_SERVER&l;/h3&g;\n&l;p&g;Returns the filename of the currently executing script. $_SERVER is a PHP super global variable which holds information about headers, paths, and script locations.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;PHP_SELF&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the version of the Common Gateway Interface (CGI) the server is using&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;GATEWAY_INTERFACE&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the IP address of the host server&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_ADDR&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the name of the host server (such as www.codewithharry.com)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_NAME&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the server identification string (such as Apache/2.2.24)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_SOFTWARE&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the name and revision of the information protocol (such as HTTP/1.1)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_PROTOCOL&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the request method used to access the page (such as POST)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;REQUEST_METHOD&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the timestamp of the start of the request (such as 1377687496)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;REQUEST_TIME&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the query string if the page is accessed via a query string&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;QUERY_STRING&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the Accept header from the current request&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;HTTP_ACCEPT&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the Accept_Charset header from the current request (such as utf-8,ISO-8859-1)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;HTTP_ACCEPT_CHARSET&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the Host header from the current request&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;HTTP_HOST&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the complete URL of the current page (not reliable because not all user-agents support it)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;HTTP_REFERER&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Is the script queried through a secure HTTP protocol?&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;HTTPS&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the IP address from where the user is viewing the current page&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;REMOTE_ADDR&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the Hostname from where the user is viewing the current page&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;REMOTE_HOST&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the port being used on the user&s;s machine to communicate with the web server&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;REMOTE_PORT&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the absolute pathname of the currently executing script&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SCRIPT_FILENAME&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the value given to the SERVER_ADMIN directive in the web server configuration file (if your script runs on a virtual host, it will be the value defined for that virtual host) (such as someone@codewithharry.com)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_ADMIN&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the port on the server machine being used by the webserver for communication (such as 80)&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_PORT&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the server version and virtual hostname which are added to server-generated pages&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SERVER_SIGNATURE&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the file system based path to the current script&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;PATH_TRANSLATED&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the path of the current script&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SCRIPT_NAME&s;]&l;/code&g;&l;/pre&g;\n&l;p&g;Returns the URI of the current page&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;$_SERVER[&s;SCRIPT_URI&s;]&l;/code&g;&l;/pre&g;\n&l;h3&g;$_GET&l;/h3&g;\n&l;p&g;PHP $_GET is a PHP super global variable which is used to collect form data after submitting an HTML form with method=\&q;get\&q;.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \necho \&q;Hello\&q; . $_GET[&s;Example&s;] . \&q; at \&q; . $_GET[&s;web&s;]; \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;$_POST&l;/h3&g;\n&l;p&g;PHP $_POST is a PHP super global variable which is used to collect form data after submitting an HTML form with method=\&q;post\&q;. $_POST is also widely used to pass variables.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;html&a;gt;\n&a;lt;body&a;gt;\n&a;lt;form method=\&q;post\&q; action=\&q;&a;lt;?php echo $_SERVER[&s;PHP_SELF&s;];?&a;gt;\&q;&a;gt;\nName: &a;lt;input type=\&q;text\&q; name=\&q;fname\&q;&a;gt;\n&a;lt;input type=\&q;submit\&q;&a;gt;\n&a;lt;/form&a;gt;\n&a;lt;?php\nif ($_SERVER[\&q;REQUEST_METHOD\&q;] == \&q;POST\&q;) {\n$name = $_POST[&s;fname&s;];\nif (empty($name)) {\necho \&q;Please Enter your name\&q;;\n} else {\necho $name;\n}\n}\n?&a;gt;\n&a;lt;/body&a;gt;\n&a;lt;/html&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;$_REQUEST&l;/h3&g;\n&l;p&g;PHP $_REQUEST is a PHP super global variable which is used to collect data after submitting an HTML form.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;html&a;gt;\n&a;lt;body&a;gt;\n&a;lt;form method=\&q;post\&q; action=\&q;&a;lt;?php echo $_SERVER[&s;PHP_SELF&s;];?&a;gt;\&q;&a;gt;\nName: &a;lt;input type=\&q;text\&q; name=\&q;fname\&q;&a;gt;\n&a;lt;input type=\&q;submit\&q;&a;gt;\n&a;lt;/form&a;gt;\n&a;lt;?php\nif ($_SERVER[\&q;REQUEST_METHOD\&q;] == \&q;POST\&q;) {\n$name = $_REQUEST[&s;fname&s;];\nif (empty($name)) {\necho \&q;Name is empty\&q;;\n} else {\necho $name;\n}\n}\n?&a;gt;\n&a;lt;/body&a;gt;\n&a;lt;/html&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Variable-handling Functions&l;/h2&g;\n&l;p&g;The PHP variable handling functions are part of the PHP core. No installation is required to use these functions.&l;/p&g;\n&l;h3&g;boolval&l;/h3&g;\n&l;p&g;Boolval is used to get the boolean value of a variable&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \necho &s;0: &s;.(boolval(0) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;42: &s;.(boolval(42) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;0.0: &s;.(boolval(0.0) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;4.2: &s;.(boolval(4.2) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;\&q;\&q;: &s;.(boolval(\&q;\&q;) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;\&q;string\&q;: &s;.(boolval(\&q;string\&q;) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;\&q;0\&q;: &s;.(boolval(\&q;0\&q;) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;\&q;1\&q;: &s;.(boolval(\&q;1\&q;) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;[1, 2]: &s;.(boolval([1, 2]) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;[]: &s;.(boolval([]) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \necho &s;stdClass: &s;.(boolval(new stdClass) ? &s;true&s; : &s;false&s;).\&q;\\n\&q;; \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;isset&l;/h3&g;\n&l;p&g;It is used to check whether a variable is empty. It also checks whether the variable is set/declared:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$x = 0; \n// True because $x is set \nif (isset($x)) { \necho \&q;Variable &s;x&s; is set\&q;; \n} \n&l;/code&g;&l;/pre&g;\n&l;h3&g;unset&l;/h3&g;\n&l;p&g;It unsets variables.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$a = \&q;Namaste world!\&q;; \necho \&q;The value of &s;a&s; before unset: \&q; . $a ; \nunset($a); \necho \&q;The value of &s;a&s; after unset: \&q; . $a; \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;debug_zval_dump&l;/h3&g;\n&l;p&g;debug_zval_dump is used to dump a string representation of an internal zval structure to output&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$var1 = &s;Hello&s;; \n$var1 .= &s; World&s;; \n$var2 = $var1; \n\ndebug_zval_dump($var1); \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;empty&l;/h3&g;\n&l;p&g;Empty is used to check whether a variable is empty or not.&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$var = 0; \n\n// Evaluates to true because $var is empty \nif (empty($var)) { \necho &s;$var is either 0, empty, or not set at all&s;; \n} \n\n// Evaluates as true because $var is set \nif (isset($var)) { \necho &s;$var is set even though it is empty&s;; \n} \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;floatval&l;/h3&g;\n&l;p&g;It returns the float value of different variables:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$var = &s;122.34343The&s;; \n$float_value_of_var = floatval($var); \necho $float_value_of_var; // 122.34343 \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;get_defined_vars&l;/h3&g;\n&l;p&g;It returns all defined variables, as an array:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$b = array(1, 1, 2, 3, 5, 8); \n\n$arr = get_defined_vars(); \n\n// print $b \nprint_r($arr[\&q;b\&q;]); \n\n/* print path to the PHP interpreter (if used as a CGI) \n* e.g. /usr/local/bin/php */ \necho $arr[\&q;_\&q;]; \n\n// print the command-line parameters if any \nprint_r($arr[\&q;argv\&q;]); \n\n// print all the server vars \nprint_r($arr[\&q;_SERVER\&q;]); \n\n// print all the available keys for the arrays of variables \nprint_r(array_keys(get_defined_vars())); \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;get_resource_type&l;/h3&g;\n&l;p&g;It returns the resource type:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n// prints: stream \n$fp = fopen(\&q;foo\&q;, \&q;w\&q;); \necho get_resource_type($fp) . \&q;\\n\&q;; \n\n// prints: curl \n$c = curl_init (); \necho get_resource_type($c) . \&q;\\n\&q;; // works prior to PHP 8.0.0 as since 8.0 curl_init returns a CurlHandle object \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;gettype&l;/h3&g;\n&l;p&g;It returns the type of different variables:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$a = 3; \necho gettype($a) ; \n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;intval&l;/h3&g;\n&l;p&g;It returns the integer value of different variables:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \necho intval(42); ?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;is_array&l;/h3&g;\n&l;p&g;To check whether a variable is an array or not:&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php \n$a = \&q;Hello\&q;; \necho \&q;a is \&q; . is_array($a) ;?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Array&l;/h2&g;\n&l;p&g;An array stores multiple values in one single variable.&l;/p&g;\n&l;h3&g;Declaring an Array&l;/h3&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;&a;lt;?php\n$cms = array(\&q;Harry\&q;, \&q;Lovish\&q;, \&q;Rohan\&q;);\necho \&q;Who needs chocolate? Is it\&q; . $cms[0] . \&q;, \&q; .\n$cms[1] . \&q; or \&q; . $cms[2] . \&q;?\&q;;\n?&a;gt;&l;/code&g;&l;/pre&g;\n&l;h2&g;Functions&l;/h2&g;\n&l;p&g;A function is a block of statements that can be used repeatedly in a program&l;/p&g;\n&l;h3&g;Defining Functions&l;/h3&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;function NameOfTheFunction() { \n//place PHP code here \n}&l;/code&g;&l;/pre&g;\n&l;h2&g;MySQLi Functions&l;/h2&g;\n&l;p&g;These functions allow you to access MySQL database server.&l;/p&g;\n&l;h3&g;mysqli_connect() Function&l;/h3&g;\n&l;p&g;It opens a non-persistent MySQL connection&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_connect()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_affected_rows() Function&l;/h3&g;\n&l;p&g;It returns the number of affected rows&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_affected_rows()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_connect_error() Function&l;/h3&g;\n&l;p&g;It shows the Error description for the connection error&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_connect_error()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_fetch_all() Function&l;/h3&g;\n&l;p&g;It fetches all result rows as an array&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_fetch_all()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_fetch_array() Function&l;/h3&g;\n&l;p&g;It fetches a result row as an associative, a numeric array, or both&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_fetch_array()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_fetch_assoc() Function&l;/h3&g;\n&l;p&g;It fetches a result row as an associative array&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_fetch_assoc()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_fetch_row() Function&l;/h3&g;\n&l;p&g;It fetches one row from a result set and returns it as an enumerated array&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_fetch_row()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_kill() Function&l;/h3&g;\n&l;p&g;It kills a MySQL thread&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_kill()&l;/code&g;&l;/pre&g;\n&l;h3&g;mysqli_close() Function&l;/h3&g;\n&l;p&g;It closes a database connection&l;/p&g;\n&l;pre class=\&q;language-php\&q;&g;&l;code&g;mysqli_close()&l;/code&g;&l;/pre&g;&q;,&q;metaTags&q;:&q;php cheatsheet for php beginners&q;,&q;metaDesc&q;:&q;Php Cheatsheet for all php developers&q;,&q;time&q;:&q;2021-07-28T06:36:21.370986&q;,&q;slug&q;:&q;php-cheatsheet&q;,&q;is_published&q;:false,&q;is_proofread&q;:false,&q;success&q;:true},&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:10:27 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;GET, OPTIONS&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;24635&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/blog/getblog/php-cheatsheet&q;}}</script></body><!-- This page was prerendered with Angular Universal -->
+<!-- Mirrored from www.codewithharry.com/blogpost/php-cheatsheet/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 13:44:12 GMT -->
+</html>

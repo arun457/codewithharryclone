@@ -1,0 +1,912 @@
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from www.codewithharry.com/videos/python-tutorial-easy-for-beginners/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 14:15:40 GMT -->
+<head>
+  <meta charset="utf-8">
+  <title>Python Tutorial For Beginners In Hindi (With Notes) - CodeWithHarry</title>
+  <base >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v87/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <script data-ad-client="ca-pub-9655830461045889" async="" src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-60726752-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-60726752-3');
+  </script>
+<link rel="stylesheet" href="../../styles.bc31d58d1fffbdf64e6b.css"><style ng-transition="serverApp">.content[_ngcontent-sc76]{min-height:calc(100vh - 56px - 80px)}</style><style ng-transition="serverApp">[_nghost-sc73]{position:relative;display:block;pointer-events:none}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{transition:350ms linear;display:block;position:absolute;top:5px;left:0}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]   .ngx-spinner-icon[_ngcontent-sc73]{width:14px;height:14px;border:2px solid transparent;border-top-color:inherit;border-left-color:inherit;border-radius:50%;-webkit-animation:.4s linear infinite loading-bar-spinner;animation:.4s linear infinite loading-bar-spinner}[_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{transition:width 350ms;position:absolute;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}[dir=rtl]   [_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{right:0;left:unset}[fixed=true][_nghost-sc73]{z-index:10002}[fixed=true][_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{position:fixed}[fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{position:fixed;top:10px;left:10px}[dir=rtl]   [fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{right:10px;left:unset}@-webkit-keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}</style><style ng-transition="serverApp">.brandLogo[_ngcontent-sc74]{max-width:39px;margin:0 13px}li[_ngcontent-sc74]   a.nav-link[_ngcontent-sc74]{color:#fff}.notificationImg[_ngcontent-sc74]{width:30px;filter:invert(1)}.notification-bell[_ngcontent-sc74]{position:absolute;right:0}.dropdown-toggle[_ngcontent-sc74]{font-weight:700}.dropdown-menu-notify[_ngcontent-sc74]{overflow-y:scroll;overflow-x:hidden;max-height:400px;top:60px;right:-1px;left:unset;width:460px;box-shadow:0 5px 7px -1px #c1c1c1;padding:0}ul[_ngcontent-sc74]   ul[_ngcontent-sc74]   a[_ngcontent-sc74]{background:transparent}.dropdown-menu-notify[_ngcontent-sc74]:before{content:"";position:absolute;top:-20px;right:12px;border:10px solid transparent;border-bottom-color:#fff}.head-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:3px 3px 0 0}.footer-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:0 0 3px 3px}.notification-box-notify[_ngcontent-sc74]{padding:10px 0}.bg-gray-notify[_ngcontent-sc74]{background-color:#eee}@media (max-width:640px){.dropdown-menu-notify[_ngcontent-sc74]{top:50px;left:-16px;width:290px}.nav-notify[_ngcontent-sc74]{display:block}.nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74], .nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74]   a[_ngcontent-sc74]{padding-left:0}.message-notify[_ngcontent-sc74]{font-size:13px}}.loginError[_ngcontent-sc74]{color:red;padding:3px 2px}div.alert[_ngcontent-sc74]{margin:0}input.ng-touched.ng-invalid[_ngcontent-sc74], textarea.ng-touched.ng-invalid[_ngcontent-sc74]{border-color:red}.forgot[_ngcontent-sc74]{font-size:14px;color:#000;text-align:left;text-decoration:underline;cursor:pointer;padding:16px 0}.googleAuth[_ngcontent-sc74]{width:46%;cursor:pointer;border:1px solid #000;border-radius:3px;background:#60a3dd;margin-top:1px}.or[_ngcontent-sc74]{font-weight:500;font-size:19px}.modal-header[_ngcontent-sc74]{display:flex;align-items:center;justify-content:center;flex-direction:column}.modal-header[_ngcontent-sc74]   span[_ngcontent-sc74]{position:absolute;top:15px;right:20px}.navbar-brand[_ngcontent-sc74]{margin:0;padding:0}</style><style ng-transition="serverApp">footer[_ngcontent-sc75]{color:#fff}</style><style ng-transition="serverApp">div.code-toolbar{position:relative}div.code-toolbar>.toolbar{position:absolute;top:.3em;right:.2em;transition:opacity .3s ease-in-out;opacity:0}div.code-toolbar:focus-within>.toolbar,div.code-toolbar:hover>.toolbar{opacity:1}div.code-toolbar>.toolbar .toolbar-item{display:inline-block}div.code-toolbar>.toolbar a{cursor:pointer}div.code-toolbar>.toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}div.code-toolbar>.toolbar a,div.code-toolbar>.toolbar button,div.code-toolbar>.toolbar span{color:#bbb;font-size:.8em;padding:0 .5em;background:#f5f2f0;background:hsla(0,0%,87.8%,.2);box-shadow:0 2px 0 0 rgba(0,0,0,.2);border-radius:.5em}div.code-toolbar>.toolbar a:focus,div.code-toolbar>.toolbar a:hover,div.code-toolbar>.toolbar button:focus,div.code-toolbar>.toolbar button:hover,div.code-toolbar>.toolbar span:focus,div.code-toolbar>.toolbar span:hover{color:inherit;text-decoration:none}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}code[class*=language-],pre[class*=language-]{max-height:614px}.commentContainer{overflow-x:auto}.content-holder{list-style:none;padding:0}.content-holder a{color:#000;text-decoration:none}.content-holder li:hover{background-color:#efeff0}.content-holder-item{padding:23px 12px;font-size:16px;cursor:pointer}li.active{background-color:#d6d6d6}.bg-black{background-color:#000}#content-box{max-height:85vh;overflow-y:scroll}#course-content-box{background:#fff;align-self:flex-start;height:20px;position:sticky;top:0}.bg-lgrey{background-color:#e7e7e9}.tab-pane{min-height:344px}.nav-link{font-weight:700;color:#000}.commentReplies{background-color:#e7e7e9;margin:18px 3px}.commentReplies img{margin:8px 14px}#toggleCourse{display:none}.openCourseHeight{height:76vh!important}.plusIcon{display:none}@media only screen and (max-width:400px){.nav-link{font-size:16px;padding:9px 6px}#course-content-box{height:57px}}@media only screen and (max-width:560px){img.rounded-circle{height:0;visibility:hidden}}@media only screen and (max-width:768px){#course-content-box{height:46px;transition:height .4s;position:static}#content-box{height:70vh;visibility:hidden}#toggle-button{visibility:visible}#video-box{z-index:1}#sticky-d{position:sticky;top:0;z-index:1}#toggleCourse{display:inline}.other{margin-left:-15px;margin-right:-15px}.plusIcon{display:inline-block;width:24px;height:24px}}#video-box2{font-size:14pt;font-family:helvetica}#video-box2 img{cursor:pointer}#video-box2 pre code{font-size:16px}.commentContainer pre{font-size:14pt;font-family:helvetica}#video-box2 h6,h1,h2,h3,h4,h5{font-family:Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.tab-pane{min-height:100vh}div.toolbar-item button{color:#fff!important;border:2px solid #fff!important;margin-right:23px}@media screen and (max-width:768px){div.toolbar-item button{margin-right:0}}#previewModal .modal-dialog{max-width:80%}.h-0{height:0}@media screen and (max-width:768px){div.toolbar-item button{margin-right:0}#video-box2 pre code{font-size:10px}.mt-48{margin-top:48px}}pre[class*=language-]{font-size:6pt}img{max-width:100%;height:auto}#video-box2{word-wrap:break-word}.commentError{font-size:10pt;margin:8px}#qna>h2{margin:43px}.showReplies{color:#00f;cursor:pointer;font-size:14px;padding:8px 16px}.advh{height:300px;width:100%;margin:auto}h2,h3,h4,h5,h6{margin:25px 0 9px}.commentPre{overflow-x:auto;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}table{max-width:90vw}td,tr{max-width:30vw!important}</style><meta name="description" content=""><style ng-transition="serverApp"></style></head>
+
+<body>
+  <app-root _nghost-sc76="" ng-version="11.2.11"><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><app-header _ngcontent-sc76="" _nghost-sc74=""><!----><nav _ngcontent-sc74="" class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-sc74="" routerlink="/" class="navbar-brand" href="../../index.html"><img _ngcontent-sc74="" height="39px" width="39px" src="../../assets/img/logo.png" alt="CodeWithHarry" class="brandLogo"></a><button _ngcontent-sc74="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-sc74="" class="navbar-toggler-icon"></span></button><div _ngcontent-sc74="" id="navbarSupportedContent" class="collapse navbar-collapse"><ul _ngcontent-sc74="" class="navbar-nav mr-auto"><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/" class="nav-link" href="../../index.html">Home</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/videos" class="nav-link" href="../index.html">Videos</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/blog" class="nav-link" href="../../blog/index.html">Blog</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/contact" class="nav-link" href="../../contact/index.html">Contact Me</a></li></ul><form _ngcontent-sc74="" novalidate="" class="form-inline my-2 my-lg-0 mr-3 ng-untouched ng-pristine ng-valid"><input _ngcontent-sc74="" type="text" placeholder="Search" aria-label="Search" name="query" class="form-control mr-sm-2 ng-untouched ng-pristine ng-valid" value=""><button _ngcontent-sc74="" type="submit" class="btn btn-danger my-2 my-sm-0">Search</button></form><div _ngcontent-sc74="" class="mx-0"><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-danger mr-2">Login</button><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#signupModal" class="btn btn-danger">SignUp</button></div><!----><!----></div></nav><div _ngcontent-sc74="" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleLogin.png" alt="Login with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="loginModalTitle" class="modal-title">Login via username</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="username">Username</label><input _ngcontent-sc74="" type="text" id="username" placeholder="Enter your username" name="username" pattern="[a-zA-Z0-9 ]*" maxlength="10" minlength="2" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="loginpassword">Password</label><input _ngcontent-sc74="" type="password" id="loginpassword" placeholder="Enter your password" name="loginpassword" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><button _ngcontent-sc74="" type="submit" id="loginsubmit" class="btn btn-danger mt-2" disabled=""><!----> Login</button></form><!----><!----><!----><div _ngcontent-sc74="" class="forgot"><span _ngcontent-sc74="">Forgot Password?</span></div></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div><div _ngcontent-sc74="" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleSignUp.png" alt="Signup with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="signupModal" class="modal-title">SignUp for an account</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="uname">Username</label><input _ngcontent-sc74="" type="text" id="signupUserName" placeholder="Enter your username" name="signupUserName" pattern="[a-zA-Z0-9_ ]*" maxlength="10" minlength="4" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><small _ngcontent-sc74="" id="unamehelp" class="form-text text-muted px-1"> Your unique username must 4 - 10 characters (only lowecase letters, numbers &amp; underscores allowed) with no spaces </small></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupName">Name</label><input _ngcontent-sc74="" type="text" id="signupName" name="signupName" placeholder="Enter your Name" maxlength="30" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="email">Your Email</label><div _ngcontent-sc74="" class="mx-0"><div _ngcontent-sc74="" class="col-md-8 px-0"><input _ngcontent-sc74="" type="email" placeholder="Enter your Email" id="signupEmail" name="signupEmail" required="" email="" maxlength="40" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><!----></div><div _ngcontent-sc74="" class="col-md-4 my-1 px-0"><button _ngcontent-sc74="" type="button" id="otpbtn" class="btn btn-danger btn-sm mt-2" disabled=""><!----> Send OTP</button></div></div></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="otp">Enter OTP</label><input _ngcontent-sc74="" type="number" id="signupOTP" placeholder="Enter OTP" name="signupOTP" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupPassword1">Choose a password (At least 4 characters)</label><input _ngcontent-sc74="" type="password" id="signupPassword1" name="signupPassword1" placeholder="Choose a password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group mb-0"><label _ngcontent-sc74="" for="signupPassword2">Retype your password</label><input _ngcontent-sc74="" type="password" id="signupPassword2" name="signupPassword2" placeholder="Retype your password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><!----><!----><!----><!----><button _ngcontent-sc74="" type="submit" class="btn btn-danger mt-4" disabled=""><!----> SignUp</button></form></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div></app-header><div _ngcontent-sc76="" class="content"><router-outlet _ngcontent-sc76=""></router-outlet><app-video-page><div class="container-fluid"><div id="sticky-d" class="row"><div id="video-box" class="col-md-9 bg-black px-0"><div class="container videoContainer embed-responsive embed-responsive-16by9 px-3"><iframe allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/gfDE2a7MKjA"></iframe><!----></div><!----></div><div id="course-content-box" class="col-md-3 px-0"><div class="row mx-0 py-2 px-3 bg-lgrey"><h5 class="my-0"> Course Content </h5><img height="25px" width="25px" alt="" class="plusIcon mx-2" src="../../assets/img/plus.png"><button id="togglePlayer" class="btn btn-sm btn-danger mx-3">Hide  Player</button></div><div id="content-box" class=""><ul class="content-holder"><li class="content-holder-item"><input type="checkbox"> 1. Learn JavaScript In One Video In Hindi (2018) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 2. Learn Python In Hindi In One Video - हिंदी में (Latest Tutorial) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 3. Learn Php In One Video In Hindi - हिंदी में (Latest PHP Tutorial 2018) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 4. 15 Minute Python Tutorial For Beginners In Hindi (Full &amp; Complete Crash Course) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 5. Learn Bootstrap In Hindi In One Video - हिंदी में (Latest Tutorial 2019) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 6. Learn HTML In One Video <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 7. Learn jQuery In Hindi In One Video - हिंदी में (Latest Tutorial 2018) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 8. Create A Responsive Website Using HTML, CSS And Bootstrap 4 In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 9. Login And Registration Form Using Php &amp; MySQL [Php Login System In Hindi] <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 10. C Programming Tutorial For Beginners: Learn C In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 11. JavaScript Registration Form Validation - हिंदी में (Latest Tutorial 2019) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 12. CSS 3 Tutorial For Beginners: Learn CSS In One Video In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 13. C++ Tutorial For Beginners: Learn C Plus Plus In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 14. Learn Python Programming For Free | Python Programming Tutorial In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 15. Java tutorial in hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 16. Android Development Tutorial in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 17. Web Scraping Tutorial using Python and BeautifulSoup <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 18. Git &amp; GitHub Tutorial For Beginners In Hindi - हिंदी में (2019) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 19. Login And Registration Form Using Php &amp; MySQL [Php Login System In Hindi] <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 20. Linux Tutorial For Beginners in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 21. Numpy Tutorial in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 22. Php Tutorial for Beginners in Hindi with MySQL Project <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 23. Learn JavaScript In One Video In Hindi (2020) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 24. C Language Tutorial For Beginners (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 25. How To Make a WordPress Website | Wordpress Tutorial for Beginners | Elementor Tutorial In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item active"><input type="checkbox"> 26. Python Tutorial For Beginners In Hindi (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 27. Python Programming Course in Hindi (Advanced) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 28. Android Application Development Tutorial in Hindi With Notes <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 29. React Tutorial in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 30. HTML Tutorial For Beginners In Hindi (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 31. CSS Tutorial In Hindi (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><!----></ul><!----></div></div><hr></div><div id="video-box2" class="col-md-9 bg-black px-0"><div class="other bg-light"><ul id="myTab" role="tablist" class="nav nav-tabs"><li role="presentation" class="nav-item"><a id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true" class="nav-link active">Overview</a></li><li role="presentation" class="nav-item"><a id="qna-tab" data-toggle="tab" href="#qna" role="tab" aria-controls="qna" aria-selected="false" class="nav-link">Q&amp;A</a></li><li role="presentation" class="nav-item"><a id="resources-tab" data-toggle="tab" href="#resources" role="tab" aria-controls="resources" aria-selected="false" class="nav-link">Files</a></li><li role="presentation" class="nav-item"><a id="announcements-tab" data-toggle="tab" href="#announcements" role="tab" aria-controls="announcements" aria-selected="false" class="nav-link">Announcements</a></li></ul><div id="myTabContent" class="tab-content"><div id="overview" role="tabpanel" aria-labelledby="overview-tab" class="tab-pane fade show mx-4 mt-3 active"><div class="container clearfix py-0 px-0"><h3 class="my-2"> Python Tutorial For Beginners In Hindi (With Notes)<a target="_blank" href="https://www.codewithharry.com/dashboard/videos/python-tutorial-easy-for-beginners"><!----></a></h3><!----><div class="contentBox"><div><h4>Chapter – 0</h4>
+<h5><strong>What is Programming?</strong></h5>
+<p>Just like we use Hindi or English to communicate with each other, we use a Programming language to communicate with the computer.</p>
+<p>Programming is a way to instruct the computer to perform various tasks.</p>
+<h5><strong>What is Python?</strong></h5>
+<p>Python is a simple and easy-to-understand language that feels like reading simple English. This Pseudo code nature of Python makes it easy to learn and understandable for beginners.</p>
+<h5><strong>Features of Python:</strong></h5>
+<ul>
+<li>Easy to understand = Less development time</li>
+<li>Free and open source</li>
+<li>High-level language</li>
+<li>Portable – works on Windows/Linux/Mac</li>
+<li>+ Fun to work with :)</li>
+</ul>
+<p><strong>Installation</strong></p>
+<p>Python can be easily installed from python.org</p>
+<p>When you click on the download button, python can be installed right after you complete the setup by executing the file for your platform.</p>
+<p>Tip: Just install it like a game ☻</p>
+<p><span></span></p></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 1: Modules, Comments &amp; Pip</h4>
+<p>Let’s write our very first python program.</p>
+<p>Create a file called hello.py and paste the below code into it</p>
+<pre class="language-python"><code>print(“Hello World”)         # print is a function (more later)</code></pre>
+<p>Execute this file (.py file) by typing python hello.py, and you will see Hello World printed on the screen.</p>
+<h5><strong>Modules</strong></h5>
+<p>A module is a file containing code written by somebody else (usually) which can be imported and used in our programs.</p>
+<h5><strong>Pip</strong></h5>
+<p>Pip is a package manager for python. You can use pip to install a module on your system.</p>
+<p>E.g., pip install flask (It will install flask module in your system)</p>
+<h5><strong>Types of modules</strong></h5>
+<p>There are two types of modules in Python:</p>
+<ol>
+<li>Built-in modules – Pre-installed in Python</li>
+<li>External modules – Need to install using pip</li>
+</ol>
+<p>Some examples of built-in modules are os, abc, etc.</p>
+<p>Some examples of external modules are TensorFlow, flask, etc.</p>
+<p><strong>Using Python as a Calculator</strong></p>
+<p>We can use python as a calculator by typing “python” + <strong>TO DO </strong>on the terminal. [It opens REPL or read evaluation print loop]</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h5><strong>Comments</strong></h5>
+<p>Comments are used to write something which the programmer does not want to execute.</p>
+<p>Comments can be used to mark the author's name, date, etc.</p>
+<p><strong>Types of Comments:</strong></p>
+<p>There are two types of comments in python,</p>
+<ol>
+<li>Single line comments – Written using # (pound/hash symbol)</li>
+<li>Multi-line comments – Written using ‘’’ Comment ‘’’ or “”” Comment “””.</li>
+</ol>
+<h4>Chapter 1 – Practice Set</h4>
+<ol>
+<li>Write a program to print Twinkle-Twinkle Little Star poem in python.</li>
+<li>Use REPL and print the table of 5 using it.</li>
+<li>Install an external module and use it to perform an operation of your interest.</li>
+<li>Write a python program to print the contents of a directory using os module. Search online for the function which does that.</li>
+<li>Label the program written in problem 4 with comments.</li>
+</ol>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 2 – Variables and Data Types</h4>
+<p>A variable is a name given to a memory location in a program. For example</p>
+<pre class="language-python"><code>a=30
+
+b=”Harry”
+
+c=71.22</code></pre>
+<p><strong>Variable – </strong>Container to store a value</p>
+<p><strong>Keywords – </strong>Reserved words in Python</p>
+<p><strong>Identifiers – </strong>class/function/variable name</p>
+<h5><strong>Data Types:</strong></h5>
+<p>Primarily there are the following data types in Python:</p>
+<ol>
+<li>Integers</li>
+<li>Floating point numbers</li>
+<li>Strings</li>
+<li>Booleans</li>
+<li>None</li>
+</ol>
+<p>Python is a fantastic language that automatically identifies the type of data for us.</p>
+<pre class="language-python"><code>a = 71                                    #Identifies a as class&lt;int&gt;
+
+b = 88.44                              #Identifies b as class&lt;float&gt;
+
+name = “Harry”                  #Identifies name as class&lt;Str&gt;</code></pre>
+<p><strong>Rules for defining a variable name: </strong>(Also applicable to other identifiers)</p>
+<ul>
+<li>A variable name can contain alphabets, digits, and underscore.</li>
+<li>A variable name can only start with an alphabet and underscore.</li>
+<li>A variable can’t start with a digit.</li>
+<li>No white space is allowed to be used inside a variable name.</li>
+</ul>
+<p>Examples of few valid variable names,</p>
+<p>Harry, harry, one8, _akki, aakash, harry_bro, etc.</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h5><strong>Operators in Python</strong></h5>
+<p>The following are some common operators in Python:</p>
+<ol>
+<li>Arithmetic Operators (+, -, *, /, etc.)</li>
+<li>Assignment Operators (=, +=, -=, etc.)</li>
+<li>Comparison Operators (==, &gt;=, &lt;=, &gt;, &lt;, !=, etc.)</li>
+<li>Logical Operators (and, or, not)</li>
+</ol>
+<p><strong>type() function and Typecasting </strong></p>
+<p>type function is used to find the data type of a given variable in Python.</p>
+<pre class="language-python"><code>a = 31
+
+type(a)                      #class&lt;int&gt;
+
+b = “31”
+
+type(b)                      #class&lt;str&gt;</code></pre>
+<p>A number can be converted into a string and vice versa (if possible)</p>
+<p>There are many functions to convert one data type into another.</p>
+<pre class="language-python"><code>Str(31)           # ”31” Integer to string conversion
+
+int(“32”)       # 32 String to int conversion
+
+float(32)       #32.0 Integer to float conversion</code></pre>
+<p>… and so on</p>
+<p>Here “31” is a string literal, and 31 is a numeric literal.</p>
+<p><strong>input() function</strong></p>
+<p>This function allows the user to take input from the keyboard as a string.</p>
+<pre class="language-python"><code>a = input(“Enter name”)               #if a is “harry”, the user entered harry</code></pre>
+<p><strong>Note: </strong>The output of the input function is always a string even if the number is entered by the user.</p>
+<p>Suppose if a user enters 34, then this 34 will automatically convert to “34” string literal.</p>
+<h4>Chapter 2 – Practice Set</h4>
+<ol>
+<li>Write a Python program to add two numbers.</li>
+<li>Write a Python program to find the remainder when a number is divided by Z(Integer).</li>
+<li>Check the type of the variable assigned using the input() function.</li>
+<li>Use a comparison operator to find out whether a given variable a is greater than b or not. (Take a=34 and b=80)</li>
+<li>Write a Python program to find the average of two numbers entered by the user.</li>
+<li>Write a Python program to calculate the square of a number entered by the user.</li>
+</ol>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 3 – Strings</h4>
+<p>The string is a data type in Python.</p>
+<p>A string is a sequence of characters enclosed in quotes.</p>
+<p>We can primarily write a string in three ways:</p>
+<ol>
+<li>Single quoted strings : a = ‘harry’</li>
+<li>Double quoted strings : b = “harry”</li>
+<li>Triple quoted strings : c = ‘’’ harry ‘’’</li>
+</ol>
+<h5><strong>String Slicing:</strong></h5>
+<p>A string in Python can be sliced for getting a part of the string.</p>
+<p>Consider the following string:</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/StringSlicing1py.png"></p>
+<p>The index in a string starts from 0 to (length-1) in Python. To slice a string, we use the following syntax:</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/StringSlicing2py.png"></p>
+<p><strong>Negative Indices: </strong>Negative indices can also be used as shown in the figure above. -1 corresponds to the (length-1) index, -2 to (length-2).</p>
+<p><strong>Slicing with skip value</strong></p>
+<p>We can provide a skip value as a part of our slice like this:</p>
+<pre class="language-python"><code>word = “amazing”
+
+word[1:6:2]           # It will return ’mzn’</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Other advanced slicing techniques</strong></p>
+<pre class="language-python"><code>word = ‘amazing’
+
+word[:7] or word[0:7]      #It will return ‘amazing’
+
+word[0:] or word[0:7]      #It will return ‘amazing’</code></pre>
+<h5><strong>String Functions</strong></h5>
+<p>Some of the most used functions to perform operations on or manipulate strings are:</p>
+<ol>
+<li><strong> </strong><strong>len() function : </strong>It returns the length of the string.</li>
+</ol>
+<pre class="language-python"><code>len(‘harry’)               #Returns 5</code></pre>
+<ol start="2">
+<li><strong> </strong><strong>endswith(“rry”) : </strong>This function tells whether the variable string ends with the string “rry” or not. If string is “harry”, it returns for “rry” since harry ends with rry.</li>
+<li><strong> </strong><strong>count(“c”) : </strong>It counts the total number of occurrences of any character.</li>
+<li><strong> </strong><strong>capitalize() : </strong>This function capitalizes the first character of a given string.</li>
+<li><strong> </strong><strong>find(word) : </strong>This function finds a word and returns the index of first occurrence of that word in the string.</li>
+<li><strong> </strong><strong>replace(oldword, newword)</strong> : This function replaces the old word with the new word in the entire string.</li>
+</ol>
+<h5><strong>Escape Sequence Characters:</strong></h5>
+<p>Sequence of characters after backslash ‘\’ [Escape Sequence Characters]</p>
+<p>Escape Sequence Characters comprises of more than one character but represents one character when used within the string.</p>
+<p>Examples: \n (new line), \t (tab), \’ (single quote), \\ (backslash), etc.</p>
+<h4>Chapter 3 – Practice Set</h4>
+<ol>
+<li>Write a Python program to display a user-entered name followed by Good Afternoon using input() function.</li>
+<li>Write a program to fill in a letter template given below with name and date.</li>
+</ol>
+<pre class="language-python"><code>letter = ‘’’ Dear &lt;|NAME|&gt;,
+
+                        You are selected!
+
+                        &lt;|DATE|&gt;</code></pre>
+<ol start="3">
+<li>Write a program to detect double spaces in a string.</li>
+<li>Replace the double spaces from problem 3 with single spaces.</li>
+<li>Write a program to format the following letter using escape sequence characters.</li>
+</ol>
+<pre class="language-python"><code>letter = “Dear Harry, This Python course in nice. Thanks!!”</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 4 – Lists and Tuples</h4>
+<p>Python Lists are containers to store a set of values of any data type.</p>
+<pre class="language-python"><code>friends = [‘Apple’, ‘Akash’, ‘Rohan’, 7, False]</code></pre>
+<p>The list can contain different types of elements such as int, float, string, Boolean, etc. Above list is a collection of different types of elements.</p>
+<h5><strong>List Indexing</strong></h5>
+<p>A list can be index just like a string.</p>
+<pre class="language-python"><code>L1 = [7, 9, ‘harry’]
+
+L1[0] – 7
+
+L1[1] – 9
+
+L1[70] – Error
+
+L1[0:2] – [7,9]         (This is known as List Slicing)</code></pre>
+<h5><strong>List Methods</strong></h5>
+<p>Consider the following list:</p>
+<pre class="language-python"><code>L1 = [1, 8, 7, 2, 21, 15]</code></pre>
+<ol>
+<li>sort() – updates the list to [1,2,7,8,15,21]</li>
+<li>reverse() – updates the list to [15,21,2,7,8,1]</li>
+<li>append(8) – adds 8 at the end of the list</li>
+<li>insert(3,8) – This will add 8 at 3 index</li>
+<li>pop(2) – It will delete the element at index 2 and return its value</li>
+<li>remove(21) – It will remove 21 from the last</li>
+</ol>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h5><strong>Tuples in Python:</strong></h5>
+<p>A tuple is an immutable (can’t change or modified) data type in Python.</p>
+<pre class="language-python"><code>a = ()              #It is an example of empty tuple
+
+a = (1,)           #Tuple with only one element needs a comma
+
+a = (1, 7, 2)   #Tuple with more than one element</code></pre>
+<p>Once defined, tuple elements can’t be manipulated or altered.</p>
+<p><strong>Tuple methods:</strong></p>
+<p>Consider the following tuple,</p>
+<pre class="language-python"><code>a = (1, 7, 2)</code></pre>
+<ol>
+<li><strong> </strong><strong>count(1) – </strong>It will return the number of times 1 occurs in a.</li>
+<li><strong> </strong><strong>index(1) – </strong>It will return the index of the first occurrence of 1 in a.</li>
+</ol>
+<h4>Chapter 4 – Practice Set</h4>
+<ol>
+<li>Write a program to store seven fruits in a list entered by the user.</li>
+<li>Write a program to accept the marks of 6 students and display them in a sorted manner.</li>
+<li>Check that a tuple cannot be changed in Python.</li>
+<li>Write a program to sum a list with 4 numbers.</li>
+<li>Write a program to count the number of zeros in the following tuple:</li>
+</ol>
+<pre class="language-python"><code>a = (7, 0, 8, 0, 0, 9)</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 5 – Dictionary and Sets</h4>
+<p>Dictionary is a collection of key-value pairs.</p>
+<p><strong>Syntax:</strong></p>
+<pre class="language-python"><code>''' a = {“key”: “value”,
+“harry”: “code”,
+“marks” : “100”,
+“list”: [1,2,9]}
+a[“key”]	# Prints value
+a[“list”] 	# Prints [1,2,9] '''
+</code></pre>
+<h5><strong>Properties of Python Dictionaries</strong></h5>
+<ol>
+<li>It is unordered</li>
+<li>It is mutable</li>
+<li>It is indexed</li>
+<li>It cannot contain duplicate keys</li>
+</ol>
+<h5><strong>Dictionary Methods</strong></h5>
+<p>Consider the following dictionary,</p>
+<pre class="language-python"><code>a = {“name”: “Harry”,
+	“from”: “India”,
+	“marks”: [92,98,96]}</code></pre>
+<ol>
+<li><strong>items()</strong> : returns a list of (key,value) tuple.</li>
+<li><strong>keys() </strong>: returns a list containing dictionary’s keys.</li>
+<li><strong>update({“friend”: “Sam”}) </strong>: updates the dictionary with supplied key-value pairs.</li>
+<li><strong>get(“name”) </strong>: returns the value of the specified keys (and value is returned e.g., “Harry” is returned here)</li>
+</ol>
+<p>More methods are available on docs.python.org</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h5><strong>Sets in Python</strong></h5>
+<p>Set is a collection of non-repetitive elements.</p>
+<pre class="language-python"><code>S= Set()          # No repetition allowed!
+
+S.add(1)
+
+S.add(2)
+
+# or Set = {1,2}</code></pre>
+<p>If you are a programming beginner without much knowledge of mathematical operations on sets, you can simply look at sets in python as data types containing unique values.</p>
+<h5><strong>Properties of Sets</strong></h5>
+<ol>
+<li>Sets are unordered # Elements order doesn’t matter</li>
+<li>Sets are unindexed # Cannot access elements by index</li>
+<li>There is no way to change items in sets</li>
+<li>Sets cannot contain duplicate values</li>
+</ol>
+<h5><strong>Operations on Sets</strong></h5>
+<p>Consider the following set:</p>
+<pre class="language-python"><code>S = {1,8,2,3}</code></pre>
+<ol>
+<li><strong>Len(s) : </strong>Returns 4, the length of the set</li>
+<li><strong>remove(8) : </strong>Updates the set S and removes 8 from S</li>
+<li><strong>pop() : </strong>Removes an arbitrary element from the set and returns the element removed.</li>
+<li><strong>clear() : </strong>Empties the set S</li>
+<li><strong>union({8, 11}) : </strong>Returns a new set with all items from both sets. #{1,8,2,3,11}</li>
+<li><strong>intersection({8, 11}) : </strong>Returns a set which contains only items in both sets. #{8}</li>
+</ol>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/SET1PY.png"></p>
+<h4>Chapter 5 – Practice Set</h4>
+<ol>
+<li>Write a program to create a dictionary of Hindi words with values as their English translation. Provide the user with an option to look it up!</li>
+<li>Write a program to input eight numbers from the user and display all the unique numbers (once).</li>
+<li>Can we have a set with 18(int) and “18”(str) as a value in it?</li>
+<li>What will be the length of the following set S:</li>
+</ol>
+<pre class="language-python"><code>S = Set()
+
+S.add(20)
+
+S.add(20.0)
+
+S.add(“20”)</code></pre>
+<p>What will be the length of S after the above operations?</p>
+<ol start="5">
+<li>S = {}, what is the type of S?</li>
+<li>Create an empty dictionary. Allow 4 friends to enter their favorite language as values and use keys as their names. Assume that the names are unique.</li>
+<li>If the names of 2 friends are the same; what will happen to the program in Program 6?</li>
+<li>If the languages of two friends are the same; what will happen to the program in Program 6?</li>
+<li>Can you change the values inside a list which is contained in set S</li>
+</ol>
+<pre class="language-python"><code>S = {8, 7, 12, “Harry”, [1, 2]}</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 6 – Conditional Expressions</h4>
+<p>Sometimes we want to play pubg on our phone if the day is Sunday.</p>
+<p>Sometimes we order Ice-cream online if the day is sunny.</p>
+<p>Sometimes we go hiking if our parents allow.</p>
+<p>All these are decisions that depend on the condition being met.</p>
+<p>In python programming too, we must be able to execute instructions on a condition(s) being met. This is what conditions are for!</p>
+<h5><strong>If else and elif in Python</strong></h5>
+<p>If else and elif statements are a multiway decision taken by our program due to certain conditions in our code.</p>
+<p><strong>Syntax:</strong></p>
+<pre class="language-python"><code>'''
+if (condition1):		// if condition 1 is true
+	print(“yes”)
+elif (condition2):		// if condition 2 is true
+	print(“No”)
+else:				// otherwise
+	print(“May be”)
+'''
+</code></pre>
+<p><strong>Code example:</strong></p>
+<pre class="language-python"><code>a = 22
+if (a&gt;9):
+    print(“Greater”)
+else:
+    print(“lesser”)</code></pre>
+<p><strong>Quick Quiz: </strong>Write a program to print yes when the age entered by the user is greater than or equal to 18.</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h5><strong>Relational Operators</strong></h5>
+<p>Relational operators are used to evaluate conditions inside if statements. Some examples of relational operators are:</p>
+<pre class="language-python"><code>= = -&gt; equals
+
+&gt;=  -&gt; greater than/equal to
+
+&lt;=, etc.</code></pre>
+<h5><strong>Logical Operators</strong></h5>
+<p>In python, logical operators operate on conditional statements. Example:</p>
+<pre class="language-python"><code>and -&gt; true if both operands are true else false
+
+or -&gt; true if at least one operand is true else false
+
+not -&gt; inverts true to false and false to true</code></pre>
+<h5><strong>elif clause</strong></h5>
+<p>elif in python means [else if]. If statement can be chained together with a lot of these elif statements followed by an else statement.</p>
+<pre class="language-python"><code>'''
+if (condition1):
+    #code
+elif (condition 2):
+    #code
+elif (condition 2):
+    #code
+….
+else:
+    #code    '''
+</code></pre>
+<ul>
+<li>The above ladder will stop once a condition in an if or elif is met.</li>
+</ul>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li>There can be any number of elif statements.</li>
+<li>Last else is executed only if all the conditions inside elifs fail.</li>
+</ul>
+<h4>Chapter 6 – Practice Set</h4>
+<ol>
+<li>Write a program to find the greatest of four numbers entered by the user.</li>
+<li>Write a program to find out whether a student is pass or fail if it requires a total of 40% and at least 33% in each subject to pass. Assume 3 subjects and take marks as an input from the user.</li>
+<li>A spam comment is defined as a text containing the following keywords:</li>
+</ol>
+<p>“make a lot of money”, “buy now”, “subscribe this”, “click this”. Write a program to detect these spams.</p>
+<ol start="4">
+<li>Write a program to find whether a given username contains less than 10 characters or not.</li>
+<li>Write a program that finds out whether a given name is present in a list or not.</li>
+<li>Write a program to calculate the grade of a student from his marks from the following scheme:</li>
+</ol>
+<table border="1">
+<tbody>
+<tr>
+<td>90-100</td>
+<td>Ex</td>
+</tr>
+<tr>
+<td>80-90</td>
+<td>A</td>
+</tr>
+<tr>
+<td>70-80</td>
+<td>B</td>
+</tr>
+<tr>
+<td>60-70</td>
+<td>C</td>
+</tr>
+<tr>
+<td>50-60</td>
+<td>D</td>
+</tr>
+<tr>
+<td>&lt;50</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<ol start="7">
+<li>Write a program to find out whether a given post is talking about “Harry” or not.</li>
+</ol>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 7 – Loops in Python</h4>
+<p>Sometimes we want to repeat a set of statements in our program. For instance: Print 1 to 1000</p>
+<p>Loops make it easy for a programmer to tell the computer, which set of instructions to repeat, and how!</p>
+<h5><strong>Types of loops in Python</strong></h5>
+<p>Primarily there are two types of loops in Python</p>
+<ol>
+<li>While loop</li>
+<li>For loop</li>
+</ol>
+<p>We will look into this one by one!</p>
+<p><strong>While loop</strong></p>
+<p>The syntax of a while loop looks like this:</p>
+<pre class="language-python"><code>''' while condition:
+    #Body of the loop '''
+</code></pre>
+<ul>
+<li>The block keeps executing until the condition is true/false</li>
+</ul>
+<p>In while loops, the condition is checked first. If it evaluates to true, the body of the loop is executed, otherwise not!</p>
+<p>If the loop is entered, the process of condition check and execution is continued until the condition becomes false.</p>
+<p><strong>Quick Quiz: </strong>Write a program to print 1 to 50 using a while loop.</p>
+<p><strong>An Example:</strong></p>
+<pre class="language-python"><code>i = 0
+while i&lt;5:
+    print(“Harry”)
+    i = i+1
+</code></pre>
+<p>(Above program will print Harry 5 times)</p>
+<p><strong>Note: </strong>if the condition never becomes false, the loop keeps getting executed.</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Quick Quiz: </strong>Write a program to print the content of a list using while loops.</p>
+<h5><strong>For loop</strong></h5>
+<p>A for loop is used to iterate through a sequence like a list, tuple, or string (iterables)</p>
+<p>The syntax of a for loop looks like this:</p>
+<pre class="language-python"><code>l = [1, 7, 8]
+for item in l:
+	print(item)
+</code></pre>
+<p>(Above program will print 1, 7, and 8)</p>
+<h5><strong>Range function in Python</strong></h5>
+<p>The range function in python is used to generate a sequence of numbers.</p>
+<p>We can also specify the start, stop, and step-size as follows:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; range(start, stop, step_size)</p>
+<ul>
+<li>step size is usually not used with range()</li>
+</ul>
+<p><strong>An example demonstrating range() function</strong></p>
+<pre class="language-python"><code>for i in range(0, 7):		#range(7) can also be used
+	print(i)		#prints 0 to 6
+</code></pre>
+<h5><strong>For loop with else</strong></h5>
+<p>An optional else can be used with a for loop if the code is to be executed when the loop exhausts.</p>
+<p>Example:</p>
+<pre class="language-python"><code>l = [1, 7, 8]
+for item in l:
+	print(item)
+else:
+	print(“Done”)	#This is printed when the loop exhausts!
+</code></pre>
+<p>Output:</p>
+<pre class="language-python"><code>1
+
+7
+
+8
+
+Done</code></pre>
+<h5><strong>The break statement</strong></h5>
+<p>‘break’ is used to come out of the loop when encountered. It instructs the program to – Exit the loop now.</p>
+<p>Example:</p>
+<pre class="language-python"><code>for i in range(0, 80):
+	print(i)	#This will print 0, 1, 2 and 3
+	if i == 3:
+		break</code></pre>
+<h5><strong>The continue statement</strong></h5>
+<p>‘continue’ is used to stop the current iteration of the loop and continue with the next one. It instructs the program to “skip this iteration.”</p>
+<p>Example:</p>
+<pre class="language-python"><code>for i in range(4):
+	print(“printing”)
+	if i == 2:	#if i is 2, the iteration is skipped
+		continue
+	print(i)
+</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h5><strong>pass statement</strong></h5>
+<p>pass is a null statement in python. It instructs to “Do nothing.”</p>
+<p>Example:</p>
+<pre class="language-python"><code>l = [1, 7, 8]
+for item in l:
+	pass		#without pass, the program will throw an error
+</code></pre>
+<h4>Chapter 7 – Practice Set</h4>
+<ol>
+<li>Write a program to print the multiplication table of a given number using for loop.</li>
+<li>Write a program to greet all the person names stored in a list l1 and which starts with S.</li>
+</ol>
+<pre class="language-python"><code>l1 = [“Harry”, “Sohan”, “Sachin”, “Rahul”]</code></pre>
+<ol start="3">
+<li>Attempt problem 1 using a while loop.</li>
+<li>Write a program to find whether a given number is prime or not.</li>
+<li>Write a program to find the sum of first n natural numbers using a while loop.</li>
+<li>Write a program to calculate the factorial of a given number using for loop.</li>
+<li>Write a program to print the following star pattern.</li>
+</ol>
+<pre class="language-python"><code>    *
+
+  ***  
+
+***** for n=3</code></pre>
+<ol start="8">
+<li>Write a program to print the following star pattern:</li>
+</ol>
+<pre class="language-python"><code>*
+
+**
+
+*** for n = 3</code></pre>
+<ol start="9">
+<li>Write a program to print the following star pattern:</li>
+</ol>
+<pre class="language-python"><code>* * *
+*   *             #For n=3
+* * * </code></pre>
+<p>&nbsp; &nbsp;10. Write a program to print the multiplication table of n using for loop in reversed order.</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 8 – Functions and Recursions</h4>
+<p>A function is a group of statements performing a specific task.</p>
+<p>When a program gets bigger in size and its complexity grows, it gets difficult for a programmer to keep track of which piece of code is doing what!</p>
+<p>A function can be reused by the programmer in a given program any number of times.</p>
+<p><strong>Example and Syntax of a function</strong></p>
+<p>The syntax of a function looks as follows:</p>
+<pre class="language-python"><code>def func1():
+	print(“Hello”)
+</code></pre>
+<p>This function can be called any number of times, anywhere in the program.</p>
+<p><strong>Function call</strong></p>
+<p>Whenever we want to call a function, we put the name of the function followed by parenthesis as follows:</p>
+<pre class="language-python"><code>func1()          #This is called function call</code></pre>
+<p><strong>Function definition</strong></p>
+<p>The part containing the exact set of instructions that are executed during the function call.</p>
+<p><strong>Quick Quiz: </strong>Write a program to greet a user with “Good day” using functions.</p>
+<h5><strong>Types of functions in Python</strong></h5>
+<p>There are two types of functions in Python:</p>
+<ol>
+<li>Built-in functions #Already present in Python</li>
+<li>User-defined functions #Defined by the user</li>
+</ol>
+<p>Examples of built-in function includes len(), print(), range(), etc.</p>
+<p>The func1() function we defined is an example of a user-defined function.</p>
+<p><strong>Functions with arguments</strong></p>
+<p>A function can accept some values it can work with. We can put these values in the parenthesis. A function can also return values as shown below:</p>
+<pre class="language-python"><code>def greet(name):
+	gr = “Hello” + name
+	return gr
+</code></pre>
+<pre class="language-python"><code>a = greet(“Harry”) #“Harry” is passed to greet in name
+
+# a will now contain “Hello Harry”</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Default Parameter Value</strong></p>
+<p>We can have a value as the default argument in a function.</p>
+<p>If we specify name = “stranger” in the line containing def, this value is used when no argument is passed.</p>
+<p>For Example:</p>
+<pre class="language-python"><code>def greet(name=’stranger’):
+	#function body
+</code></pre>
+<pre class="language-python"><code>greet()                       #Name will be ‘stranger’ in function body(default)
+
+greet(“Harry”)        #Name will be “Harry” in function body(passed)</code></pre>
+<h5><strong>Recursion</strong></h5>
+<p>Recursion is a function which calls itself.</p>
+<p>It is used to directly use a mathematical formula as a function. For example:</p>
+<pre class="language-python"><code>factorial(n) = n * factorial(n-1)</code></pre>
+<p>This function can be defined as follows:</p>
+<pre class="language-python"><code>def factorial(n):
+	if i == 0 or i == 1 : #Base condition which doesn’t call the function any further
+		return i
+	else:
+		return n*factorial(n-1) #Function calling itself
+</code></pre>
+<p>This works as follows:</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/facpy1.png"></p>
+<p>The programmer needs to be extremely careful while working with recursion to ensure that the function doesn’t infinitely keep calling itself.</p>
+<p>Recursion is sometimes the most direct way to code an algorithm.</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 8 – Practice Set</h4>
+<ol>
+<li>Write a program using the function to find the greatest of three numbers.</li>
+<li>Write a python program using the function to convert Celsius to Fahrenheit.</li>
+<li>How do you prevent a python print() function to print a new line at the end?</li>
+<li>Write a recursive function to calculate the sum of first n natural numbers.</li>
+<li>Write a python function to print the first n lines of the following pattern.</li>
+</ol>
+<pre class="language-python"><code>***
+
+**       #For n = 3
+
+*</code></pre>
+<ol start="6">
+<li>Write a python function that converts inches to cms.</li>
+<li>Write a python function to remove a given word from a list and strip it at the same time.</li>
+<li>Write a python function to print the multiplication table of a given number.</li>
+</ol>
+<h4>Project 1: Snake, Water, Gun Game</h4>
+<p>We all have played snake, water gun game in our childhood. If you haven’t, google the rules of this game and write a Python program capable of playing this game with the user.</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 9 – File I/O</h4>
+<p>The random access memory is volatile, and all its contents are lost once a program terminates.</p>
+<p>In order to persist the data forever, we use files.</p>
+<p>A file is data stored in a storage device. A python program can talk to the file by reading content from it and writing content to it.</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/fileiopy1.png"></p>
+<p><strong>Types of Files</strong></p>
+<p>There are 2 types of files:</p>
+<ol>
+<li>Text files (.txt, .c, etc)</li>
+<li>Binary files (.jpg, .dat, etc)</li>
+</ol>
+<p>Python has a lot of functions for reading, updating, and deleting files.</p>
+<p><strong>Opening a file</strong></p>
+<p>Python has an open() function for opening files. It takes 2 parameters: filename and mode.</p>
+<pre class="language-python"><code>open(“this.txt”, “r”)</code></pre>
+<p>Here, “this” is the file name and “r” is the mode of opening (read mode)</p>
+<p><strong>Reading a file in Python</strong></p>
+<pre class="language-python"><code>f = open(“this.txt”, “r”)     #Opens the file in r mode
+
+text = f.read()          #Read its content
+
+print(text)     #Print its contents
+
+f.close()         #Close the fie</code></pre>
+<p>We can also specify the number of characters in read() function:</p>
+<pre class="language-python"><code>f.read(2)       #Reads first 2 characters</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Other methods to read the file</strong></p>
+<p>We can also use f.readline() function to read one full line at a time.</p>
+<pre class="language-python"><code>f.readline()               #Reads one line from the file</code></pre>
+<p><strong>Modes of opening a file</strong></p>
+<p>r – open for reading</p>
+<p>w – open for writing</p>
+<p>a – open for appending</p>
+<p>+ -&gt; open for updating</p>
+<p>‘rb’ will open for read in binary mode</p>
+<p>‘rt’ will open for read in text mode</p>
+<p><strong>Writing Files in Python</strong></p>
+<p>In order to write to a file, we first open it in write or append mode, after which, we use the python’s f.write() method to write to the file!</p>
+<pre class="language-python"><code>f = open(“this.txt”, “w”)
+
+f.write(“This is nice”)        #Can be called multiple times
+
+f.close()</code></pre>
+<p><strong>With statement</strong></p>
+<p>The best way to open and close the file automatically is the “with” statement.</p>
+<pre class="language-python"><code>with open(“this.txt”) as f:
+
+            f.read()</code></pre>
+<p>#There is no need to write f.close() as it is done automatically</p>
+<h4>Chapter 9 – Practice Set</h4>
+<ol>
+<li>Write a program to read the text from a given file, “poems.txt” and find out whether it contains the word ‘twinkle’.</li>
+<li>The game() function in a program lets a user play a game and returns the score as an integer. You need to read a file “Hiscore.txt” which is either blank or contains the previous Hi-score. You need to write a program to update the Hi-score whenever game() breaks the Hi-Score.</li>
+<li>Write a program to generate multiplication tables from 2 to 20 and write it to the different files. Place these files in a folder for a 13- year old boy.</li>
+<li>A file contains the word “Donkey” multiple times. You need to write a program which replaces this word with ###### by updating the same file.</li>
+<li>Repeat program 4 for a list of such words to be censored.</li>
+<li>Write a program to mine a log file and find out whether it contains ‘python’.</li>
+<li>Write a program to find out the line number where python is present from question 6.</li>
+<li>Write a program to make a copy of a text file “this.txt.”</li>
+<li>Write a program to find out whether a file is identical and matches the content of another file.</li>
+<li>Write a program to wipe out the contents of a file using python.</li>
+<li>Write a python program to rename a file to “renamed_by_python.txt.”</li>
+</ol>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 10 – Object-Oriented Programming</h4>
+<p>Solving a problem by creating objects is one of the most popular approaches in programming. This is called object-oriented programming.</p>
+<p>This concept focuses on using reusable code. (Implements DRY principle)</p>
+<h5><strong>Class</strong></h5>
+<p>A class is a blueprint for creating objects.</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/classpy1.png"></p>
+<p>The syntax of a class looks like this:</p>
+<pre class="language-python"><code>Class Employee:		[classname is written in PascalCase]
+	#methods &amp; variables
+</code></pre>
+<h5><strong>Object</strong></h5>
+<p>An object is an instantiation of a class. When class is defined, a template(info) is defined. Memory is allocated only after object instantiation.</p>
+<p>Objects of a given class can invoke the methods available to it without revealing the implementation details to the user.&nbsp;&nbsp;&nbsp;&nbsp; #Abstraction &amp; Encapsulation!</p>
+<p><strong>Modelling a problem in OOPs</strong></p>
+<p>We identify the following in our problem</p>
+<p>Noun -&gt; Class -&gt; Employee</p>
+<p>Adjective -&gt; Attributes -&gt; name,age,salary</p>
+<p>Verbs -&gt; Methods -&gt; getSalary(), increment()</p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Class Attributes</strong></p>
+<p>An attribute that belongs to the class rather than a particular object.</p>
+<p>Example:</p>
+<pre class="language-python"><code>Class Employee:
+	company = “Google” 	#Specific to each class
+harry = Employee()	#Object instantiation
+harry.company
+Employee.company = “YouTube”	#changing class attribute
+</code></pre>
+<p><strong>Instance Attributes</strong></p>
+<p>An attribute that belongs to the Instance (object)</p>
+<p>Assuming the class from the previous example:</p>
+<pre class="language-python"><code>harry.name = “Harry”
+harry.salary = “30K”	#Adding instance attributes
+</code></pre>
+<p>Note: Instance attributes take preference over class attributes during assignment and retrieval.</p>
+<p>harry.attribute1&nbsp; :</p>
+<ol>
+<li>Is attribute1 present in the object?</li>
+<li>Is attribute1 present in class?</li>
+</ol>
+<p><strong>‘self’ parameter</strong></p>
+<p>self refers to the instance of the class.</p>
+<p>It is automatically passed with a function call from an object.</p>
+<pre class="language-python"><code>harry.getSalary()</code></pre>
+<p>here, self is harry, and the above line of code is equivalent to Employee.getSalary(harry)</p>
+<p>This function getsalary is defined as:</p>
+<pre class="language-python"><code>class Employee:
+	company = “Google”
+	def getSalary(self):
+		print(“Salary is not there”)
+</code></pre>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Static method</strong></p>
+<p>Sometimes we need a function that doesn’t use the self-parameter. We can define a static method like this:</p>
+<pre class="language-python"><code>@staticmethod	#decorator to mark greet as a static method
+def greet():
+	print(“Hello user”)
+</code></pre>
+<p><strong>__init__() constructor</strong></p>
+<p>__init__() is a special method which runs as soon as the object is created.</p>
+<p>__init__() method is also known as constructor.</p>
+<p>It takes self-argument and can also take further arguments.</p>
+<p>For Example:</p>
+<pre class="language-python"><code>class Employee:
+	def __init__(self,name):
+		self.name = name
+	def getSalary(self):
+		#Some code…
+harry = Employee(“Harry”)	#Object can be instantiated using constructor like this!
+</code></pre>
+<h4>Chapter 10 – Practice Set</h4>
+<ol>
+<li>Create a class programmer for storing information of a few programmers working at Microsoft.</li>
+<li>Write a class calculator capable of finding square, cube, and the square root of a number.</li>
+<li>Create a class with a class attribute a; create an object from it and set a directly using object.a=0 Does this change the class attribute?</li>
+<li>Add a static method in problem 2 to greet the user with hello.</li>
+<li>Write a class Train which has methods to book a ticket, get status(no of seats), and get fare information of trains running under Indian Railways.</li>
+<li>Can you change the self parameter inside a class to something else (say ‘harry’)? Try changing self to ‘slf’ or ‘harry’ and see the effects.</li>
+</ol>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Chapter 11 – Inheritance &amp; more on OOPs</h4>
+<p>Inheritance is a way of creating a new class from an existing class.</p>
+<p><strong>Syntax:</strong></p>
+<pre class="language-python"><code>class Emoloyee:	#Base Class
+	#Code
+class Programmer(Employee):	#Derived or child class
+	#Code
+</code></pre>
+<p>We can use the methods and attributes of Employee in Programmer object.</p>
+<p>Also, we can overwrite or add new attributes and methods in the Programmer class.</p>
+<h5><strong>Type of Inheritance</strong></h5>
+<ol>
+<li>Single inheritance</li>
+<li>Multiple inheritance</li>
+<li>Multilevel inheritance</li>
+</ol>
+<p><strong>Single Inheritance</strong></p>
+<p>Single inheritance occurs when a child class inherits only a single parent class.</p>
+<p>Base -&gt; Derived</p>
+<p><strong>Multiple Inheritance</strong></p>
+<p>Multiple inheritances occurs when the child class inherits from more than one parent class.</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/childpy1.png"></p>
+<p><strong>Multilevel Inheritance</strong></p>
+<p>When a child class becomes a parent for another child class.</p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/childpy2.png"></p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><strong>Super() method</strong></p>
+<p>Super method is used to access the methods of a superclass in the derived class.</p>
+<pre class="language-python"><code>super().__init__()  #Calls constructor of the base class</code></pre>
+<p><strong>Class methods</strong></p>
+<p>A class method is a method which is bound to the class and not the object of the class.</p>
+<p>@classmethod decorator is used to create a class method.</p>
+<p>Syntax to create a class method:</p>
+<pre class="language-python"><code>@classmethod
+def (cls, p1, p2):
+	#code
+</code></pre>
+<p><strong>@property decorators</strong></p>
+<p>Consider the following class</p>
+<pre class="language-python"><code>class Employee:
+	@property 
+	def name(self):
+		return self.ename
+</code></pre>
+<p>if e = Employee() is an object of class employee, we can print (e.name) top print the ename/call name() function.</p>
+<p><strong>@.getters and @.setters</strong></p>
+<p>The method name with @property decorator is called getter method.</p>
+<p>We can define a function + @name.setter decorator like below:</p>
+<pre class="language-python"><code>@name.setter
+def name(self, value):
+	self.ename = value
+</code></pre>
+<p><strong>Operator overloading in Python</strong></p>
+<p>Operators in python can be overloaded using dunder methods.</p>
+<p>These methods are called when a given operator is used on the objects.</p>
+<p>Operators in python can be overloaded using the following methods:</p>
+<pre class="language-python"><code>p1 + p2 -&gt; p1.__add__(p2)
+
+p1 – p2 -&gt; p1.__sub__(p2)
+
+p1 * p2 -&gt; p1.__mul__(p2)
+
+p1 / p2 -&gt; p1.__truediv__(p2)
+
+p1 // p2 -&gt; p1.__floordiv__(p2)</code></pre>
+<p><strong>Other dunder/magic methods in Python</strong></p>
+<p><span></span></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<pre class="language-python"><code>__str__() -&gt; used  to set what gets displayed upon calling str(obj)
+
+__len__() -&gt; used to set what gets displayed upon calling .__len__() or len(obj)</code></pre>
+<h4>Chapter 11 – Practice Set</h4>
+<ol>
+<li>Create a class C-2d vector and use it to create another class representing a 3-d vector.</li>
+<li>Create a class of pets from a class Animals and further create class Dog from Pets. Add a method bark to class Dog.</li>
+<li>Create a class Employee and add salary and increment properties to it.</li>
+</ol>
+<p>Write a method SalaryAfterIncrement method with a @property decorator with a setter which changes the value of increment based on the salary.</p>
+<ol start="4">
+<li>Write a class complex to represent complex numbers, along with overloaded operators + and * which adds and multiplies them.</li>
+<li>Write a class vector representing a vector of n dimension. Overload the + and * operator which calculates the sum and the dot product of them.</li>
+<li>Write __str__() method to print the vector as follows:</li>
+</ol>
+<pre class="language-python"><code>7i + 8j + 10k</code></pre>
+<p>Assume vector of dimension 3 for this problem.</p>
+<ol start="7">
+<li>Override the __len__() method on vector of problem 5 to display the dimension of the vector.</li>
+</ol>
+<h4>Project 2: Snake, Water, Gun Game</h4>
+<p>We are going to write a program that generates a random number and asks the user to guess it.</p>
+<p>If the player’s guess is higher than the actual number, the program displays “Lower number please”. Similarly, if the user’s guess is too low, the program prints “higher number please”.</p>
+<p>When the user guesses the correct number, the program displays the number of guesses the player used to arrive at the number.</p>
+<p>Hint: Use the random module</p>
+<p><a href="https://drive.google.com/file/d/1dghcM0yMkwpAHsdTBbc9gluyXAyFTQw3/view?usp=sharing">Download all the Notes here</a></p></div></div><!----><!----><!----></div><div class="advh mb-2"><app-adsense adtype="advh" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><!----><!----><!----><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="8999979664" data-ad-format="auto" data-full-width-responsive="true" class="adsbygoogle" style="display: block;"></ins></div><!----></div></app-adsense></div><!----><div class="my-4 d-flex justify-content-between"><a class="btn btn-danger" href="../wordpress-tutorial-in-hindi/index.html">← Previous </a><a class="btn btn-danger" href="../python-tutorial-advanced/index.html">Next →</a></div></div><!----></div><div id="qna" role="tabpanel" aria-labelledby="qna-tab" class="tab-pane fade mx-4 mt-3"><h3>You need to be logged in to post a comment!</h3><!----><!----><div class="container my-4 px-0"><h3>Comments</h3><!----><!----><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>naveen.thakur778 </b><span class="badge badge-secondary"> Jul 23, 2021</span><br><div class="commentPre">bhai code sahi dal rha hu fir bhi problem aa rhi hai.
+https://drive.google.com/file/d/1FnaVK4BhoAHBDAbM93jKifbReT3EWKlc/view?usp=sharing</div></div><!----><div class="collapse" id="openReply4533"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>udmann009 </b><span class="badge badge-secondary"> Jul 22, 2021</span><br><div class="commentPre">where is the file that conatins all .py files ???
+</div></div><!----><div class="collapse" id="openReply4526"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>kishorvibhute999 </b><span class="badge badge-secondary"> Jul 19, 2021</span><br><div class="commentPre">https://drive.google.com/file/d/1dghcM0yMkwpAHsdTBbc9gluyXAyFTQw3/view</div></div><!----><div class="collapse" id="openReply4476"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>ashishusa85 </b><span class="badge badge-secondary"> Jul 14, 2021</span><br><div class="commentPre">From where do I download hand written notes and program code files for python
+</div></div><!----><div class="collapse" id="openReply4431"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><div class="showReplies">Show 2 replies</div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>MalikAdnan </b><span class="badge badge-secondary"> Jul 11, 2021</span><br><div class="commentPre">How can i download the notes plz hlp me</div></div><!----><div class="collapse" id="openReply4409"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><!----><!----></div></div><div id="resources" role="tabpanel" aria-labelledby="resources-tab" class="tab-pane fade mx-4 mt-3"><div class="container px-0"><h4>Resources</h4><div>No resource files associated with this project</div><!----><ol><!----></ol></div></div><div id="announcements" role="tabpanel" aria-labelledby="announcements-tab" class="tab-pane fade mx-4 mt-3"><div class="container"><h4>Course Announcements</h4><p> Any Course related announcements will be posted here </p></div></div></div></div></div></div></app-video-page><!----></div><app-footer _ngcontent-sc76="" _nghost-sc75=""><footer _ngcontent-sc75="" class="container-fluid bg-dark my-0 py-3 text-light"><p _ngcontent-sc75="" class="mb-0 text-center">Copyright © 2020-2021 CodeWithHarry.com</p></footer></app-footer></app-root>
+<script src="../../runtime.7b63b9fd40098a2e8207.js" defer=""></script><script src="../../polyfills.00096ed7d93ed26ee6df.js" defer=""></script><script src="../../scripts.2558b03aa1b9660ed84d.js" defer=""></script><script src="../../main.bd8a3a7a366ac101c3dc.js" defer=""></script>
+
+
+<script id="serverApp-state" type="application/json">{&q;G.https://api.codewithharry.com/video/getvideo/python-tutorial-easy-for-beginners?&q;:{&q;body&q;:{&q;title&q;:&q;Python Tutorial For Beginners In Hindi (With Notes)&q;,&q;videoId&q;:&q;gfDE2a7MKjA&q;,&q;announcements&q;:&q;&q;,&q;content&q;:&q;&l;h4 style=\&q;text-align: center;\&q;&g;Chapter &a;ndash; 0&l;/h4&g;\n&l;h5&g;&l;strong&g;What is Programming?&l;/strong&g;&l;/h5&g;\n&l;p&g;Just like we use Hindi or English to communicate with each other, we use a Programming language to communicate with the computer.&l;/p&g;\n&l;p&g;Programming is a way to instruct the computer to perform various tasks.&l;/p&g;\n&l;h5&g;&l;strong&g;What is Python?&l;/strong&g;&l;/h5&g;\n&l;p&g;Python is a simple and easy-to-understand language that feels like reading simple English. This Pseudo code nature of Python makes it easy to learn and understandable for beginners.&l;/p&g;\n&l;h5&g;&l;strong&g;Features of Python:&l;/strong&g;&l;/h5&g;\n&l;ul&g;\n&l;li&g;Easy to understand = Less development time&l;/li&g;\n&l;li&g;Free and open source&l;/li&g;\n&l;li&g;High-level language&l;/li&g;\n&l;li&g;Portable &a;ndash; works on Windows/Linux/Mac&l;/li&g;\n&l;li&g;+ Fun to work with :)&l;/li&g;\n&l;/ul&g;\n&l;p&g;&l;strong&g;Installation&l;/strong&g;&l;/p&g;\n&l;p&g;Python can be easily installed from python.org&l;/p&g;\n&l;p&g;When you click on the download button, python can be installed right after you complete the setup by executing the file for your platform.&l;/p&g;\n&l;p&g;Tip: Just install it like a game ☻&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 1: Modules, Comments &a;amp; Pip&l;/h4&g;\n&l;p&g;Let&a;rsquo;s write our very first python program.&l;/p&g;\n&l;p&g;Create a file called hello.py and paste the below code into it&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;print(&a;ldquo;Hello World&a;rdquo;)         # print is a function (more later)&l;/code&g;&l;/pre&g;\n&l;p&g;Execute this file (.py file) by typing python hello.py, and you will see Hello World printed on the screen.&l;/p&g;\n&l;h5&g;&l;strong&g;Modules&l;/strong&g;&l;/h5&g;\n&l;p&g;A module is a file containing code written by somebody else (usually) which can be imported and used in our programs.&l;/p&g;\n&l;h5&g;&l;strong&g;Pip&l;/strong&g;&l;/h5&g;\n&l;p&g;Pip is a package manager for python. You can use pip to install a module on your system.&l;/p&g;\n&l;p&g;E.g., pip install flask (It will install flask module in your system)&l;/p&g;\n&l;h5&g;&l;strong&g;Types of modules&l;/strong&g;&l;/h5&g;\n&l;p&g;There are two types of modules in Python:&l;/p&g;\n&l;ol&g;\n&l;li&g;Built-in modules &a;ndash; Pre-installed in Python&l;/li&g;\n&l;li&g;External modules &a;ndash; Need to install using pip&l;/li&g;\n&l;/ol&g;\n&l;p&g;Some examples of built-in modules are os, abc, etc.&l;/p&g;\n&l;p&g;Some examples of external modules are TensorFlow, flask, etc.&l;/p&g;\n&l;p&g;&l;strong&g;Using Python as a Calculator&l;/strong&g;&l;/p&g;\n&l;p&g;We can use python as a calculator by typing &a;ldquo;python&a;rdquo; + &l;strong&g;TO DO &l;/strong&g;on the terminal. [It opens REPL or read evaluation print loop]&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h5&g;&l;strong&g;Comments&l;/strong&g;&l;/h5&g;\n&l;p&g;Comments are used to write something which the programmer does not want to execute.&l;/p&g;\n&l;p&g;Comments can be used to mark the author&s;s name, date, etc.&l;/p&g;\n&l;p&g;&l;strong&g;Types of Comments:&l;/strong&g;&l;/p&g;\n&l;p&g;There are two types of comments in python,&l;/p&g;\n&l;ol&g;\n&l;li&g;Single line comments &a;ndash; Written using # (pound/hash symbol)&l;/li&g;\n&l;li&g;Multi-line comments &a;ndash; Written using &a;lsquo;&a;rsquo;&a;rsquo; Comment &a;lsquo;&a;rsquo;&a;rsquo; or &a;ldquo;&a;rdquo;&a;rdquo; Comment &a;ldquo;&a;rdquo;&a;rdquo;.&l;/li&g;\n&l;/ol&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 1 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program to print Twinkle-Twinkle Little Star poem in python.&l;/li&g;\n&l;li&g;Use REPL and print the table of 5 using it.&l;/li&g;\n&l;li&g;Install an external module and use it to perform an operation of your interest.&l;/li&g;\n&l;li&g;Write a python program to print the contents of a directory using os module. Search online for the function which does that.&l;/li&g;\n&l;li&g;Label the program written in problem 4 with comments.&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 2 &a;ndash; Variables and Data Types&l;/h4&g;\n&l;p&g;A variable is a name given to a memory location in a program. For example&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a=30\n\nb=&a;rdquo;Harry&a;rdquo;\n\nc=71.22&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Variable &a;ndash; &l;/strong&g;Container to store a value&l;/p&g;\n&l;p&g;&l;strong&g;Keywords &a;ndash; &l;/strong&g;Reserved words in Python&l;/p&g;\n&l;p&g;&l;strong&g;Identifiers &a;ndash; &l;/strong&g;class/function/variable name&l;/p&g;\n&l;h5&g;&l;strong&g;Data Types:&l;/strong&g;&l;/h5&g;\n&l;p&g;Primarily there are the following data types in Python:&l;/p&g;\n&l;ol&g;\n&l;li&g;Integers&l;/li&g;\n&l;li&g;Floating point numbers&l;/li&g;\n&l;li&g;Strings&l;/li&g;\n&l;li&g;Booleans&l;/li&g;\n&l;li&g;None&l;/li&g;\n&l;/ol&g;\n&l;p&g;Python is a fantastic language that automatically identifies the type of data for us.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = 71                                    #Identifies a as class&a;lt;int&a;gt;\n\nb = 88.44                              #Identifies b as class&a;lt;float&a;gt;\n\nname = &a;ldquo;Harry&a;rdquo;                  #Identifies name as class&a;lt;Str&a;gt;&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Rules for defining a variable name: &l;/strong&g;(Also applicable to other identifiers)&l;/p&g;\n&l;ul&g;\n&l;li&g;A variable name can contain alphabets, digits, and underscore.&l;/li&g;\n&l;li&g;A variable name can only start with an alphabet and underscore.&l;/li&g;\n&l;li&g;A variable can&a;rsquo;t start with a digit.&l;/li&g;\n&l;li&g;No white space is allowed to be used inside a variable name.&l;/li&g;\n&l;/ul&g;\n&l;p&g;Examples of few valid variable names,&l;/p&g;\n&l;p&g;Harry, harry, one8, _akki, aakash, harry_bro, etc.&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h5&g;&l;strong&g;Operators in Python&l;/strong&g;&l;/h5&g;\n&l;p&g;The following are some common operators in Python:&l;/p&g;\n&l;ol&g;\n&l;li&g;Arithmetic Operators (+, -, *, /, etc.)&l;/li&g;\n&l;li&g;Assignment Operators (=, +=, -=, etc.)&l;/li&g;\n&l;li&g;Comparison Operators (==, &a;gt;=, &a;lt;=, &a;gt;, &a;lt;, !=, etc.)&l;/li&g;\n&l;li&g;Logical Operators (and, or, not)&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;strong&g;type() function and Typecasting &l;/strong&g;&l;/p&g;\n&l;p&g;type function is used to find the data type of a given variable in Python.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = 31\n\ntype(a)                      #class&a;lt;int&a;gt;\n\nb = &a;ldquo;31&a;rdquo;\n\ntype(b)                      #class&a;lt;str&a;gt;&l;/code&g;&l;/pre&g;\n&l;p&g;A number can be converted into a string and vice versa (if possible)&l;/p&g;\n&l;p&g;There are many functions to convert one data type into another.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;Str(31)           # &a;rdquo;31&a;rdquo; Integer to string conversion\n\nint(&a;ldquo;32&a;rdquo;)       # 32 String to int conversion\n\nfloat(32)       #32.0 Integer to float conversion&l;/code&g;&l;/pre&g;\n&l;p&g;&a;hellip; and so on&l;/p&g;\n&l;p&g;Here &a;ldquo;31&a;rdquo; is a string literal, and 31 is a numeric literal.&l;/p&g;\n&l;p&g;&l;strong&g;input() function&l;/strong&g;&l;/p&g;\n&l;p&g;This function allows the user to take input from the keyboard as a string.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = input(&a;ldquo;Enter name&a;rdquo;)               #if a is &a;ldquo;harry&a;rdquo;, the user entered harry&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Note: &l;/strong&g;The output of the input function is always a string even if the number is entered by the user.&l;/p&g;\n&l;p&g;Suppose if a user enters 34, then this 34 will automatically convert to &a;ldquo;34&a;rdquo; string literal.&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 2 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a Python program to add two numbers.&l;/li&g;\n&l;li&g;Write a Python program to find the remainder when a number is divided by Z(Integer).&l;/li&g;\n&l;li&g;Check the type of the variable assigned using the input() function.&l;/li&g;\n&l;li&g;Use a comparison operator to find out whether a given variable a is greater than b or not. (Take a=34 and b=80)&l;/li&g;\n&l;li&g;Write a Python program to find the average of two numbers entered by the user.&l;/li&g;\n&l;li&g;Write a Python program to calculate the square of a number entered by the user.&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 3 &a;ndash; Strings&l;/h4&g;\n&l;p&g;The string is a data type in Python.&l;/p&g;\n&l;p&g;A string is a sequence of characters enclosed in quotes.&l;/p&g;\n&l;p&g;We can primarily write a string in three ways:&l;/p&g;\n&l;ol&g;\n&l;li&g;Single quoted strings : a = &a;lsquo;harry&a;rsquo;&l;/li&g;\n&l;li&g;Double quoted strings : b = &a;ldquo;harry&a;rdquo;&l;/li&g;\n&l;li&g;Triple quoted strings : c = &a;lsquo;&a;rsquo;&a;rsquo; harry &a;lsquo;&a;rsquo;&a;rsquo;&l;/li&g;\n&l;/ol&g;\n&l;h5&g;&l;strong&g;String Slicing:&l;/strong&g;&l;/h5&g;\n&l;p&g;A string in Python can be sliced for getting a part of the string.&l;/p&g;\n&l;p&g;Consider the following string:&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/StringSlicing1py.png\&q; /&g;&l;/p&g;\n&l;p&g;The index in a string starts from 0 to (length-1) in Python. To slice a string, we use the following syntax:&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/StringSlicing2py.png\&q; /&g;&l;/p&g;\n&l;p&g;&l;strong&g;Negative Indices: &l;/strong&g;Negative indices can also be used as shown in the figure above. -1 corresponds to the (length-1) index, -2 to (length-2).&l;/p&g;\n&l;p&g;&l;strong&g;Slicing with skip value&l;/strong&g;&l;/p&g;\n&l;p&g;We can provide a skip value as a part of our slice like this:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;word = &a;ldquo;amazing&a;rdquo;\n\nword[1:6:2]           # It will return &a;rsquo;mzn&a;rsquo;&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Other advanced slicing techniques&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;word = &a;lsquo;amazing&a;rsquo;\n\nword[:7] or word[0:7]      #It will return &a;lsquo;amazing&a;rsquo;\n\nword[0:] or word[0:7]      #It will return &a;lsquo;amazing&a;rsquo;&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;String Functions&l;/strong&g;&l;/h5&g;\n&l;p&g;Some of the most used functions to perform operations on or manipulate strings are:&l;/p&g;\n&l;ol&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;len() function : &l;/strong&g;It returns the length of the string.&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;len(&a;lsquo;harry&a;rsquo;)               #Returns 5&l;/code&g;&l;/pre&g;\n&l;ol start=\&q;2\&q;&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;endswith(&a;ldquo;rry&a;rdquo;) : &l;/strong&g;This function tells whether the variable string ends with the string &a;ldquo;rry&a;rdquo; or not. If string is &a;ldquo;harry&a;rdquo;, it returns for &a;ldquo;rry&a;rdquo; since harry ends with rry.&l;/li&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;count(&a;ldquo;c&a;rdquo;) : &l;/strong&g;It counts the total number of occurrences of any character.&l;/li&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;capitalize() : &l;/strong&g;This function capitalizes the first character of a given string.&l;/li&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;find(word) : &l;/strong&g;This function finds a word and returns the index of first occurrence of that word in the string.&l;/li&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;replace(oldword, newword)&l;/strong&g; : This function replaces the old word with the new word in the entire string.&l;/li&g;\n&l;/ol&g;\n&l;h5&g;&l;strong&g;Escape Sequence Characters:&l;/strong&g;&l;/h5&g;\n&l;p&g;Sequence of characters after backslash &a;lsquo;\\&a;rsquo; [Escape Sequence Characters]&l;/p&g;\n&l;p&g;Escape Sequence Characters comprises of more than one character but represents one character when used within the string.&l;/p&g;\n&l;p&g;Examples: \\n (new line), \\t (tab), \\&a;rsquo; (single quote), \\\\ (backslash), etc.&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 3 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a Python program to display a user-entered name followed by Good Afternoon using input() function.&l;/li&g;\n&l;li&g;Write a program to fill in a letter template given below with name and date.&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;letter = &a;lsquo;&a;rsquo;&a;rsquo; Dear &a;lt;|NAME|&a;gt;,\n\n                        You are selected!\n\n                        &a;lt;|DATE|&a;gt;&l;/code&g;&l;/pre&g;\n&l;ol start=\&q;3\&q;&g;\n&l;li&g;Write a program to detect double spaces in a string.&l;/li&g;\n&l;li&g;Replace the double spaces from problem 3 with single spaces.&l;/li&g;\n&l;li&g;Write a program to format the following letter using escape sequence characters.&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;letter = &a;ldquo;Dear Harry, This Python course in nice. Thanks!!&a;rdquo;&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 4 &a;ndash; Lists and Tuples&l;/h4&g;\n&l;p&g;Python Lists are containers to store a set of values of any data type.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;friends = [&a;lsquo;Apple&a;rsquo;, &a;lsquo;Akash&a;rsquo;, &a;lsquo;Rohan&a;rsquo;, 7, False]&l;/code&g;&l;/pre&g;\n&l;p&g;The list can contain different types of elements such as int, float, string, Boolean, etc. Above list is a collection of different types of elements.&l;/p&g;\n&l;h5&g;&l;strong&g;List Indexing&l;/strong&g;&l;/h5&g;\n&l;p&g;A list can be index just like a string.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;L1 = [7, 9, &a;lsquo;harry&a;rsquo;]\n\nL1[0] &a;ndash; 7\n\nL1[1] &a;ndash; 9\n\nL1[70] &a;ndash; Error\n\nL1[0:2] &a;ndash; [7,9]         (This is known as List Slicing)&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;List Methods&l;/strong&g;&l;/h5&g;\n&l;p&g;Consider the following list:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;L1 = [1, 8, 7, 2, 21, 15]&l;/code&g;&l;/pre&g;\n&l;ol&g;\n&l;li&g;sort() &a;ndash; updates the list to [1,2,7,8,15,21]&l;/li&g;\n&l;li&g;reverse() &a;ndash; updates the list to [15,21,2,7,8,1]&l;/li&g;\n&l;li&g;append(8) &a;ndash; adds 8 at the end of the list&l;/li&g;\n&l;li&g;insert(3,8) &a;ndash; This will add 8 at 3 index&l;/li&g;\n&l;li&g;pop(2) &a;ndash; It will delete the element at index 2 and return its value&l;/li&g;\n&l;li&g;remove(21) &a;ndash; It will remove 21 from the last&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h5&g;&l;strong&g;Tuples in Python:&l;/strong&g;&l;/h5&g;\n&l;p&g;A tuple is an immutable (can&a;rsquo;t change or modified) data type in Python.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = ()              #It is an example of empty tuple\n\na = (1,)           #Tuple with only one element needs a comma\n\na = (1, 7, 2)   #Tuple with more than one element&l;/code&g;&l;/pre&g;\n&l;p&g;Once defined, tuple elements can&a;rsquo;t be manipulated or altered.&l;/p&g;\n&l;p&g;&l;strong&g;Tuple methods:&l;/strong&g;&l;/p&g;\n&l;p&g;Consider the following tuple,&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = (1, 7, 2)&l;/code&g;&l;/pre&g;\n&l;ol&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;count(1) &a;ndash; &l;/strong&g;It will return the number of times 1 occurs in a.&l;/li&g;\n&l;li&g;&l;strong&g; &l;/strong&g;&l;strong&g;index(1) &a;ndash; &l;/strong&g;It will return the index of the first occurrence of 1 in a.&l;/li&g;\n&l;/ol&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 4 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program to store seven fruits in a list entered by the user.&l;/li&g;\n&l;li&g;Write a program to accept the marks of 6 students and display them in a sorted manner.&l;/li&g;\n&l;li&g;Check that a tuple cannot be changed in Python.&l;/li&g;\n&l;li&g;Write a program to sum a list with 4 numbers.&l;/li&g;\n&l;li&g;Write a program to count the number of zeros in the following tuple:&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = (7, 0, 8, 0, 0, 9)&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 5 &a;ndash; Dictionary and Sets&l;/h4&g;\n&l;p&g;Dictionary is a collection of key-value pairs.&l;/p&g;\n&l;p&g;&l;strong&g;Syntax:&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;&s;&s;&s; a = {&a;ldquo;key&a;rdquo;: &a;ldquo;value&a;rdquo;,\n&a;ldquo;harry&a;rdquo;: &a;ldquo;code&a;rdquo;,\n&a;ldquo;marks&a;rdquo; : &a;ldquo;100&a;rdquo;,\n&a;ldquo;list&a;rdquo;: [1,2,9]}\na[&a;ldquo;key&a;rdquo;]\t# Prints value\na[&a;ldquo;list&a;rdquo;] \t# Prints [1,2,9] &s;&s;&s;\n&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;Properties of Python Dictionaries&l;/strong&g;&l;/h5&g;\n&l;ol&g;\n&l;li&g;It is unordered&l;/li&g;\n&l;li&g;It is mutable&l;/li&g;\n&l;li&g;It is indexed&l;/li&g;\n&l;li&g;It cannot contain duplicate keys&l;/li&g;\n&l;/ol&g;\n&l;h5&g;&l;strong&g;Dictionary Methods&l;/strong&g;&l;/h5&g;\n&l;p&g;Consider the following dictionary,&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = {&a;ldquo;name&a;rdquo;: &a;ldquo;Harry&a;rdquo;,\n\t&a;ldquo;from&a;rdquo;: &a;ldquo;India&a;rdquo;,\n\t&a;ldquo;marks&a;rdquo;: [92,98,96]}&l;/code&g;&l;/pre&g;\n&l;ol&g;\n&l;li&g;&l;strong&g;items()&l;/strong&g; : returns a list of (key,value) tuple.&l;/li&g;\n&l;li&g;&l;strong&g;keys() &l;/strong&g;: returns a list containing dictionary&a;rsquo;s keys.&l;/li&g;\n&l;li&g;&l;strong&g;update({&a;ldquo;friend&a;rdquo;: &a;ldquo;Sam&a;rdquo;}) &l;/strong&g;: updates the dictionary with supplied key-value pairs.&l;/li&g;\n&l;li&g;&l;strong&g;get(&a;ldquo;name&a;rdquo;) &l;/strong&g;: returns the value of the specified keys (and value is returned e.g., &a;ldquo;Harry&a;rdquo; is returned here)&l;/li&g;\n&l;/ol&g;\n&l;p&g;More methods are available on docs.python.org&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h5&g;&l;strong&g;Sets in Python&l;/strong&g;&l;/h5&g;\n&l;p&g;Set is a collection of non-repetitive elements.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;S= Set()          # No repetition allowed!\n\nS.add(1)\n\nS.add(2)\n\n# or Set = {1,2}&l;/code&g;&l;/pre&g;\n&l;p&g;If you are a programming beginner without much knowledge of mathematical operations on sets, you can simply look at sets in python as data types containing unique values.&l;/p&g;\n&l;h5&g;&l;strong&g;Properties of Sets&l;/strong&g;&l;/h5&g;\n&l;ol&g;\n&l;li&g;Sets are unordered # Elements order doesn&a;rsquo;t matter&l;/li&g;\n&l;li&g;Sets are unindexed # Cannot access elements by index&l;/li&g;\n&l;li&g;There is no way to change items in sets&l;/li&g;\n&l;li&g;Sets cannot contain duplicate values&l;/li&g;\n&l;/ol&g;\n&l;h5&g;&l;strong&g;Operations on Sets&l;/strong&g;&l;/h5&g;\n&l;p&g;Consider the following set:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;S = {1,8,2,3}&l;/code&g;&l;/pre&g;\n&l;ol&g;\n&l;li&g;&l;strong&g;Len(s) : &l;/strong&g;Returns 4, the length of the set&l;/li&g;\n&l;li&g;&l;strong&g;remove(8) : &l;/strong&g;Updates the set S and removes 8 from S&l;/li&g;\n&l;li&g;&l;strong&g;pop() : &l;/strong&g;Removes an arbitrary element from the set and returns the element removed.&l;/li&g;\n&l;li&g;&l;strong&g;clear() : &l;/strong&g;Empties the set S&l;/li&g;\n&l;li&g;&l;strong&g;union({8, 11}) : &l;/strong&g;Returns a new set with all items from both sets. #{1,8,2,3,11}&l;/li&g;\n&l;li&g;&l;strong&g;intersection({8, 11}) : &l;/strong&g;Returns a set which contains only items in both sets. #{8}&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/SET1PY.png\&q; /&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 5 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program to create a dictionary of Hindi words with values as their English translation. Provide the user with an option to look it up!&l;/li&g;\n&l;li&g;Write a program to input eight numbers from the user and display all the unique numbers (once).&l;/li&g;\n&l;li&g;Can we have a set with 18(int) and &a;ldquo;18&a;rdquo;(str) as a value in it?&l;/li&g;\n&l;li&g;What will be the length of the following set S:&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;S = Set()\n\nS.add(20)\n\nS.add(20.0)\n\nS.add(&a;ldquo;20&a;rdquo;)&l;/code&g;&l;/pre&g;\n&l;p&g;What will be the length of S after the above operations?&l;/p&g;\n&l;ol start=\&q;5\&q;&g;\n&l;li&g;S = {}, what is the type of S?&l;/li&g;\n&l;li&g;Create an empty dictionary. Allow 4 friends to enter their favorite language as values and use keys as their names. Assume that the names are unique.&l;/li&g;\n&l;li&g;If the names of 2 friends are the same; what will happen to the program in Program 6?&l;/li&g;\n&l;li&g;If the languages of two friends are the same; what will happen to the program in Program 6?&l;/li&g;\n&l;li&g;Can you change the values inside a list which is contained in set S&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;S = {8, 7, 12, &a;ldquo;Harry&a;rdquo;, [1, 2]}&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 6 &a;ndash; Conditional Expressions&l;/h4&g;\n&l;p&g;Sometimes we want to play pubg on our phone if the day is Sunday.&l;/p&g;\n&l;p&g;Sometimes we order Ice-cream online if the day is sunny.&l;/p&g;\n&l;p&g;Sometimes we go hiking if our parents allow.&l;/p&g;\n&l;p&g;All these are decisions that depend on the condition being met.&l;/p&g;\n&l;p&g;In python programming too, we must be able to execute instructions on a condition(s) being met. This is what conditions are for!&l;/p&g;\n&l;h5&g;&l;strong&g;If else and elif in Python&l;/strong&g;&l;/h5&g;\n&l;p&g;If else and elif statements are a multiway decision taken by our program due to certain conditions in our code.&l;/p&g;\n&l;p&g;&l;strong&g;Syntax:&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;&s;&s;&s;\nif (condition1):\t\t// if condition 1 is true\n\tprint(&a;ldquo;yes&a;rdquo;)\nelif (condition2):\t\t// if condition 2 is true\n\tprint(&a;ldquo;No&a;rdquo;)\nelse:\t\t\t\t// otherwise\n\tprint(&a;ldquo;May be&a;rdquo;)\n&s;&s;&s;\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Code example:&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = 22\nif (a&a;gt;9):\n    print(&a;ldquo;Greater&a;rdquo;)\nelse:\n    print(&a;ldquo;lesser&a;rdquo;)&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Quick Quiz: &l;/strong&g;Write a program to print yes when the age entered by the user is greater than or equal to 18.&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h5&g;&l;strong&g;Relational Operators&l;/strong&g;&l;/h5&g;\n&l;p&g;Relational operators are used to evaluate conditions inside if statements. Some examples of relational operators are:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;= = -&a;gt; equals\n\n&a;gt;=  -&a;gt; greater than/equal to\n\n&a;lt;=, etc.&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;Logical Operators&l;/strong&g;&l;/h5&g;\n&l;p&g;In python, logical operators operate on conditional statements. Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;and -&a;gt; true if both operands are true else false\n\nor -&a;gt; true if at least one operand is true else false\n\nnot -&a;gt; inverts true to false and false to true&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;elif clause&l;/strong&g;&l;/h5&g;\n&l;p&g;elif in python means [else if]. If statement can be chained together with a lot of these elif statements followed by an else statement.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;&s;&s;&s;\nif (condition1):\n    #code\nelif (condition 2):\n    #code\nelif (condition 2):\n    #code\n&a;hellip;.\nelse:\n    #code    &s;&s;&s;\n&l;/code&g;&l;/pre&g;\n&l;ul&g;\n&l;li&g;The above ladder will stop once a condition in an if or elif is met.&l;/li&g;\n&l;/ul&g;\n&l;p&g;&l;strong&g;Important Notes:&l;/strong&g;&l;/p&g;\n&l;ul&g;\n&l;li&g;There can be any number of elif statements.&l;/li&g;\n&l;li&g;Last else is executed only if all the conditions inside elifs fail.&l;/li&g;\n&l;/ul&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 6 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program to find the greatest of four numbers entered by the user.&l;/li&g;\n&l;li&g;Write a program to find out whether a student is pass or fail if it requires a total of 40% and at least 33% in each subject to pass. Assume 3 subjects and take marks as an input from the user.&l;/li&g;\n&l;li&g;A spam comment is defined as a text containing the following keywords:&l;/li&g;\n&l;/ol&g;\n&l;p&g;&a;ldquo;make a lot of money&a;rdquo;, &a;ldquo;buy now&a;rdquo;, &a;ldquo;subscribe this&a;rdquo;, &a;ldquo;click this&a;rdquo;. Write a program to detect these spams.&l;/p&g;\n&l;ol start=\&q;4\&q;&g;\n&l;li&g;Write a program to find whether a given username contains less than 10 characters or not.&l;/li&g;\n&l;li&g;Write a program that finds out whether a given name is present in a list or not.&l;/li&g;\n&l;li&g;Write a program to calculate the grade of a student from his marks from the following scheme:&l;/li&g;\n&l;/ol&g;\n&l;table style=\&q;border-collapse: collapse; width: 100%; height: 132px;\&q; border=\&q;1\&q;&g;\n&l;tbody&g;\n&l;tr style=\&q;height: 22px;\&q;&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;90-100&l;/td&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;Ex&l;/td&g;\n&l;/tr&g;\n&l;tr style=\&q;height: 22px;\&q;&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;80-90&l;/td&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;A&l;/td&g;\n&l;/tr&g;\n&l;tr style=\&q;height: 22px;\&q;&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;70-80&l;/td&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;B&l;/td&g;\n&l;/tr&g;\n&l;tr style=\&q;height: 22px;\&q;&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;60-70&l;/td&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;C&l;/td&g;\n&l;/tr&g;\n&l;tr style=\&q;height: 22px;\&q;&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;50-60&l;/td&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;D&l;/td&g;\n&l;/tr&g;\n&l;tr style=\&q;height: 22px;\&q;&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;&a;lt;50&l;/td&g;\n&l;td style=\&q;width: 48.6515%; height: 22px;\&q;&g;F&l;/td&g;\n&l;/tr&g;\n&l;/tbody&g;\n&l;/table&g;\n&l;ol start=\&q;7\&q;&g;\n&l;li&g;Write a program to find out whether a given post is talking about &a;ldquo;Harry&a;rdquo; or not.&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 7 &a;ndash; Loops in Python&l;/h4&g;\n&l;p&g;Sometimes we want to repeat a set of statements in our program. For instance: Print 1 to 1000&l;/p&g;\n&l;p&g;Loops make it easy for a programmer to tell the computer, which set of instructions to repeat, and how!&l;/p&g;\n&l;h5&g;&l;strong&g;Types of loops in Python&l;/strong&g;&l;/h5&g;\n&l;p&g;Primarily there are two types of loops in Python&l;/p&g;\n&l;ol&g;\n&l;li&g;While loop&l;/li&g;\n&l;li&g;For loop&l;/li&g;\n&l;/ol&g;\n&l;p&g;We will look into this one by one!&l;/p&g;\n&l;p&g;&l;strong&g;While loop&l;/strong&g;&l;/p&g;\n&l;p&g;The syntax of a while loop looks like this:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;&s;&s;&s; while condition:\n    #Body of the loop &s;&s;&s;\n&l;/code&g;&l;/pre&g;\n&l;ul&g;\n&l;li&g;The block keeps executing until the condition is true/false&l;/li&g;\n&l;/ul&g;\n&l;p&g;In while loops, the condition is checked first. If it evaluates to true, the body of the loop is executed, otherwise not!&l;/p&g;\n&l;p&g;If the loop is entered, the process of condition check and execution is continued until the condition becomes false.&l;/p&g;\n&l;p&g;&l;strong&g;Quick Quiz: &l;/strong&g;Write a program to print 1 to 50 using a while loop.&l;/p&g;\n&l;p&g;&l;strong&g;An Example:&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;i = 0\nwhile i&a;lt;5:\n    print(&a;ldquo;Harry&a;rdquo;)\n    i = i+1\n&l;/code&g;&l;/pre&g;\n&l;p&g;(Above program will print Harry 5 times)&l;/p&g;\n&l;p&g;&l;strong&g;Note: &l;/strong&g;if the condition never becomes false, the loop keeps getting executed.&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Quick Quiz: &l;/strong&g;Write a program to print the content of a list using while loops.&l;/p&g;\n&l;h5&g;&l;strong&g;For loop&l;/strong&g;&l;/h5&g;\n&l;p&g;A for loop is used to iterate through a sequence like a list, tuple, or string (iterables)&l;/p&g;\n&l;p&g;The syntax of a for loop looks like this:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;l = [1, 7, 8]\nfor item in l:\n\tprint(item)\n&l;/code&g;&l;/pre&g;\n&l;p&g;(Above program will print 1, 7, and 8)&l;/p&g;\n&l;h5&g;&l;strong&g;Range function in Python&l;/strong&g;&l;/h5&g;\n&l;p&g;The range function in python is used to generate a sequence of numbers.&l;/p&g;\n&l;p&g;We can also specify the start, stop, and step-size as follows:&l;/p&g;\n&l;p&g;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp; range(start, stop, step_size)&l;/p&g;\n&l;ul&g;\n&l;li&g;step size is usually not used with range()&l;/li&g;\n&l;/ul&g;\n&l;p&g;&l;strong&g;An example demonstrating range() function&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;for i in range(0, 7):\t\t#range(7) can also be used\n\tprint(i)\t\t#prints 0 to 6\n&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;For loop with else&l;/strong&g;&l;/h5&g;\n&l;p&g;An optional else can be used with a for loop if the code is to be executed when the loop exhausts.&l;/p&g;\n&l;p&g;Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;l = [1, 7, 8]\nfor item in l:\n\tprint(item)\nelse:\n\tprint(&a;ldquo;Done&a;rdquo;)\t#This is printed when the loop exhausts!\n&l;/code&g;&l;/pre&g;\n&l;p&g;Output:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;1\n\n7\n\n8\n\nDone&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;The break statement&l;/strong&g;&l;/h5&g;\n&l;p&g;&a;lsquo;break&a;rsquo; is used to come out of the loop when encountered. It instructs the program to &a;ndash; Exit the loop now.&l;/p&g;\n&l;p&g;Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;for i in range(0, 80):\n\tprint(i)\t#This will print 0, 1, 2 and 3\n\tif i == 3:\n\t\tbreak&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;The continue statement&l;/strong&g;&l;/h5&g;\n&l;p&g;&a;lsquo;continue&a;rsquo; is used to stop the current iteration of the loop and continue with the next one. It instructs the program to &a;ldquo;skip this iteration.&a;rdquo;&l;/p&g;\n&l;p&g;Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;for i in range(4):\n\tprint(&a;ldquo;printing&a;rdquo;)\n\tif i == 2:\t#if i is 2, the iteration is skipped\n\t\tcontinue\n\tprint(i)\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h5&g;&l;strong&g;pass statement&l;/strong&g;&l;/h5&g;\n&l;p&g;pass is a null statement in python. It instructs to &a;ldquo;Do nothing.&a;rdquo;&l;/p&g;\n&l;p&g;Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;l = [1, 7, 8]\nfor item in l:\n\tpass\t\t#without pass, the program will throw an error\n&l;/code&g;&l;/pre&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 7 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program to print the multiplication table of a given number using for loop.&l;/li&g;\n&l;li&g;Write a program to greet all the person names stored in a list l1 and which starts with S.&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;l1 = [&a;ldquo;Harry&a;rdquo;, &a;ldquo;Sohan&a;rdquo;, &a;ldquo;Sachin&a;rdquo;, &a;ldquo;Rahul&a;rdquo;]&l;/code&g;&l;/pre&g;\n&l;ol start=\&q;3\&q;&g;\n&l;li&g;Attempt problem 1 using a while loop.&l;/li&g;\n&l;li&g;Write a program to find whether a given number is prime or not.&l;/li&g;\n&l;li&g;Write a program to find the sum of first n natural numbers using a while loop.&l;/li&g;\n&l;li&g;Write a program to calculate the factorial of a given number using for loop.&l;/li&g;\n&l;li&g;Write a program to print the following star pattern.&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;    *\n\n  ***  \n\n***** for n=3&l;/code&g;&l;/pre&g;\n&l;ol start=\&q;8\&q;&g;\n&l;li&g;Write a program to print the following star pattern:&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;*\n\n**\n\n*** for n = 3&l;/code&g;&l;/pre&g;\n&l;ol start=\&q;9\&q;&g;\n&l;li&g;Write a program to print the following star pattern:&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;* * *\n*   *             #For n=3\n* * * &l;/code&g;&l;/pre&g;\n&l;p&g;&a;nbsp; &a;nbsp;10. Write a program to print the multiplication table of n using for loop in reversed order.&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 8 &a;ndash; Functions and Recursions&l;/h4&g;\n&l;p&g;A function is a group of statements performing a specific task.&l;/p&g;\n&l;p&g;When a program gets bigger in size and its complexity grows, it gets difficult for a programmer to keep track of which piece of code is doing what!&l;/p&g;\n&l;p&g;A function can be reused by the programmer in a given program any number of times.&l;/p&g;\n&l;p&g;&l;strong&g;Example and Syntax of a function&l;/strong&g;&l;/p&g;\n&l;p&g;The syntax of a function looks as follows:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;def func1():\n\tprint(&a;ldquo;Hello&a;rdquo;)\n&l;/code&g;&l;/pre&g;\n&l;p&g;This function can be called any number of times, anywhere in the program.&l;/p&g;\n&l;p&g;&l;strong&g;Function call&l;/strong&g;&l;/p&g;\n&l;p&g;Whenever we want to call a function, we put the name of the function followed by parenthesis as follows:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;func1()          #This is called function call&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Function definition&l;/strong&g;&l;/p&g;\n&l;p&g;The part containing the exact set of instructions that are executed during the function call.&l;/p&g;\n&l;p&g;&l;strong&g;Quick Quiz: &l;/strong&g;Write a program to greet a user with &a;ldquo;Good day&a;rdquo; using functions.&l;/p&g;\n&l;h5&g;&l;strong&g;Types of functions in Python&l;/strong&g;&l;/h5&g;\n&l;p&g;There are two types of functions in Python:&l;/p&g;\n&l;ol&g;\n&l;li&g;Built-in functions #Already present in Python&l;/li&g;\n&l;li&g;User-defined functions #Defined by the user&l;/li&g;\n&l;/ol&g;\n&l;p&g;Examples of built-in function includes len(), print(), range(), etc.&l;/p&g;\n&l;p&g;The func1() function we defined is an example of a user-defined function.&l;/p&g;\n&l;p&g;&l;strong&g;Functions with arguments&l;/strong&g;&l;/p&g;\n&l;p&g;A function can accept some values it can work with. We can put these values in the parenthesis. A function can also return values as shown below:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;def greet(name):\n\tgr = &a;ldquo;Hello&a;rdquo; + name\n\treturn gr\n&l;/code&g;&l;/pre&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;a = greet(&a;ldquo;Harry&a;rdquo;) #&a;ldquo;Harry&a;rdquo; is passed to greet in name\n\n# a will now contain &a;ldquo;Hello Harry&a;rdquo;&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Default Parameter Value&l;/strong&g;&l;/p&g;\n&l;p&g;We can have a value as the default argument in a function.&l;/p&g;\n&l;p&g;If we specify name = &a;ldquo;stranger&a;rdquo; in the line containing def, this value is used when no argument is passed.&l;/p&g;\n&l;p&g;For Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;def greet(name=&a;rsquo;stranger&a;rsquo;):\n\t#function body\n&l;/code&g;&l;/pre&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;greet()                       #Name will be &a;lsquo;stranger&a;rsquo; in function body(default)\n\ngreet(&a;ldquo;Harry&a;rdquo;)        #Name will be &a;ldquo;Harry&a;rdquo; in function body(passed)&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;Recursion&l;/strong&g;&l;/h5&g;\n&l;p&g;Recursion is a function which calls itself.&l;/p&g;\n&l;p&g;It is used to directly use a mathematical formula as a function. For example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;factorial(n) = n * factorial(n-1)&l;/code&g;&l;/pre&g;\n&l;p&g;This function can be defined as follows:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;def factorial(n):\n\tif i == 0 or i == 1 : #Base condition which doesn&a;rsquo;t call the function any further\n\t\treturn i\n\telse:\n\t\treturn n*factorial(n-1) #Function calling itself\n&l;/code&g;&l;/pre&g;\n&l;p&g;This works as follows:&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/facpy1.png\&q; /&g;&l;/p&g;\n&l;p&g;The programmer needs to be extremely careful while working with recursion to ensure that the function doesn&a;rsquo;t infinitely keep calling itself.&l;/p&g;\n&l;p&g;Recursion is sometimes the most direct way to code an algorithm.&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 8 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program using the function to find the greatest of three numbers.&l;/li&g;\n&l;li&g;Write a python program using the function to convert Celsius to Fahrenheit.&l;/li&g;\n&l;li&g;How do you prevent a python print() function to print a new line at the end?&l;/li&g;\n&l;li&g;Write a recursive function to calculate the sum of first n natural numbers.&l;/li&g;\n&l;li&g;Write a python function to print the first n lines of the following pattern.&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;***\n\n**       #For n = 3\n\n*&l;/code&g;&l;/pre&g;\n&l;ol start=\&q;6\&q;&g;\n&l;li&g;Write a python function that converts inches to cms.&l;/li&g;\n&l;li&g;Write a python function to remove a given word from a list and strip it at the same time.&l;/li&g;\n&l;li&g;Write a python function to print the multiplication table of a given number.&l;/li&g;\n&l;/ol&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Project 1: Snake, Water, Gun Game&l;/h4&g;\n&l;p&g;We all have played snake, water gun game in our childhood. If you haven&a;rsquo;t, google the rules of this game and write a Python program capable of playing this game with the user.&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 9 &a;ndash; File I/O&l;/h4&g;\n&l;p&g;The random access memory is volatile, and all its contents are lost once a program terminates.&l;/p&g;\n&l;p&g;In order to persist the data forever, we use files.&l;/p&g;\n&l;p&g;A file is data stored in a storage device. A python program can talk to the file by reading content from it and writing content to it.&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/fileiopy1.png\&q; /&g;&l;/p&g;\n&l;p&g;&l;strong&g;Types of Files&l;/strong&g;&l;/p&g;\n&l;p&g;There are 2 types of files:&l;/p&g;\n&l;ol&g;\n&l;li&g;Text files (.txt, .c, etc)&l;/li&g;\n&l;li&g;Binary files (.jpg, .dat, etc)&l;/li&g;\n&l;/ol&g;\n&l;p&g;Python has a lot of functions for reading, updating, and deleting files.&l;/p&g;\n&l;p&g;&l;strong&g;Opening a file&l;/strong&g;&l;/p&g;\n&l;p&g;Python has an open() function for opening files. It takes 2 parameters: filename and mode.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;open(&a;ldquo;this.txt&a;rdquo;, &a;ldquo;r&a;rdquo;)&l;/code&g;&l;/pre&g;\n&l;p&g;Here, &a;ldquo;this&a;rdquo; is the file name and &a;ldquo;r&a;rdquo; is the mode of opening (read mode)&l;/p&g;\n&l;p&g;&l;strong&g;Reading a file in Python&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;f = open(&a;ldquo;this.txt&a;rdquo;, &a;ldquo;r&a;rdquo;)     #Opens the file in r mode\n\ntext = f.read()          #Read its content\n\nprint(text)     #Print its contents\n\nf.close()         #Close the fie&l;/code&g;&l;/pre&g;\n&l;p&g;We can also specify the number of characters in read() function:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;f.read(2)       #Reads first 2 characters&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Other methods to read the file&l;/strong&g;&l;/p&g;\n&l;p&g;We can also use f.readline() function to read one full line at a time.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;f.readline()               #Reads one line from the file&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Modes of opening a file&l;/strong&g;&l;/p&g;\n&l;p&g;r &a;ndash; open for reading&l;/p&g;\n&l;p&g;w &a;ndash; open for writing&l;/p&g;\n&l;p&g;a &a;ndash; open for appending&l;/p&g;\n&l;p&g;+ -&a;gt; open for updating&l;/p&g;\n&l;p&g;&a;lsquo;rb&a;rsquo; will open for read in binary mode&l;/p&g;\n&l;p&g;&a;lsquo;rt&a;rsquo; will open for read in text mode&l;/p&g;\n&l;p&g;&l;strong&g;Writing Files in Python&l;/strong&g;&l;/p&g;\n&l;p&g;In order to write to a file, we first open it in write or append mode, after which, we use the python&a;rsquo;s f.write() method to write to the file!&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;f = open(&a;ldquo;this.txt&a;rdquo;, &a;ldquo;w&a;rdquo;)\n\nf.write(&a;ldquo;This is nice&a;rdquo;)        #Can be called multiple times\n\nf.close()&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;With statement&l;/strong&g;&l;/p&g;\n&l;p&g;The best way to open and close the file automatically is the &a;ldquo;with&a;rdquo; statement.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;with open(&a;ldquo;this.txt&a;rdquo;) as f:\n\n            f.read()&l;/code&g;&l;/pre&g;\n&l;p&g;#There is no need to write f.close() as it is done automatically&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 9 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Write a program to read the text from a given file, &a;ldquo;poems.txt&a;rdquo; and find out whether it contains the word &a;lsquo;twinkle&a;rsquo;.&l;/li&g;\n&l;li&g;The game() function in a program lets a user play a game and returns the score as an integer. You need to read a file &a;ldquo;Hiscore.txt&a;rdquo; which is either blank or contains the previous Hi-score. You need to write a program to update the Hi-score whenever game() breaks the Hi-Score.&l;/li&g;\n&l;li&g;Write a program to generate multiplication tables from 2 to 20 and write it to the different files. Place these files in a folder for a 13- year old boy.&l;/li&g;\n&l;li&g;A file contains the word &a;ldquo;Donkey&a;rdquo; multiple times. You need to write a program which replaces this word with ###### by updating the same file.&l;/li&g;\n&l;li&g;Repeat program 4 for a list of such words to be censored.&l;/li&g;\n&l;li&g;Write a program to mine a log file and find out whether it contains &a;lsquo;python&a;rsquo;.&l;/li&g;\n&l;li&g;Write a program to find out the line number where python is present from question 6.&l;/li&g;\n&l;li&g;Write a program to make a copy of a text file &a;ldquo;this.txt.&a;rdquo;&l;/li&g;\n&l;li&g;Write a program to find out whether a file is identical and matches the content of another file.&l;/li&g;\n&l;li&g;Write a program to wipe out the contents of a file using python.&l;/li&g;\n&l;li&g;Write a python program to rename a file to &a;ldquo;renamed_by_python.txt.&a;rdquo;&l;/li&g;\n&l;/ol&g;\n&l;p style=\&q;text-align: left;\&q;&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 10 &a;ndash; Object-Oriented Programming&l;/h4&g;\n&l;p&g;Solving a problem by creating objects is one of the most popular approaches in programming. This is called object-oriented programming.&l;/p&g;\n&l;p&g;This concept focuses on using reusable code. (Implements DRY principle)&l;/p&g;\n&l;h5&g;&l;strong&g;Class&l;/strong&g;&l;/h5&g;\n&l;p&g;A class is a blueprint for creating objects.&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/classpy1.png\&q; /&g;&l;/p&g;\n&l;p&g;The syntax of a class looks like this:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;Class Employee:\t\t[classname is written in PascalCase]\n\t#methods &a;amp; variables\n&l;/code&g;&l;/pre&g;\n&l;h5&g;&l;strong&g;Object&l;/strong&g;&l;/h5&g;\n&l;p&g;An object is an instantiation of a class. When class is defined, a template(info) is defined. Memory is allocated only after object instantiation.&l;/p&g;\n&l;p&g;Objects of a given class can invoke the methods available to it without revealing the implementation details to the user.&a;nbsp;&a;nbsp;&a;nbsp;&a;nbsp; #Abstraction &a;amp; Encapsulation!&l;/p&g;\n&l;p&g;&l;strong&g;Modelling a problem in OOPs&l;/strong&g;&l;/p&g;\n&l;p&g;We identify the following in our problem&l;/p&g;\n&l;p&g;Noun -&a;gt; Class -&a;gt; Employee&l;/p&g;\n&l;p&g;Adjective -&a;gt; Attributes -&a;gt; name,age,salary&l;/p&g;\n&l;p&g;Verbs -&a;gt; Methods -&a;gt; getSalary(), increment()&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Class Attributes&l;/strong&g;&l;/p&g;\n&l;p&g;An attribute that belongs to the class rather than a particular object.&l;/p&g;\n&l;p&g;Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;Class Employee:\n\tcompany = &a;ldquo;Google&a;rdquo; \t#Specific to each class\nharry = Employee()\t#Object instantiation\nharry.company\nEmployee.company = &a;ldquo;YouTube&a;rdquo;\t#changing class attribute\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Instance Attributes&l;/strong&g;&l;/p&g;\n&l;p&g;An attribute that belongs to the Instance (object)&l;/p&g;\n&l;p&g;Assuming the class from the previous example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;harry.name = &a;ldquo;Harry&a;rdquo;\nharry.salary = &a;ldquo;30K&a;rdquo;\t#Adding instance attributes\n&l;/code&g;&l;/pre&g;\n&l;p&g;Note: Instance attributes take preference over class attributes during assignment and retrieval.&l;/p&g;\n&l;p&g;harry.attribute1&a;nbsp; :&l;/p&g;\n&l;ol&g;\n&l;li&g;Is attribute1 present in the object?&l;/li&g;\n&l;li&g;Is attribute1 present in class?&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;strong&g;&a;lsquo;self&a;rsquo; parameter&l;/strong&g;&l;/p&g;\n&l;p&g;self refers to the instance of the class.&l;/p&g;\n&l;p&g;It is automatically passed with a function call from an object.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;harry.getSalary()&l;/code&g;&l;/pre&g;\n&l;p&g;here, self is harry, and the above line of code is equivalent to Employee.getSalary(harry)&l;/p&g;\n&l;p&g;This function getsalary is defined as:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;class Employee:\n\tcompany = &a;ldquo;Google&a;rdquo;\n\tdef getSalary(self):\n\t\tprint(&a;ldquo;Salary is not there&a;rdquo;)\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Static method&l;/strong&g;&l;/p&g;\n&l;p&g;Sometimes we need a function that doesn&a;rsquo;t use the self-parameter. We can define a static method like this:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;@staticmethod\t#decorator to mark greet as a static method\ndef greet():\n\tprint(&a;ldquo;Hello user&a;rdquo;)\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;__init__() constructor&l;/strong&g;&l;/p&g;\n&l;p&g;__init__() is a special method which runs as soon as the object is created.&l;/p&g;\n&l;p&g;__init__() method is also known as constructor.&l;/p&g;\n&l;p&g;It takes self-argument and can also take further arguments.&l;/p&g;\n&l;p&g;For Example:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;class Employee:\n\tdef __init__(self,name):\n\t\tself.name = name\n\tdef getSalary(self):\n\t\t#Some code&a;hellip;\nharry = Employee(&a;ldquo;Harry&a;rdquo;)\t#Object can be instantiated using constructor like this!\n&l;/code&g;&l;/pre&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 10 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Create a class programmer for storing information of a few programmers working at Microsoft.&l;/li&g;\n&l;li&g;Write a class calculator capable of finding square, cube, and the square root of a number.&l;/li&g;\n&l;li&g;Create a class with a class attribute a; create an object from it and set a directly using object.a=0 Does this change the class attribute?&l;/li&g;\n&l;li&g;Add a static method in problem 2 to greet the user with hello.&l;/li&g;\n&l;li&g;Write a class Train which has methods to book a ticket, get status(no of seats), and get fare information of trains running under Indian Railways.&l;/li&g;\n&l;li&g;Can you change the self parameter inside a class to something else (say &a;lsquo;harry&a;rsquo;)? Try changing self to &a;lsquo;slf&a;rsquo; or &a;lsquo;harry&a;rsquo; and see the effects.&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 11 &a;ndash; Inheritance &a;amp; more on OOPs&l;/h4&g;\n&l;p&g;Inheritance is a way of creating a new class from an existing class.&l;/p&g;\n&l;p&g;&l;strong&g;Syntax:&l;/strong&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;class Emoloyee:\t#Base Class\n\t#Code\nclass Programmer(Employee):\t#Derived or child class\n\t#Code\n&l;/code&g;&l;/pre&g;\n&l;p&g;We can use the methods and attributes of Employee in Programmer object.&l;/p&g;\n&l;p&g;Also, we can overwrite or add new attributes and methods in the Programmer class.&l;/p&g;\n&l;h5&g;&l;strong&g;Type of Inheritance&l;/strong&g;&l;/h5&g;\n&l;ol&g;\n&l;li&g;Single inheritance&l;/li&g;\n&l;li&g;Multiple inheritance&l;/li&g;\n&l;li&g;Multilevel inheritance&l;/li&g;\n&l;/ol&g;\n&l;p&g;&l;strong&g;Single Inheritance&l;/strong&g;&l;/p&g;\n&l;p&g;Single inheritance occurs when a child class inherits only a single parent class.&l;/p&g;\n&l;p&g;Base -&a;gt; Derived&l;/p&g;\n&l;p&g;&l;strong&g;Multiple Inheritance&l;/strong&g;&l;/p&g;\n&l;p&g;Multiple inheritances occurs when the child class inherits from more than one parent class.&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/childpy1.png\&q; /&g;&l;/p&g;\n&l;p&g;&l;strong&g;Multilevel Inheritance&l;/strong&g;&l;/p&g;\n&l;p&g;When a child class becomes a parent for another child class.&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-tutorial-easy-for-beginners/childpy2.png\&q; /&g;&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;p&g;&l;strong&g;Super() method&l;/strong&g;&l;/p&g;\n&l;p&g;Super method is used to access the methods of a superclass in the derived class.&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;super().__init__()  #Calls constructor of the base class&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Class methods&l;/strong&g;&l;/p&g;\n&l;p&g;A class method is a method which is bound to the class and not the object of the class.&l;/p&g;\n&l;p&g;@classmethod decorator is used to create a class method.&l;/p&g;\n&l;p&g;Syntax to create a class method:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;@classmethod\ndef (cls, p1, p2):\n\t#code\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;@property decorators&l;/strong&g;&l;/p&g;\n&l;p&g;Consider the following class&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;class Employee:\n\t@property \n\tdef name(self):\n\t\treturn self.ename\n&l;/code&g;&l;/pre&g;\n&l;p&g;if e = Employee() is an object of class employee, we can print (e.name) top print the ename/call name() function.&l;/p&g;\n&l;p&g;&l;strong&g;@.getters and @.setters&l;/strong&g;&l;/p&g;\n&l;p&g;The method name with @property decorator is called getter method.&l;/p&g;\n&l;p&g;We can define a function + @name.setter decorator like below:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;@name.setter\ndef name(self, value):\n\tself.ename = value\n&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Operator overloading in Python&l;/strong&g;&l;/p&g;\n&l;p&g;Operators in python can be overloaded using dunder methods.&l;/p&g;\n&l;p&g;These methods are called when a given operator is used on the objects.&l;/p&g;\n&l;p&g;Operators in python can be overloaded using the following methods:&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;p1 + p2 -&a;gt; p1.__add__(p2)\n\np1 &a;ndash; p2 -&a;gt; p1.__sub__(p2)\n\np1 * p2 -&a;gt; p1.__mul__(p2)\n\np1 / p2 -&a;gt; p1.__truediv__(p2)\n\np1 // p2 -&a;gt; p1.__floordiv__(p2)&l;/code&g;&l;/pre&g;\n&l;p&g;&l;strong&g;Other dunder/magic methods in Python&l;/strong&g;&l;/p&g;\n&l;p&g;&l;span style=\&q;font-family: arial, helvetica, sans-serif;\&q;&g;&a;lt;|AD|&a;gt;&l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;__str__() -&a;gt; used  to set what gets displayed upon calling str(obj)\n\n__len__() -&a;gt; used to set what gets displayed upon calling .__len__() or len(obj)&l;/code&g;&l;/pre&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Chapter 11 &a;ndash; Practice Set&l;/h4&g;\n&l;ol&g;\n&l;li&g;Create a class C-2d vector and use it to create another class representing a 3-d vector.&l;/li&g;\n&l;li&g;Create a class of pets from a class Animals and further create class Dog from Pets. Add a method bark to class Dog.&l;/li&g;\n&l;li&g;Create a class Employee and add salary and increment properties to it.&l;/li&g;\n&l;/ol&g;\n&l;p&g;Write a method SalaryAfterIncrement method with a @property decorator with a setter which changes the value of increment based on the salary.&l;/p&g;\n&l;ol start=\&q;4\&q;&g;\n&l;li&g;Write a class complex to represent complex numbers, along with overloaded operators + and * which adds and multiplies them.&l;/li&g;\n&l;li&g;Write a class vector representing a vector of n dimension. Overload the + and * operator which calculates the sum and the dot product of them.&l;/li&g;\n&l;li&g;Write __str__() method to print the vector as follows:&l;/li&g;\n&l;/ol&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;7i + 8j + 10k&l;/code&g;&l;/pre&g;\n&l;p&g;Assume vector of dimension 3 for this problem.&l;/p&g;\n&l;ol start=\&q;7\&q;&g;\n&l;li&g;Override the __len__() method on vector of problem 5 to display the dimension of the vector.&l;/li&g;\n&l;/ol&g;\n&l;h4 style=\&q;text-align: center;\&q;&g;Project 2: Snake, Water, Gun Game&l;/h4&g;\n&l;p&g;We are going to write a program that generates a random number and asks the user to guess it.&l;/p&g;\n&l;p&g;If the player&a;rsquo;s guess is higher than the actual number, the program displays &a;ldquo;Lower number please&a;rdquo;. Similarly, if the user&a;rsquo;s guess is too low, the program prints &a;ldquo;higher number please&a;rdquo;.&l;/p&g;\n&l;p&g;When the user guesses the correct number, the program displays the number of guesses the player used to arrive at the number.&l;/p&g;\n&l;p&g;Hint: Use the random module&l;/p&g;\n&l;p&g;&l;a href=\&q;https://drive.google.com/file/d/1dghcM0yMkwpAHsdTBbc9gluyXAyFTQw3/view?usp=sharing\&q;&g;Download all the Notes here&l;/a&g;&l;/p&g;&q;,&q;duration&q;:&q;&q;,&q;metaTags&q;:&q;&q;,&q;metaDesc&q;:&q;&q;,&q;time&q;:&q;2021-05-17T21:10:45.814930&q;,&q;slug&q;:&q;python-tutorial-easy-for-beginners&q;,&q;success&q;:true},&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:09:16 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;OPTIONS, GET&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;49718&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getvideo/python-tutorial-easy-for-beginners&q;},&q;G.https://api.codewithharry.com/video/getcoursecontent/python-tutorial-easy-for-beginners?&q;:{&q;body&q;:[{&q;title&q;:&q;Learn JavaScript In One Video In Hindi (2018)&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn Python In Hindi In One Video - हिंदी में (Latest Tutorial)&q;,&q;slug&q;:&q;learn-python-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn Php In One Video In Hindi - हिंदी में (Latest PHP Tutorial 2018)&q;,&q;slug&q;:&q;learn-php-in-one-video-in-hindi&q;},{&q;title&q;:&q;15 Minute Python Tutorial For Beginners In Hindi (Full &a; Complete Crash Course)&q;,&q;slug&q;:&q;learn-python-in-one-video-in-15-min-hindi&q;},{&q;title&q;:&q;Learn Bootstrap In Hindi In One Video - हिंदी में (Latest Tutorial 2019)&q;,&q;slug&q;:&q;learn-bootstrap-in-one-video&q;},{&q;title&q;:&q;Learn HTML In One Video&q;,&q;slug&q;:&q;learn-html-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn jQuery In Hindi In One Video - हिंदी में (Latest Tutorial 2018)&q;,&q;slug&q;:&q;learn-jquery-in-one-video-in-hindi&q;},{&q;title&q;:&q;Create A Responsive Website Using HTML, CSS And Bootstrap 4 In Hindi&q;,&q;slug&q;:&q;learn-responsive-html-css3-bootstrap-website-in-one-video-in-hindi&q;},{&q;title&q;:&q;Login And Registration Form Using Php &a; MySQL [Php Login System In Hindi]&q;,&q;slug&q;:&q;php-mysql-login-system-in-one-video&q;},{&q;title&q;:&q;C Programming Tutorial For Beginners: Learn C In Hindi&q;,&q;slug&q;:&q;learn-c-in-one-video-in-hindi&q;},{&q;title&q;:&q;JavaScript Registration Form Validation - हिंदी में (Latest Tutorial 2019)&q;,&q;slug&q;:&q;complete-form-validation-using-javascript-in-hindi-in-one-video&q;},{&q;title&q;:&q;CSS 3 Tutorial For Beginners: Learn CSS In One Video In Hindi&q;,&q;slug&q;:&q;learn-css-in-one-video-in-hindi&q;},{&q;title&q;:&q;C++ Tutorial For Beginners: Learn C Plus Plus In Hindi&q;,&q;slug&q;:&q;learn-c-plus-plus-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn Python Programming For Free | Python Programming Tutorial In Hindi&q;,&q;slug&q;:&q;learn-python-in-one-video-in-hindi-2019&q;},{&q;title&q;:&q;Java tutorial in hindi&q;,&q;slug&q;:&q;learn-java-in-one-video-in-hindi-2019&q;},{&q;title&q;:&q;Android Development Tutorial in Hindi&q;,&q;slug&q;:&q;android-development-tutorial-in-one-video-hindi&q;},{&q;title&q;:&q;Web Scraping Tutorial using Python and BeautifulSoup&q;,&q;slug&q;:&q;python-web-scraping-tutorial-in-hindi&q;},{&q;title&q;:&q;Git &a; GitHub Tutorial For Beginners In Hindi - हिंदी में (2019)&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-7&q;},{&q;title&q;:&q;Login And Registration Form Using Php &a; MySQL [Php Login System In Hindi]&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-9&q;},{&q;title&q;:&q;Linux Tutorial For Beginners in Hindi&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-12&q;},{&q;title&q;:&q;Numpy Tutorial in Hindi&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-13&q;},{&q;title&q;:&q;Php Tutorial for Beginners in Hindi with MySQL Project&q;,&q;slug&q;:&q;learn-php-in-one-video-in-hindi-2020&q;},{&q;title&q;:&q;Learn JavaScript In One Video In Hindi (2020)&q;,&q;slug&q;:&q;javascript-tutorial-in-hindi-in-one-video-2020&q;},{&q;title&q;:&q;C Language Tutorial For Beginners (With Notes)&q;,&q;slug&q;:&q;c-tutorial-in-hindi-with-notes&q;},{&q;title&q;:&q;How To Make a WordPress Website | Wordpress Tutorial for Beginners | Elementor Tutorial In Hindi&q;,&q;slug&q;:&q;wordpress-tutorial-in-hindi&q;},{&q;title&q;:&q;Python Tutorial For Beginners In Hindi (With Notes)&q;,&q;slug&q;:&q;python-tutorial-easy-for-beginners&q;},{&q;title&q;:&q;Python Programming Course in Hindi (Advanced)&q;,&q;slug&q;:&q;python-tutorial-advanced&q;},{&q;title&q;:&q;Android Application Development Tutorial in Hindi With Notes&q;,&q;slug&q;:&q;android-tutorial-in-hindi-with-notes&q;},{&q;title&q;:&q;React Tutorial in Hindi&q;,&q;slug&q;:&q;react-tutorial-in-hindi&q;},{&q;title&q;:&q;HTML Tutorial For Beginners In Hindi (With Notes)&q;,&q;slug&q;:&q;html-tutorial-for-beginners&q;},{&q;title&q;:&q;CSS Tutorial In Hindi (With Notes)&q;,&q;slug&q;:&q;css-in-one-video&q;}],&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:09:16 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;OPTIONS, GET&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;3596&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getcoursecontent/python-tutorial-easy-for-beginners&q;},&q;G.https://api.codewithharry.com/video/getcomments/python-tutorial-easy-for-beginners/0/999999?&q;:{&q;body&q;:[{&q;comment&q;:&q;bhai code sahi dal rha hu fir bhi problem aa rhi hai.\nhttps://drive.google.com/file/d/1FnaVK4BhoAHBDAbM93jKifbReT3EWKlc/view?usp=sharing&q;,&q;username&q;:&q;naveen.thakur778&q;,&q;sno&q;:4533,&q;time&q;:&q;2021-07-23T12:00:02.880715&q;,&q;replycount&q;:0},{&q;comment&q;:&q;where is the file that conatins all .py files ???\n&q;,&q;username&q;:&q;udmann009&q;,&q;sno&q;:4526,&q;time&q;:&q;2021-07-22T12:07:10.266177&q;,&q;replycount&q;:0},{&q;comment&q;:&q;https://drive.google.com/file/d/1dghcM0yMkwpAHsdTBbc9gluyXAyFTQw3/view&q;,&q;username&q;:&q;kishorvibhute999&q;,&q;sno&q;:4476,&q;time&q;:&q;2021-07-19T13:17:15.916539&q;,&q;replycount&q;:0},{&q;comment&q;:&q;From where do I download hand written notes and program code files for python\n&q;,&q;username&q;:&q;ashishusa85&q;,&q;sno&q;:4431,&q;time&q;:&q;2021-07-14T22:14:27.354172&q;,&q;replycount&q;:2},{&q;comment&q;:&q;How can i download the notes plz hlp me&q;,&q;username&q;:&q;MalikAdnan&q;,&q;sno&q;:4409,&q;time&q;:&q;2021-07-11T07:49:14.363076&q;,&q;replycount&q;:0}],&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:09:16 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;GET, OPTIONS&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;894&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getcomments/python-tutorial-easy-for-beginners/0/999999&q;}}</script></body><!-- This page was prerendered with Angular Universal -->
+<!-- Mirrored from www.codewithharry.com/videos/python-tutorial-easy-for-beginners/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 14:15:48 GMT -->
+</html>
