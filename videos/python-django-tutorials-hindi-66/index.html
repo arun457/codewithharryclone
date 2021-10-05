@@ -1,0 +1,740 @@
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from www.codewithharry.com/videos/python-django-tutorials-hindi-66/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 14:39:59 GMT -->
+<head>
+  <meta charset="utf-8">
+  <title>Integrating Payment Gateway: PayTM, UPI, Cards &amp; NetBanking | Python Django Tutorials In Hindi #66 - CodeWithHarry</title>
+  <base >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v87/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <script data-ad-client="ca-pub-9655830461045889" async="" src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-60726752-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-60726752-3');
+  </script>
+<link rel="stylesheet" href="../../styles.bc31d58d1fffbdf64e6b.css"><style ng-transition="serverApp">.content[_ngcontent-sc76]{min-height:calc(100vh - 56px - 80px)}</style><style ng-transition="serverApp">[_nghost-sc73]{position:relative;display:block;pointer-events:none}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{transition:350ms linear;display:block;position:absolute;top:5px;left:0}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]   .ngx-spinner-icon[_ngcontent-sc73]{width:14px;height:14px;border:2px solid transparent;border-top-color:inherit;border-left-color:inherit;border-radius:50%;-webkit-animation:.4s linear infinite loading-bar-spinner;animation:.4s linear infinite loading-bar-spinner}[_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{transition:width 350ms;position:absolute;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}[dir=rtl]   [_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{right:0;left:unset}[fixed=true][_nghost-sc73]{z-index:10002}[fixed=true][_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{position:fixed}[fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{position:fixed;top:10px;left:10px}[dir=rtl]   [fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{right:10px;left:unset}@-webkit-keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}</style><style ng-transition="serverApp">.brandLogo[_ngcontent-sc74]{max-width:39px;margin:0 13px}li[_ngcontent-sc74]   a.nav-link[_ngcontent-sc74]{color:#fff}.notificationImg[_ngcontent-sc74]{width:30px;filter:invert(1)}.notification-bell[_ngcontent-sc74]{position:absolute;right:0}.dropdown-toggle[_ngcontent-sc74]{font-weight:700}.dropdown-menu-notify[_ngcontent-sc74]{overflow-y:scroll;overflow-x:hidden;max-height:400px;top:60px;right:-1px;left:unset;width:460px;box-shadow:0 5px 7px -1px #c1c1c1;padding:0}ul[_ngcontent-sc74]   ul[_ngcontent-sc74]   a[_ngcontent-sc74]{background:transparent}.dropdown-menu-notify[_ngcontent-sc74]:before{content:"";position:absolute;top:-20px;right:12px;border:10px solid transparent;border-bottom-color:#fff}.head-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:3px 3px 0 0}.footer-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:0 0 3px 3px}.notification-box-notify[_ngcontent-sc74]{padding:10px 0}.bg-gray-notify[_ngcontent-sc74]{background-color:#eee}@media (max-width:640px){.dropdown-menu-notify[_ngcontent-sc74]{top:50px;left:-16px;width:290px}.nav-notify[_ngcontent-sc74]{display:block}.nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74], .nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74]   a[_ngcontent-sc74]{padding-left:0}.message-notify[_ngcontent-sc74]{font-size:13px}}.loginError[_ngcontent-sc74]{color:red;padding:3px 2px}div.alert[_ngcontent-sc74]{margin:0}input.ng-touched.ng-invalid[_ngcontent-sc74], textarea.ng-touched.ng-invalid[_ngcontent-sc74]{border-color:red}.forgot[_ngcontent-sc74]{font-size:14px;color:#000;text-align:left;text-decoration:underline;cursor:pointer;padding:16px 0}.googleAuth[_ngcontent-sc74]{width:46%;cursor:pointer;border:1px solid #000;border-radius:3px;background:#60a3dd;margin-top:1px}.or[_ngcontent-sc74]{font-weight:500;font-size:19px}.modal-header[_ngcontent-sc74]{display:flex;align-items:center;justify-content:center;flex-direction:column}.modal-header[_ngcontent-sc74]   span[_ngcontent-sc74]{position:absolute;top:15px;right:20px}.navbar-brand[_ngcontent-sc74]{margin:0;padding:0}</style><style ng-transition="serverApp">footer[_ngcontent-sc75]{color:#fff}</style><style ng-transition="serverApp">div.code-toolbar{position:relative}div.code-toolbar>.toolbar{position:absolute;top:.3em;right:.2em;transition:opacity .3s ease-in-out;opacity:0}div.code-toolbar:focus-within>.toolbar,div.code-toolbar:hover>.toolbar{opacity:1}div.code-toolbar>.toolbar .toolbar-item{display:inline-block}div.code-toolbar>.toolbar a{cursor:pointer}div.code-toolbar>.toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}div.code-toolbar>.toolbar a,div.code-toolbar>.toolbar button,div.code-toolbar>.toolbar span{color:#bbb;font-size:.8em;padding:0 .5em;background:#f5f2f0;background:hsla(0,0%,87.8%,.2);box-shadow:0 2px 0 0 rgba(0,0,0,.2);border-radius:.5em}div.code-toolbar>.toolbar a:focus,div.code-toolbar>.toolbar a:hover,div.code-toolbar>.toolbar button:focus,div.code-toolbar>.toolbar button:hover,div.code-toolbar>.toolbar span:focus,div.code-toolbar>.toolbar span:hover{color:inherit;text-decoration:none}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}code[class*=language-],pre[class*=language-]{max-height:614px}.commentContainer{overflow-x:auto}.content-holder{list-style:none;padding:0}.content-holder a{color:#000;text-decoration:none}.content-holder li:hover{background-color:#efeff0}.content-holder-item{padding:23px 12px;font-size:16px;cursor:pointer}li.active{background-color:#d6d6d6}.bg-black{background-color:#000}#content-box{max-height:85vh;overflow-y:scroll}#course-content-box{background:#fff;align-self:flex-start;height:20px;position:sticky;top:0}.bg-lgrey{background-color:#e7e7e9}.tab-pane{min-height:344px}.nav-link{font-weight:700;color:#000}.commentReplies{background-color:#e7e7e9;margin:18px 3px}.commentReplies img{margin:8px 14px}#toggleCourse{display:none}.openCourseHeight{height:76vh!important}.plusIcon{display:none}@media only screen and (max-width:400px){.nav-link{font-size:16px;padding:9px 6px}#course-content-box{height:57px}}@media only screen and (max-width:560px){img.rounded-circle{height:0;visibility:hidden}}@media only screen and (max-width:768px){#course-content-box{height:46px;transition:height .4s;position:static}#content-box{height:70vh;visibility:hidden}#toggle-button{visibility:visible}#video-box{z-index:1}#sticky-d{position:sticky;top:0;z-index:1}#toggleCourse{display:inline}.other{margin-left:-15px;margin-right:-15px}.plusIcon{display:inline-block;width:24px;height:24px}}#video-box2{font-size:14pt;font-family:helvetica}#video-box2 img{cursor:pointer}#video-box2 pre code{font-size:16px}.commentContainer pre{font-size:14pt;font-family:helvetica}#video-box2 h6,h1,h2,h3,h4,h5{font-family:Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.tab-pane{min-height:100vh}div.toolbar-item button{color:#fff!important;border:2px solid #fff!important;margin-right:23px}@media screen and (max-width:768px){div.toolbar-item button{margin-right:0}}#previewModal .modal-dialog{max-width:80%}.h-0{height:0}@media screen and (max-width:768px){div.toolbar-item button{margin-right:0}#video-box2 pre code{font-size:10px}.mt-48{margin-top:48px}}pre[class*=language-]{font-size:6pt}img{max-width:100%;height:auto}#video-box2{word-wrap:break-word}.commentError{font-size:10pt;margin:8px}#qna>h2{margin:43px}.showReplies{color:#00f;cursor:pointer;font-size:14px;padding:8px 16px}.advh{height:300px;width:100%;margin:auto}h2,h3,h4,h5,h6{margin:25px 0 9px}.commentPre{overflow-x:auto;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}table{max-width:90vw}td,tr{max-width:30vw!important}</style><meta name="description" content="Integrating Payment Gateway: PayTM, UPI, Cards &amp; NetBanking | Python Django Tutorials In Hindi #66"><style ng-transition="serverApp"></style></head>
+
+<body>
+  <app-root _nghost-sc76="" ng-version="11.2.11"><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><app-header _ngcontent-sc76="" _nghost-sc74=""><!----><nav _ngcontent-sc74="" class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-sc74="" routerlink="/" class="navbar-brand" href="../../index.html"><img _ngcontent-sc74="" height="39px" width="39px" src="../../assets/img/logo.png" alt="CodeWithHarry" class="brandLogo"></a><button _ngcontent-sc74="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-sc74="" class="navbar-toggler-icon"></span></button><div _ngcontent-sc74="" id="navbarSupportedContent" class="collapse navbar-collapse"><ul _ngcontent-sc74="" class="navbar-nav mr-auto"><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/" class="nav-link" href="../../index.html">Home</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/videos" class="nav-link" href="../index.html">Videos</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/blog" class="nav-link" href="../../blog/index.html">Blog</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/contact" class="nav-link" href="../../contact/index.html">Contact Me</a></li></ul><form _ngcontent-sc74="" novalidate="" class="form-inline my-2 my-lg-0 mr-3 ng-untouched ng-pristine ng-valid"><input _ngcontent-sc74="" type="text" placeholder="Search" aria-label="Search" name="query" class="form-control mr-sm-2 ng-untouched ng-pristine ng-valid" value=""><button _ngcontent-sc74="" type="submit" class="btn btn-danger my-2 my-sm-0">Search</button></form><div _ngcontent-sc74="" class="mx-0"><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-danger mr-2">Login</button><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#signupModal" class="btn btn-danger">SignUp</button></div><!----><!----></div></nav><div _ngcontent-sc74="" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleLogin.png" alt="Login with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="loginModalTitle" class="modal-title">Login via username</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="username">Username</label><input _ngcontent-sc74="" type="text" id="username" placeholder="Enter your username" name="username" pattern="[a-zA-Z0-9 ]*" maxlength="10" minlength="2" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="loginpassword">Password</label><input _ngcontent-sc74="" type="password" id="loginpassword" placeholder="Enter your password" name="loginpassword" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><button _ngcontent-sc74="" type="submit" id="loginsubmit" class="btn btn-danger mt-2" disabled=""><!----> Login</button></form><!----><!----><!----><div _ngcontent-sc74="" class="forgot"><span _ngcontent-sc74="">Forgot Password?</span></div></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div><div _ngcontent-sc74="" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleSignUp.png" alt="Signup with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="signupModal" class="modal-title">SignUp for an account</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="uname">Username</label><input _ngcontent-sc74="" type="text" id="signupUserName" placeholder="Enter your username" name="signupUserName" pattern="[a-zA-Z0-9_ ]*" maxlength="10" minlength="4" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><small _ngcontent-sc74="" id="unamehelp" class="form-text text-muted px-1"> Your unique username must 4 - 10 characters (only lowecase letters, numbers &amp; underscores allowed) with no spaces </small></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupName">Name</label><input _ngcontent-sc74="" type="text" id="signupName" name="signupName" placeholder="Enter your Name" maxlength="30" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="email">Your Email</label><div _ngcontent-sc74="" class="mx-0"><div _ngcontent-sc74="" class="col-md-8 px-0"><input _ngcontent-sc74="" type="email" placeholder="Enter your Email" id="signupEmail" name="signupEmail" required="" email="" maxlength="40" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><!----></div><div _ngcontent-sc74="" class="col-md-4 my-1 px-0"><button _ngcontent-sc74="" type="button" id="otpbtn" class="btn btn-danger btn-sm mt-2" disabled=""><!----> Send OTP</button></div></div></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="otp">Enter OTP</label><input _ngcontent-sc74="" type="number" id="signupOTP" placeholder="Enter OTP" name="signupOTP" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupPassword1">Choose a password (At least 4 characters)</label><input _ngcontent-sc74="" type="password" id="signupPassword1" name="signupPassword1" placeholder="Choose a password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group mb-0"><label _ngcontent-sc74="" for="signupPassword2">Retype your password</label><input _ngcontent-sc74="" type="password" id="signupPassword2" name="signupPassword2" placeholder="Retype your password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><!----><!----><!----><!----><button _ngcontent-sc74="" type="submit" class="btn btn-danger mt-4" disabled=""><!----> SignUp</button></form></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div></app-header><div _ngcontent-sc76="" class="content"><router-outlet _ngcontent-sc76=""></router-outlet><app-video-page><div class="container-fluid"><div id="sticky-d" class="row"><div id="video-box" class="col-md-9 bg-black px-0"><div class="container videoContainer embed-responsive embed-responsive-16by9 px-3"><iframe allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/cdtPcTIuazI"></iframe><!----></div><!----></div><div id="course-content-box" class="col-md-3 px-0"><div class="row mx-0 py-2 px-3 bg-lgrey"><h5 class="my-0"> Course Content </h5><img height="25px" width="25px" alt="" class="plusIcon mx-2" src="../../assets/img/plus.png"><button id="togglePlayer" class="btn btn-sm btn-danger mx-3">Hide  Player</button></div><div id="content-box" class=""><ul class="content-holder"><li class="content-holder-item"><input type="checkbox"> 1. Django Course Announcement | Python Django Tutorials In Hindi #0 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 2. Django Installation &amp; Getting Started | Python Django Tutorials In Hindi #1 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 3. Creating Our First Django Project | Python Django Tutorials In Hindi #2 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 4. How Django Websites Work | Python Django Tutorials In Hindi #3 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 5. Our First Django Website | Python Django Tutorials In Hindi #4 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 6. Views &amp; Urls In Django| Python Django Tutorials In Hindi #5 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 7. Django Exercise 1: Personal Navigator | Python Django Tutorials In Hindi #6 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 8. Django Website: Laying The Pipeline | Python Django Tutorials In Hindi #7 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 9. Django Templates | Python Django Tutorials In Hindi #8 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 10. Creating Homepage of our TextUtils Website | Python Django Tutorials In Hindi #9 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 11. Django Site: Coding The Backend | Python Django Tutorials In Hindi #10 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 12. Django Exercise 1 Solution + Shoutouts | Python Django Tutorials In Hindi #11 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 13. Adding More Features To TextUtils Website | Python Django Tutorials In Hindi #12 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 14. Django Exercise 2: Revamping TextUtils | Python Django Tutorials In Hindi #13 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 15. Adding Boostrap To Our Django Website | Python Django Tutorials In Hindi #14 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 16. Fixing Bugs In Our TextUtils Website | Python Django Tutorials In Hindi #15 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 17. Django CSRF Tokens &amp; Post Request | Python Django Tutorials In Hindi #16 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 18. Exercise 2 Solution + Shoutouts  | Python Django Tutorials In Hindi #17 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 19. Wrapping Up TextUtils Website | Python Django Tutorials In Hindi #18 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 20. Our Next Django Website | Python Django Tutorials In Hindi #19 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 21. E Commerce Website In Django (Project Setup) | Python Django Tutorials In Hindi #20 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 22. E-commerce Website: Creating Apps (Apps Vs Projects) | Python Django Tutorials In Hindi #21 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 23. E-commerce Website: Adding Bootstrap, Templates &amp; Static | Python Django Tutorials In Hindi #22 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 24. E-commerce Website: Project Layout | Python Django Tutorials In Hindi #23 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 25. Models In Our Django E commerce Website | Python Django Tutorials In Hindi #24 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 26. Django Admin &amp; Adding Data To The Database | Python Django Tutorials In Hindi #25 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 27. Designing The Homepage Of Our E-Commerce Website | Python Django Tutorials In Hindi #26 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 28. Adding Images &amp; Changing Models In Django | Python Django Tutorials In Hindi #27 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 29. Adding Media Directory In Django | Python Django Tutorials In Hindi #28 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 30. Django Exercise 3: List the Products | Python Django Tutorials In Hindi #29 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 31. Fetching Products Using Python manage.py shell | Python Django Tutorials In Hindi #30 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 32. Template Inheritance In Django | Python Django Tutorials In Hindi #31 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 33. Logic For Showing Products On Homepage | Python Django Tutorials In Hindi #32 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 34. Showing Products On The Homepage | Python Django Tutorials In Hindi #33 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 35. Showing Multiple Product Slides On Homepage | Python Django Tutorials In Hindi #34 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 36. Category-Wise Product Display In E Commerce Website | Python Django Tutorials In Hindi #35 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 37. Creating an Online Shopping Cart Using JavaScript | Python Django Tutorials In Hindi #36 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 38. Exercise 3: Solution + Shoutouts | Python Django Tutorials In Hindi #37 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 39. Improving Slider Logic &amp; Adding Cart Items Count | Python Django Tutorials In Hindi #38 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 40. Adding Bootstrap Row &amp; Some CSS | Python Django Tutorials In Hindi #39 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 41. Adding Cart PopOver &amp; Other Pages Using Bootstrap | Python Django Tutorials In Hindi #40 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 42. E Commerce Website: Creating Product Page | Python Django Tutorials In Hindi #41 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 43. E Commerce Website: Creating Contact Page + Database | Python Django Tutorials In Hindi #42 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 44. Exercise 3: Improving Cart Of Our E commerce Website | Python Django Tutorials In Hindi #43 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 45. Creating Add and Remove Buttons For Items In Cart | Python Django Tutorials In Hindi #44 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 46. Creating A Cart In Navigation Bar As Popover | Python Django Tutorials In Hindi #45 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 47. Exercise 3: Solutions + Shoutouts | Python Django Tutorials In Hindi #46 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 48. Adding Checkout &amp; ClearCart Buttons | Python Django Tutorials In Hindi #47 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 49. Creating The Checkout Page | Python Django Tutorials In Hindi #48 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 50. Adding Items On Checkout Page | Python Django Tutorials In Hindi #49 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 51. Creating Database Entry For Orders | Python Django Tutorials In Hindi #50 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 52. Creating Order Tracker For Customers | Python Django Tutorials In Hindi #51 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 53. Django Exercise 4: Display Prices | Python Django Tutorials In Hindi #52 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 54. E-Commerce Website: Displaying Order Items In Tracker | Python Django Tutorials In Hindi #53 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 55. Django Solution To Exercise 4: Display Prices  | Python Django Tutorials In Hindi #54 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 56. Merging Blog App Into The Shop UI | Python Django Tutorials In Hindi #55 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 57. Django Website TextUtils: Pull Requests | Python Django Tutorials In Hindi #56 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 58. Django Website My Awesome Cart: Pull Requests | Python Django Tutorials In Hindi #57 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 59. My Awesome Cart: Creating The Blog | Python Django Tutorials In Hindi #58 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 60. Creating Models For Blog In Our E-Commerce Website | Python Django Tutorials In Hindi #59 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 61. Django Exercise 5: BlogPosts | Python Django Tutorials In Hindi #60 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 62. Creating a Django Post Page For Displaying Blog Content | Python Django Tutorials In Hindi #61 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 63. Designing The Blog Home Page | Python Django Tutorials In Hindi #62 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 64. Django Exercise 5: Solution + Shoutouts | Python Django Tutorials In Hindi #63 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 65. Linking Django Blog Posts To Blog Home | Python Django Tutorials In Hindi #64 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 66. Integrating Facebook Like, Comments &amp; Shares In Django Blog | Python Django Tutorials In Hindi #65 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item active"><input type="checkbox"> 67. Integrating Payment Gateway: PayTM, UPI, Cards &amp; NetBanking | Python Django Tutorials In Hindi #66 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 68. Creating Product Search Feature In Our E Commerce Website | Python Django Tutorials In Hindi #67 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 69. Fixing A Bug In Django E Commerce Website Tracker | Python Django Tutorials In Hindi #68 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 70. Reset Forgotten Admin Password In Django| Python Django Tutorials In Hindi #69 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 71. Hosting Django Website On Ubuntu VPS | Python Django Tutorials In Hindi #70 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 72. Creating A New Django Blog (Setup + Introduction) | Python Django Tutorials In Hindi #71 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 73. Django Blog: Project Setup &amp; URLConfs | Python Django Tutorials In Hindi #72 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 74. Django Blog: Creating Django Apps &amp; Properly Managing Them | Python Django Tutorials In Hindi #73 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 75. Django Blog: Adding HTML Templates | Python Django Tutorials In Hindi #74 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 76. Installing Django 3 for our Django Blog | Python Django Tutorials In Hindi #75 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 77. Django 3 Blog: Creating Migrations &amp; Superusers | Python Django Tutorials In Hindi #76 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 78. Django 3 Blog: Creating "Contact Us" Model | Python Django Tutorials In Hindi #77 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 79. Django 3 Blog: Handling Post Request in a Django View | Python Django Tutorials In Hindi #78 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 80. Django Mesasges Framework: Showing Messages in Django blog | Python Django Tutorials In Hindi #79 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 81. Django 3 Blog: Designing Blog Page &amp; Displaying Blog Posts | Python Django Tutorials In Hindi #80 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 82. Django 3 Blog: Creating Blog Model to Store Blog Posts | Python Django Tutorials In Hindi #81 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 83. Django 3 Blog: Designing the BlogPost Page | Python Django Tutorials In Hindi #82 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 84. Django 3 Blog: Creating Search Functionality | Python Django Tutorials In Hindi #83 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 85. Django 3 Blog: Improving Search Functionality | Python Django Tutorials In Hindi #84 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 86. Django 3 Blog: Authentication &amp; Authorization Tutorial | Python Django Tutorials In Hindi #85 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 87. Django 3 Blog: Creating Users in Django | Python Django Tutorials In Hindi #86 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 88. Django 3 Blog: Validating SignUp Form | Python Django Tutorials In Hindi #87 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 89. Django 3 Blog: Login &amp; Logout Endpoints | Python Django Tutorials In Hindi #88 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 90. Django 3 Blog: Creating Django template for Login &amp; Logout | Python Django Tutorials In Hindi #89 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 91. Django 3 Blog: Creating Blog Comments in Django | Python Django Tutorials In Hindi #90 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 92. Django 3 Blog: Creating Comment Model, Template &amp; Migrations | Python Django Tutorials In Hindi #91 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 93. Django 3 Blog: Creating APIs for Posting Comments on Blog | Python Django Tutorials In Hindi #92 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 94. Django 3 Blog: Rendering Blog Comments on Our Template | Python Django Tutorials In Hindi #93 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 95. Django 3 Blog: Restricting Comment Posting to Logged in User | Python Django Tutorials In Hindi #94 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 96. Django 3 Blog: Adding Replies to Comments on Our Blog | Python Django Tutorials In Hindi #95 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 97. Django 3 Blog: Displaying Replies Below Corresponding Comment | Python Django Tutorials In Hindi #96 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 98. Django 3 Blog: Designing Replies Below Comments &amp; Other Fixes | Python Django Tutorials In Hindi #97 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 99. Django 3 Blog: Rendering HTML inside the Blog Post | Python Django Tutorials In Hindi #98 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 100. Using TinyMCE Editor For Editing Blog Post Content | Python Django Tutorials In Hindi #99 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 101. Integrating TinyMCE Editor in Django Admin | Python Django Tutorials In Hindi #100 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 102. Adding "Post Views" (View Counter) to iCoder Django 3 Blog|  Python Django Tutorials In Hindi #101 <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><!----></ul><!----></div></div><hr></div><div id="video-box2" class="col-md-9 bg-black px-0"><div class="other bg-light"><ul id="myTab" role="tablist" class="nav nav-tabs"><li role="presentation" class="nav-item"><a id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true" class="nav-link active">Overview</a></li><li role="presentation" class="nav-item"><a id="qna-tab" data-toggle="tab" href="#qna" role="tab" aria-controls="qna" aria-selected="false" class="nav-link">Q&amp;A</a></li><li role="presentation" class="nav-item"><a id="resources-tab" data-toggle="tab" href="#resources" role="tab" aria-controls="resources" aria-selected="false" class="nav-link">Files</a></li><li role="presentation" class="nav-item"><a id="announcements-tab" data-toggle="tab" href="#announcements" role="tab" aria-controls="announcements" aria-selected="false" class="nav-link">Announcements</a></li></ul><div id="myTabContent" class="tab-content"><div id="overview" role="tabpanel" aria-labelledby="overview-tab" class="tab-pane fade show mx-4 mt-3 active"><div class="container clearfix py-0 px-0"><h3 class="my-2"> Integrating Payment Gateway: PayTM, UPI, Cards &amp; NetBanking | Python Django Tutorials In Hindi #66<a target="_blank" href="https://www.codewithharry.com/dashboard/videos/python-django-tutorials-hindi-66"><!----></a></h3><!----><div class="contentBox"><div><p><span>In this tutorial, we will integrate different payment gateways like Paytm, UPI, Cards and net banking on our E-commerce website. Before integrating the payment gateways we need to fetch the total amount in the back-end. So, open the <span>models.py</span> file of the shop app and type the below code :<br></span></p>
+<pre class="language-python"><code>class Orders(models.Model):
+    order_id= models.AutoField(primary_key=True)
+    items_json= models.CharField(max_length=5000)
+    amount=models.IntegerField(default=0)
+    name=models.CharField(max_length=90)
+    email=models.CharField(max_length=111)
+    address=models.CharField(max_length=111)
+    city=models.CharField(max_length=111)
+    state=models.CharField(max_length=111)
+    zip_code=models.CharField(max_length=111)
+    phone=models.CharField(max_length=111, default="")</code></pre>
+<p></p></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><span>In the above code, we've included a new object named amount in the pre-existing model <span>Order</span>. After this, migrate the changes in the database. Now, we need to handle this amount variable in the views of the shop app. So, open the<span> views.py</span> file of the shop app and type the below code:<br></span></p>
+<pre class="language-python"><code>def checkout(request):
+    if request.method=="POST":
+        items_json = request.POST.get('itemsJson', '')
+        name = request.POST.get('name', '')
+        amount = request.POST.get('amount', '')
+        email = request.POST.get('email', '')
+        address = request.POST.get('address1', '') + " " + request.POST.get('address2', '')
+        city = request.POST.get('city', '')
+        state = request.POST.get('state', '')
+        zip_code = request.POST.get('zip_code', '')
+        phone = request.POST.get('phone', '')
+        order = Orders(items_json=items_json, name=name, email=email, address=address, city=city,
+                       state=state, zip_code=zip_code, phone=phone, amount=amount)
+        order.save()
+        update = OrderUpdate(order_id=order.order_id, update_desc="The order has been placed")
+        update.save()
+        thank = True
+        id = order.order_id
+        return render(request, 'shop/checkout.html', {'thank':thank, 'id': id})
+    return render(request, 'shop/checkout.html')</code></pre>
+<p><span>After this, open the <span>checkout.html</span> file and type the below code after the items_json hidden:<br></span></p>
+<pre class="language-markup"><code>&lt;input type="hidden" name="amount" id="amount"&gt;</code></pre>
+<p><span>Now, we will write a jQuery function, type the below code in the js section of the checkout.html file:<br></span></p>
+<pre class="language-javascript"><code>$('#amount').val($('#totalPrice').html())</code></pre>
+<p><span>Now, we are all set to fetch the total billing price in the back-end. Restart the development server and checkout by adding some items in the cart. Then, head over to <a href="http://127.0.0.1:8000/admin/shop/orders/">http://127.0.0.1:8000/admin/shop/orders/</a> . View the order object that you've just created and you will notice that the amount is successfully displayed to the admin panel. You can also find the same in the below image :<br></span></p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-django-tutorials-hindi-66/base64.png"></p>
+<p></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><span>Now, we will create a new directory for Paytm integration. Double click on the shop folder and create a new directory named Paytm. Inside this directory, create a new file named "Checksum.py." After this, click <a href="https://github.com/Paytm-Payments/Paytm_Web_Sample_Kit_Python/tree/master/pythonKit 3.X">here</a> to go to the Github repository of the Paytm. You will find the following files on the Paytm repository :</span></p>
+<ul>
+<li><span>Checksum.py</span></li>
+<li><span>response.cgi</span></li>
+<li><span>test.cgi</span></li>
+</ul>
+<p><span>Copy the code of the <span>Checksum.py</span> file and paste in the <span>Checksum.py</span> file of the Paytm directory. Now, we need to make some changes in the checksum file. Type <span>".encode('utf-8')" </span><span>after <span>"key"</span>, <span>"IV"</span> and <span>"to_encode"</span>.&nbsp; You can make the changes by yourself or you can simply copy the below code :</span></span></p>
+<pre class="language-python"><code>import base64
+import string
+import random
+import hashlib
+
+from Crypto.Cipher import AES
+
+
+IV = "@@@@&amp;&amp;&amp;&amp;####$$$$"
+BLOCK_SIZE = 16
+
+
+def generate_checksum(param_dict, merchant_key, salt=None):
+    params_string = __get_param_string__(param_dict)
+    salt = salt if salt else __id_generator__(4)
+    final_string = '%s|%s' % (params_string, salt)
+
+    hasher = hashlib.sha256(final_string.encode())
+    hash_string = hasher.hexdigest()
+
+    hash_string += salt
+
+    return __encode__(hash_string, IV, merchant_key)
+
+def generate_refund_checksum(param_dict, merchant_key, salt=None):
+    for i in param_dict:
+        if("|" in param_dict[i]):
+            param_dict = {}
+            exit()
+    params_string = __get_param_string__(param_dict)
+    salt = salt if salt else __id_generator__(4)
+    final_string = '%s|%s' % (params_string, salt)
+
+    hasher = hashlib.sha256(final_string.encode())
+    hash_string = hasher.hexdigest()
+
+    hash_string += salt
+
+    return __encode__(hash_string, IV, merchant_key)
+
+
+def generate_checksum_by_str(param_str, merchant_key, salt=None):
+    params_string = param_str
+    salt = salt if salt else __id_generator__(4)
+    final_string = '%s|%s' % (params_string, salt)
+
+    hasher = hashlib.sha256(final_string.encode())
+    hash_string = hasher.hexdigest()
+
+    hash_string += salt
+
+    return __encode__(hash_string, IV, merchant_key)
+
+
+def verify_checksum(param_dict, merchant_key, checksum):
+    # Remove checksum
+    if 'CHECKSUMHASH' in param_dict:
+        param_dict.pop('CHECKSUMHASH')
+
+    # Get salt
+    paytm_hash = __decode__(checksum, IV, merchant_key)
+    salt = paytm_hash[-4:]
+    calculated_checksum = generate_checksum(param_dict, merchant_key, salt=salt)
+    return calculated_checksum == checksum
+
+def verify_checksum_by_str(param_str, merchant_key, checksum):
+    # Remove checksum
+    #if 'CHECKSUMHASH' in param_dict:
+        #param_dict.pop('CHECKSUMHASH')
+
+    # Get salt
+    paytm_hash = __decode__(checksum, IV, merchant_key)
+    salt = paytm_hash[-4:]
+    calculated_checksum = generate_checksum_by_str(param_str, merchant_key, salt=salt)
+    return calculated_checksum == checksum
+
+
+
+def __id_generator__(size=6, chars=string.ascii_uppercase + string.digits + string.ascii_lowercase):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+
+def __get_param_string__(params):
+    params_string = []
+    for key in sorted(params.keys()):
+        if("REFUND" in params[key] or "|" in params[key]):
+            respons_dict = {}
+            exit()
+        value = params[key]
+        params_string.append('' if value == 'null' else str(value))
+    return '|'.join(params_string)
+
+
+__pad__ = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)
+__unpad__ = lambda s: s[0:-ord(s[-1])]
+
+
+def __encode__(to_encode, iv, key):
+    # Pad
+    to_encode = __pad__(to_encode)
+    # Encrypt
+    c = AES.new(key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
+    to_encode = c.encrypt(to_encode.encode('utf-8'))
+    # Encode
+    to_encode = base64.b64encode(to_encode)
+    return to_encode.decode("UTF-8")
+
+
+def __decode__(to_decode, iv, key):
+    # Decode
+    to_decode = base64.b64decode(to_decode)
+    # Decrypt
+    c = AES.new(key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
+    to_decode = c.decrypt(to_decode)
+    if type(to_decode) == bytes:
+        # convert bytes array to str.
+        to_decode = to_decode.decode()
+    # remove pad
+    return __unpad__(to_decode)
+
+
+if __name__ == "__main__":
+    params = {
+        "MID": "mid",
+        "ORDER_ID": "order_id",
+        "CUST_ID": "cust_id",
+        "TXN_AMOUNT": "1",
+        "CHANNEL_ID": "WEB",
+        "INDUSTRY_TYPE_ID": "Retail",
+        "WEBSITE": "xxxxxxxxxxx"
+    }
+
+    print(verify_checksum(
+        params, 'xxxxxxxxxxxxxxxx',
+        "CD5ndX8VVjlzjWbbYoAtKQIlvtXPypQYOg0Fi2AUYKXZA5XSHiRF0FDj7vQu66S8MHx9NaDZ/uYm3WBOWHf+sDQAmTyxqUipA7i1nILlxrk="))
+
+    # print(generate_checksum(params, "xxxxxxxxxxxxxxxx"))</code></pre>
+<p><span>Run the <span>Checksum.py</span> file and if you see the following output then everything is working correctly.</span></p>
+<p><img src="../../../api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-django-tutorials-hindi-66/base64_gol0RlV.png"></p>
+<p></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<p><span>Now, we need to fetch the details of the user so that the Paytm can deduct the billing amount from the user's account and transfer it to our Paytm merchant account. Open the views.py of the shop app and type the below code :</span><span> </span></p>
+<pre class="language-python"><code>   # return render(request, 'shop/checkout.html', {'thank':thank, 'id': id})
+    #request paytm to transfer the amount to your account after payment by user
+    param_dict={
+
+            'MID': 'WorldP64425807474247',
+            'ORDER_ID': 'order.order_id',
+            'TXN_AMOUNT': '1',
+            'CUST_ID': 'email',
+            'INDUSTRY_TYPE_ID': 'Retail',
+            'WEBSITE': 'WEBSTAGING',
+            'CHANNEL_ID': 'WEB',
+            'CALLBACK_URL':'http://127.0.0.1:8000/shop/handlepayment/',
+
+    }
+    return  render(request, 'shop/paytm.html', {'param_dict': param_dict})
+    return render(request, 'shop/checkout.html')</code></pre>
+<p><span>Let's understand the arguments passed in the param_dict dictionary in the above code.</span></p>
+<ul>
+<li><span>Merchant id: It is the merchant id given to you by the Paytm while signing up for the Paytm merchant account.</span></li>
+<li><span>Order id: It is the id of the user's order. In the above code, we are fetching the order id from our database.</span></li>
+<li><span>Customer id: In the above code, we are using the user's email address as the customer id.</span></li>
+<li><span>Callback URL: It is the URL where you want the Paytm to show you the status of the payment.</span></li>
+</ul>
+<p><span>Now, we will create a new template to handle the param_dict dictionary that we've just created in the above step. Double click on the templates folder and create a new file named <span>"paytm.html."</span></span></p>
+<p>&nbsp;</p>
+<h4>Code Checksum.py as described/written in the video</h4>
+<pre class="language-python"><code># pip install pycryptodome
+import base64
+import string
+import random
+import hashlib
+
+from Crypto.Cipher import AES
+
+
+IV = "@@@@&amp;&amp;&amp;&amp;####$$$$"
+BLOCK_SIZE = 16
+
+
+def generate_checksum(param_dict, merchant_key, salt=None):
+    params_string = __get_param_string__(param_dict)
+    salt = salt if salt else __id_generator__(4)
+    final_string = '%s|%s' % (params_string, salt)
+
+    hasher = hashlib.sha256(final_string.encode())
+    hash_string = hasher.hexdigest()
+
+    hash_string += salt
+
+    return __encode__(hash_string, IV, merchant_key)
+
+def generate_refund_checksum(param_dict, merchant_key, salt=None):
+    for i in param_dict:
+        if("|" in param_dict[i]):
+            param_dict = {}
+            exit()
+    params_string = __get_param_string__(param_dict)
+    salt = salt if salt else __id_generator__(4)
+    final_string = '%s|%s' % (params_string, salt)
+
+    hasher = hashlib.sha256(final_string.encode())
+    hash_string = hasher.hexdigest()
+
+    hash_string += salt
+
+    return __encode__(hash_string, IV, merchant_key)
+
+
+def generate_checksum_by_str(param_str, merchant_key, salt=None):
+    params_string = param_str
+    salt = salt if salt else __id_generator__(4)
+    final_string = '%s|%s' % (params_string, salt)
+
+    hasher = hashlib.sha256(final_string.encode())
+    hash_string = hasher.hexdigest()
+
+    hash_string += salt
+
+    return __encode__(hash_string, IV, merchant_key)
+
+
+def verify_checksum(param_dict, merchant_key, checksum):
+    # Remove checksum
+    if 'CHECKSUMHASH' in param_dict:
+        param_dict.pop('CHECKSUMHASH')
+
+    # Get salt
+    paytm_hash = __decode__(checksum, IV, merchant_key)
+    salt = paytm_hash[-4:]
+    calculated_checksum = generate_checksum(param_dict, merchant_key, salt=salt)
+    return calculated_checksum == checksum
+
+def verify_checksum_by_str(param_str, merchant_key, checksum):
+    # Remove checksum
+    #if 'CHECKSUMHASH' in param_dict:
+        #param_dict.pop('CHECKSUMHASH')
+
+    # Get salt
+    paytm_hash = __decode__(checksum, IV, merchant_key)
+    salt = paytm_hash[-4:]
+    calculated_checksum = generate_checksum_by_str(param_str, merchant_key, salt=salt)
+    return calculated_checksum == checksum
+
+
+
+def __id_generator__(size=6, chars=string.ascii_uppercase + string.digits + string.ascii_lowercase):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+
+def __get_param_string__(params):
+    params_string = []
+    for key in sorted(params.keys()):
+        if("REFUND" in params[key] or "|" in params[key]):
+            respons_dict = {}
+            exit()
+        value = params[key]
+        params_string.append('' if value == 'null' else str(value))
+    return '|'.join(params_string)
+
+
+__pad__ = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)
+__unpad__ = lambda s: s[0:-ord(s[-1])]
+
+
+def __encode__(to_encode, iv, key):
+    # Pad
+    to_encode = __pad__(to_encode)
+    # Encrypt
+    c = AES.new(key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
+    to_encode = c.encrypt(to_encode.encode('utf-8'))
+    # Encode
+    to_encode = base64.b64encode(to_encode)
+    return to_encode.decode("UTF-8")
+
+
+def __decode__(to_decode, iv, key):
+    # Decode
+    to_decode = base64.b64decode(to_decode)
+    # Decrypt
+    c = AES.new(key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
+    to_decode = c.decrypt(to_decode)
+    if type(to_decode) == bytes:
+        # convert bytes array to str.
+        to_decode = to_decode.decode()
+    # remove pad
+    return __unpad__(to_decode)
+
+
+if __name__ == "__main__":
+    params = {
+        "MID": "mid",
+        "ORDER_ID": "order_id",
+        "CUST_ID": "cust_id",
+        "TXN_AMOUNT": "1",
+        "CHANNEL_ID": "WEB",
+        "INDUSTRY_TYPE_ID": "Retail",
+        "WEBSITE": "xxxxxxxxxxx"
+    }
+
+    print(verify_checksum(
+        params, 'xxxxxxxxxxxxxxxx',
+        "CD5ndX8VVjlzjWbbYoAtKQIlvtXPypQYOg0Fi2AUYKXZA5XSHiRF0FDj7vQu66S8MHx9NaDZ/uYm3WBOWHf+sDQAmTyxqUipA7i1nILlxrk="))
+
+    # print(generate_checksum(params, "xxxxxxxxxxxxxxxx"))
+</code></pre>
+<p></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Code views.py as described/written in the video</h4>
+<pre class="language-python"><code>from django.shortcuts import render
+from .models import Product, Contact, Orders, OrderUpdate
+from math import ceil
+import json
+from django.views.decorators.csrf import csrf_exempt
+from PayTm import Checksum
+# Create your views here.
+from django.http import HttpResponse
+MERCHANT_KEY = 'Your-Merchant-Key-Here'
+
+def index(request):
+    allProds = []
+    catprods = Product.objects.values('category', 'id')
+    cats = {item['category'] for item in catprods}
+    for cat in cats:
+        prod = Product.objects.filter(category=cat)
+        n = len(prod)
+        nSlides = n // 4 + ceil((n / 4) - (n // 4))
+        allProds.append([prod, range(1, nSlides), nSlides])
+    params = {'allProds':allProds}
+    return render(request, 'shop/index.html', params)
+
+
+def about(request):
+    return render(request, 'shop/about.html')
+
+
+def contact(request):
+    thank = False
+    if request.method=="POST":
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
+        contact = Contact(name=name, email=email, phone=phone, desc=desc)
+        contact.save()
+        thank = True
+    return render(request, 'shop/contact.html', {'thank': thank})
+
+
+def tracker(request):
+    if request.method=="POST":
+        orderId = request.POST.get('orderId', '')
+        email = request.POST.get('email', '')
+        try:
+            order = Orders.objects.filter(order_id=orderId, email=email)
+            if len(order)&gt;0:
+                update = OrderUpdate.objects.filter(order_id=orderId)
+                updates = []
+                for item in update:
+                    updates.append({'text': item.update_desc, 'time': item.timestamp})
+                    response = json.dumps([updates, order[0].items_json], default=str)
+                return HttpResponse(response)
+            else:
+                return HttpResponse('{}')
+        except Exception as e:
+            return HttpResponse('{}')
+
+    return render(request, 'shop/tracker.html')
+
+
+def search(request):
+    return render(request, 'shop/search.html')
+
+
+def productView(request, myid):
+
+    # Fetch the product using the id
+    product = Product.objects.filter(id=myid)
+    return render(request, 'shop/prodView.html', {'product':product[0]})
+
+
+def checkout(request):
+    if request.method=="POST":
+        items_json = request.POST.get('itemsJson', '')
+        name = request.POST.get('name', '')
+        amount = request.POST.get('amount', '')
+        email = request.POST.get('email', '')
+        address = request.POST.get('address1', '') + " " + request.POST.get('address2', '')
+        city = request.POST.get('city', '')
+        state = request.POST.get('state', '')
+        zip_code = request.POST.get('zip_code', '')
+        phone = request.POST.get('phone', '')
+        order = Orders(items_json=items_json, name=name, email=email, address=address, city=city,
+                       state=state, zip_code=zip_code, phone=phone, amount=amount)
+        order.save()
+        update = OrderUpdate(order_id=order.order_id, update_desc="The order has been placed")
+        update.save()
+        thank = True
+        id = order.order_id
+        # return render(request, 'shop/checkout.html', {'thank':thank, 'id': id})
+        # Request paytm to transfer the amount to your account after payment by user
+        param_dict = {
+
+                'MID': 'Your-Merchant-Id-Here',
+                'ORDER_ID': str(order.order_id),
+                'TXN_AMOUNT': str(amount),
+                'CUST_ID': email,
+                'INDUSTRY_TYPE_ID': 'Retail',
+                'WEBSITE': 'WEBSTAGING',
+                'CHANNEL_ID': 'WEB',
+                'CALLBACK_URL':'http://127.0.0.1:8000/shop/handlerequest/',
+
+        }
+        param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
+        return render(request, 'shop/paytm.html', {'param_dict': param_dict})
+
+    return render(request, 'shop/checkout.html')
+
+
+@csrf_exempt
+def handlerequest(request):
+    # paytm will send you post request here
+    form = request.POST
+    response_dict = {}
+    for i in form.keys():
+        response_dict[i] = form[i]
+        if i == 'CHECKSUMHASH':
+            checksum = form[i]
+
+    verify = Checksum.verify_checksum(response_dict, MERCHANT_KEY, checksum)
+    if verify:
+        if response_dict['RESPCODE'] == '01':
+            print('order successful')
+        else:
+            print('order was not successful because' + response_dict['RESPMSG'])
+    return render(request, 'shop/paymentstatus.html', {'response': response_dict})
+</code></pre>
+<h4>Code shop/urls.py as described/written in the video</h4>
+<pre class="language-python"><code>from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.index, name="ShopHome"),
+    path("about/", views.about, name="AboutUs"),
+    path("contact/", views.contact, name="ContactUs"),
+    path("tracker/", views.tracker, name="TrackingStatus"),
+    path("search/", views.search, name="Search"),
+    path("products/&lt;int:myid&gt;", views.productView, name="ProductView"),
+    path("checkout/", views.checkout, name="Checkout"),
+    path("handlerequest/", views.handlerequest, name="HandleRequest"),
+
+]
+</code></pre>
+<h4>Code shop/models.py as described/written in the video</h4>
+<pre class="language-python"><code>from django.db import models
+
+# Create your models here.
+class Product(models.Model):
+    product_id = models.AutoField
+    product_name = models.CharField(max_length=50)
+    category = models.CharField(max_length=50, default="")
+    subcategory = models.CharField(max_length=50, default="")
+    price = models.IntegerField(default=0)
+    desc = models.CharField(max_length=300)
+    pub_date = models.DateField()
+    image = models.ImageField(upload_to='shop/images', default="")
+
+    def __str__(self):
+        return self.product_name
+
+
+class Contact(models.Model):
+    msg_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=70, default="")
+    phone = models.CharField(max_length=70, default="")
+    desc = models.CharField(max_length=500, default="")
+
+
+    def __str__(self):
+        return self.name
+
+class Orders(models.Model):
+    order_id = models.AutoField(primary_key=True)
+    items_json = models.CharField(max_length=5000)
+    amount = models.IntegerField( default=0)
+    name = models.CharField(max_length=90)
+    email = models.CharField(max_length=111)
+    address = models.CharField(max_length=111)
+    city = models.CharField(max_length=111)
+    state = models.CharField(max_length=111)
+    zip_code = models.CharField(max_length=111)
+    phone = models.CharField(max_length=111, default="")
+
+class OrderUpdate(models.Model):
+    update_id  = models.AutoField(primary_key=True)
+    order_id = models.IntegerField(default="")
+    update_desc = models.CharField(max_length=5000)
+    timestamp = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.update_desc[0:7] + "..."
+</code></pre>
+<p></p></div></div><div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense><div>
+<h4>Code shop/templates/shop/paytm.html as described/written in the video</h4>
+<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Paytm merchant payment page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Redirecting you to the merchant....&lt;/h1&gt;
+&lt;h1&gt;Please do not refresh your page....&lt;/h1&gt;
+&lt;form action="https://securegw-stage.paytm.in/theia/processTransaction" method="post" name="paytm"&gt;
+    {% for key, value in param_dict.items %}
+    &lt;input type="hidden" name="{{key}}" value="{{value}}"&gt;
+    {% endfor %}
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;script&gt;
+document.paytm.submit()
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h4>Code shop/templates/shop/paymentstatus.html as described/written in the video</h4>
+<pre class="language-html"><code>{% extends 'shop/basic.html' %}
+{% block title%} My Awesome Cart Tracker{% endblock %}
+{% block body %}
+&lt;div class="container"&gt;
+    {{response}}
+    &lt;div class="col my-4"&gt;
+
+        &lt;h2&gt;Payment status regarding your order Id {{response.ORDERID}}&lt;/h2&gt;
+        {% if response.RESPCODE == '01' %}
+        ORDER SUCCESS
+        {% else %}
+        ORDER FAILURE
+        {% endif%}
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+{% endblock %}
+{% block js %}
+&lt;script&gt;
+&lt;/script&gt;
+{% endblock %}
+</code></pre>
+<h4>Code templates/shop/checkout.html as described/written in the video</h4>
+<pre class="language-html"><code>{% extends 'shop/basic.html' %}
+{% block title%} Checkout - My Awesome Cart{% endblock %}
+{% block body %}
+&lt;div class="container"&gt;
+    &lt;div class="col my-4"&gt;
+        &lt;h2&gt;Step 1 - My Awesome Cart Express Checkout - Review Your Cart Items&lt;/h2&gt;
+        &lt;div class="my-4"&gt;
+            &lt;ul class="list-group" id="items"&gt;
+            &lt;/ul&gt;
+
+            &lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb mt-3"&gt;
+    &lt;li class="breadcrumb-item active" aria-current="page"&gt;Your Cart Total Is &lt;b&gt;Rs. &lt;span id="totalPrice"&gt;&lt;/span&gt;&lt;/b&gt;. Enter your details below &amp; place your order. Thanks for using My Awesome Cart!&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+
+
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col my-4"&gt;
+        &lt;h2&gt;Step 2 - Enter Address &amp; Other Details:&lt;/h2&gt;
+        &lt;form method="post" action="/shop/checkout/"&gt;{% csrf_token %}
+            &lt;input type="hidden" name="itemsJson" id="itemsJson"&gt;
+            &lt;input type="hidden" name="amount" id="amount"&gt;
+            &lt;div class="form-row"&gt;
+                &lt;div class="form-group col-md-6"&gt;
+                    &lt;label for="inputname"&gt;Name&lt;/label&gt;
+                    &lt;input type="text" class="form-control" id="name" name="name" placeholder="Name"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group col-md-6"&gt;
+                    &lt;label for="inputEmail4"&gt;Email&lt;/label&gt;
+                    &lt;input type="email" class="form-control" id="email" name="email" placeholder="Email"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="inputAddress"&gt;Address&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="address1" name="address1" placeholder="1234 Main St"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="inputAddress2"&gt;Address line 2&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-row"&gt;
+                &lt;div class="form-group col-md-6"&gt;
+                    &lt;label for="inputCity"&gt;City&lt;/label&gt;
+                    &lt;input type="text" class="form-control" id="city" name="city"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group col-md-4"&gt;
+                    &lt;label for="inputState"&gt;State&lt;/label&gt;
+                    &lt;input type="text" class="form-control" id="state" name="state"  placeholder="Enter State"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group col-md-2"&gt;
+                    &lt;label for="inputZip"&gt;Zip&lt;/label&gt;
+                    &lt;input type="text" class="form-control" id="zip_code" name="zip_code"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="inputZip"&gt;Phone Number&lt;/label&gt;
+                &lt;input type="tel" class="form-control" id="phone" name="phone"&gt;
+            &lt;/div&gt;
+            &lt;button type="submit" class="btn btn-primary"&gt;Place Order&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+{% block js %}
+&lt;script&gt;
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+console.log(cart);
+var sum = 0;
+var totalPrice = 0;
+if ($.isEmptyObject(cart)) {
+    //if object is empty
+    mystr = `&lt;p&gt;Your cart is empty, please add some items to your cart before checking out!&lt;/p&gt;`
+    $('#items').append(mystr);
+} else {
+    for (item in cart) {
+        let name = cart[item][1];
+        let qty = cart[item][0];
+        let itemPrice = cart[item][2];
+        sum = sum + qty;
+        totalPrice = totalPrice + qty* itemPrice;
+        mystr = `&lt;li class="list-group-item d-flex justify-content-between align-items-center"&gt;
+                    ${name}
+                    &lt;span class="badge badge-primary badge-pill"&gt;${qty}&lt;/span&gt;
+                &lt;/li&gt;`
+        $('#items').append(mystr);
+    }
+}
+document.getElementById('cart').innerHTML = sum;
+document.getElementById('totalPrice').innerHTML = totalPrice;
+$('#itemsJson').val(JSON.stringify(cart));
+{% if thank %}
+alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+localStorage.clear();
+document.location = "/shop";
+{% endif %}
+$('#amount').val($('#totalPrice').html())
+&lt;/script&gt;
+{% endblock %}
+</code></pre></div></div><!----><!----><!----></div><div class="advh mb-2"><app-adsense adtype="advh" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><!----><!----><!----><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="8999979664" data-ad-format="auto" data-full-width-responsive="true" class="adsbygoogle" style="display: block;"></ins></div><!----></div></app-adsense></div><!----><div class="my-4 d-flex justify-content-between"><a class="btn btn-danger" href="../python-django-tutorials-hindi-65/index.html">← Previous </a><a class="btn btn-danger" href="../python-django-tutorials-hindi-67/index.html">Next →</a></div></div><!----></div><div id="qna" role="tabpanel" aria-labelledby="qna-tab" class="tab-pane fade mx-4 mt-3"><h3>You need to be logged in to post a comment!</h3><!----><!----><div class="container my-4 px-0"><h3>Comments</h3><!----><!----><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>dan </b><span class="badge badge-secondary"> Nov 19, 2020</span><br><div class="commentPre">Bhai Patym se customer email jo send kiye the wapas kaise le sakte h.?
+</div></div><!----><div class="collapse" id="openReply2798"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>kingrazz </b><span class="badge badge-secondary"> Oct 29, 2020</span><br><div class="commentPre">sir isme muje razorpay use karna plz sir video bannao</div></div><!----><div class="collapse" id="openReply2689"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>mahrshiy </b><span class="badge badge-secondary"> Sep 29, 2020</span><br><div class="commentPre">It shows Duplicate Order Id respmsg and TXN_FAILURE how to handle this ? plz give any solution
+</div></div><!----><div class="collapse" id="openReply2547"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>asarmah </b><span class="badge badge-secondary"> Jul 22, 2020</span><br><div class="commentPre">hello harry bhai views.py me from PayTm import Checksum No module named 'PayTm' error bata raha he.i tried to install package paytm but the package installation is failing.please help</div></div><!----><div class="collapse" id="openReply1588"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>tejas_jha </b><span class="badge badge-secondary"> Jun 8, 2020</span><br><div class="commentPre"> from Crypto.Cipher import AES
+ModuleNotFoundError: No module named 'Crypto'
+ 
+Harry bhain ye error aa ra h ...
+</div></div><!----><div class="collapse" id="openReply1158"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><div class="showReplies">Show 1 replies</div><!----><!----></div></div></div><!----><!----></div></div><div id="resources" role="tabpanel" aria-labelledby="resources-tab" class="tab-pane fade mx-4 mt-3"><div class="container px-0"><h4>Resources</h4><div>No resource files associated with this project</div><!----><ol><!----></ol></div></div><div id="announcements" role="tabpanel" aria-labelledby="announcements-tab" class="tab-pane fade mx-4 mt-3"><div class="container"><h4>Course Announcements</h4><p> Any Course related announcements will be posted here </p></div></div></div></div></div></div></app-video-page><!----></div><app-footer _ngcontent-sc76="" _nghost-sc75=""><footer _ngcontent-sc75="" class="container-fluid bg-dark my-0 py-3 text-light"><p _ngcontent-sc75="" class="mb-0 text-center">Copyright © 2020-2021 CodeWithHarry.com</p></footer></app-footer></app-root>
+<script src="../../runtime.7b63b9fd40098a2e8207.js" defer=""></script><script src="../../polyfills.00096ed7d93ed26ee6df.js" defer=""></script><script src="../../scripts.2558b03aa1b9660ed84d.js" defer=""></script><script src="../../main.bd8a3a7a366ac101c3dc.js" defer=""></script>
+
+
+<script id="serverApp-state" type="application/json">{&q;G.https://api.codewithharry.com/video/getvideo/python-django-tutorials-hindi-66?&q;:{&q;body&q;:{&q;title&q;:&q;Integrating Payment Gateway: PayTM, UPI, Cards &a; NetBanking | Python Django Tutorials In Hindi #66&q;,&q;videoId&q;:&q;cdtPcTIuazI&q;,&q;announcements&q;:&q;&q;,&q;content&q;:&q;&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;In this tutorial, we will integrate different payment gateways like Paytm, UPI, Cards and net banking on our E-commerce website. Before integrating the payment gateways we need to fetch the total amount in the back-end. So, open the &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;models.py&l;/span&g; file of the shop app and type the below code :&l;br /&g;&l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;class Orders(models.Model):\n    order_id= models.AutoField(primary_key=True)\n    items_json= models.CharField(max_length=5000)\n    amount=models.IntegerField(default=0)\n    name=models.CharField(max_length=90)\n    email=models.CharField(max_length=111)\n    address=models.CharField(max_length=111)\n    city=models.CharField(max_length=111)\n    state=models.CharField(max_length=111)\n    zip_code=models.CharField(max_length=111)\n    phone=models.CharField(max_length=111, default=\&q;\&q;)&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;In the above code, we&s;ve included a new object named amount in the pre-existing model &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;Order&l;/span&g;. After this, migrate the changes in the database. Now, we need to handle this amount variable in the views of the shop app. So, open the&l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g; views.py&l;/span&g; file of the shop app and type the below code:&l;br /&g;&l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;def checkout(request):\n    if request.method==\&q;POST\&q;:\n        items_json = request.POST.get(&s;itemsJson&s;, &s;&s;)\n        name = request.POST.get(&s;name&s;, &s;&s;)\n        amount = request.POST.get(&s;amount&s;, &s;&s;)\n        email = request.POST.get(&s;email&s;, &s;&s;)\n        address = request.POST.get(&s;address1&s;, &s;&s;) + \&q; \&q; + request.POST.get(&s;address2&s;, &s;&s;)\n        city = request.POST.get(&s;city&s;, &s;&s;)\n        state = request.POST.get(&s;state&s;, &s;&s;)\n        zip_code = request.POST.get(&s;zip_code&s;, &s;&s;)\n        phone = request.POST.get(&s;phone&s;, &s;&s;)\n        order = Orders(items_json=items_json, name=name, email=email, address=address, city=city,\n                       state=state, zip_code=zip_code, phone=phone, amount=amount)\n        order.save()\n        update = OrderUpdate(order_id=order.order_id, update_desc=\&q;The order has been placed\&q;)\n        update.save()\n        thank = True\n        id = order.order_id\n        return render(request, &s;shop/checkout.html&s;, {&s;thank&s;:thank, &s;id&s;: id})\n    return render(request, &s;shop/checkout.html&s;)&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;After this, open the &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;checkout.html&l;/span&g; file and type the below code after the items_json hidden:&l;br /&g;&l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-markup\&q;&g;&l;code&g;&a;lt;input type=\&q;hidden\&q; name=\&q;amount\&q; id=\&q;amount\&q;&a;gt;&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Now, we will write a jQuery function, type the below code in the js section of the checkout.html file:&l;br /&g;&l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;$(&s;#amount&s;).val($(&s;#totalPrice&s;).html())&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Now, we are all set to fetch the total billing price in the back-end. Restart the development server and checkout by adding some items in the cart. Then, head over to &l;a href=\&q;http://127.0.0.1:8000/admin/shop/orders/\&q;&g;http://127.0.0.1:8000/admin/shop/orders/&l;/a&g; . View the order object that you&s;ve just created and you will notice that the amount is successfully displayed to the admin panel. You can also find the same in the below image :&l;br /&g;&l;/span&g;&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-django-tutorials-hindi-66/base64.png\&q; /&g;&l;/p&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Now, we will create a new directory for Paytm integration. Double click on the shop folder and create a new directory named Paytm. Inside this directory, create a new file named \&q;Checksum.py.\&q; After this, click &l;a href=\&q;https://github.com/Paytm-Payments/Paytm_Web_Sample_Kit_Python/tree/master/pythonKit%203.X\&q;&g;here&l;/a&g; to go to the Github repository of the Paytm. You will find the following files on the Paytm repository :&l;/span&g;&l;/p&g;\n&l;ul&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Checksum.py&l;/span&g;&l;/li&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;response.cgi&l;/span&g;&l;/li&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;test.cgi&l;/span&g;&l;/li&g;\n&l;/ul&g;\n&l;p&g;&l;span style=\&q;font-size: 18.6667px;\&q;&g;Copy the code of the &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;Checksum.py&l;/span&g; file and paste in the &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;Checksum.py&l;/span&g; file of the Paytm directory. Now, we need to make some changes in the checksum file. Type &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;\&q;.encode(&s;utf-8&s;)\&q; &l;/span&g;&l;span style=\&q;font-family: helvetica, arial, sans-serif;\&q;&g;after &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;\&q;key\&q;&l;/span&g;, &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;\&q;IV\&q;&l;/span&g; and &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;\&q;to_encode\&q;&l;/span&g;.&a;nbsp; You can make the changes by yourself or you can simply copy the below code :&l;/span&g;&l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;import base64\nimport string\nimport random\nimport hashlib\n\nfrom Crypto.Cipher import AES\n\n\nIV = \&q;@@@@&a;amp;&a;amp;&a;amp;&a;amp;####$$$$\&q;\nBLOCK_SIZE = 16\n\n\ndef generate_checksum(param_dict, merchant_key, salt=None):\n    params_string = __get_param_string__(param_dict)\n    salt = salt if salt else __id_generator__(4)\n    final_string = &s;%s|%s&s; % (params_string, salt)\n\n    hasher = hashlib.sha256(final_string.encode())\n    hash_string = hasher.hexdigest()\n\n    hash_string += salt\n\n    return __encode__(hash_string, IV, merchant_key)\n\ndef generate_refund_checksum(param_dict, merchant_key, salt=None):\n    for i in param_dict:\n        if(\&q;|\&q; in param_dict[i]):\n            param_dict = {}\n            exit()\n    params_string = __get_param_string__(param_dict)\n    salt = salt if salt else __id_generator__(4)\n    final_string = &s;%s|%s&s; % (params_string, salt)\n\n    hasher = hashlib.sha256(final_string.encode())\n    hash_string = hasher.hexdigest()\n\n    hash_string += salt\n\n    return __encode__(hash_string, IV, merchant_key)\n\n\ndef generate_checksum_by_str(param_str, merchant_key, salt=None):\n    params_string = param_str\n    salt = salt if salt else __id_generator__(4)\n    final_string = &s;%s|%s&s; % (params_string, salt)\n\n    hasher = hashlib.sha256(final_string.encode())\n    hash_string = hasher.hexdigest()\n\n    hash_string += salt\n\n    return __encode__(hash_string, IV, merchant_key)\n\n\ndef verify_checksum(param_dict, merchant_key, checksum):\n    # Remove checksum\n    if &s;CHECKSUMHASH&s; in param_dict:\n        param_dict.pop(&s;CHECKSUMHASH&s;)\n\n    # Get salt\n    paytm_hash = __decode__(checksum, IV, merchant_key)\n    salt = paytm_hash[-4:]\n    calculated_checksum = generate_checksum(param_dict, merchant_key, salt=salt)\n    return calculated_checksum == checksum\n\ndef verify_checksum_by_str(param_str, merchant_key, checksum):\n    # Remove checksum\n    #if &s;CHECKSUMHASH&s; in param_dict:\n        #param_dict.pop(&s;CHECKSUMHASH&s;)\n\n    # Get salt\n    paytm_hash = __decode__(checksum, IV, merchant_key)\n    salt = paytm_hash[-4:]\n    calculated_checksum = generate_checksum_by_str(param_str, merchant_key, salt=salt)\n    return calculated_checksum == checksum\n\n\n\ndef __id_generator__(size=6, chars=string.ascii_uppercase + string.digits + string.ascii_lowercase):\n    return &s;&s;.join(random.choice(chars) for _ in range(size))\n\n\ndef __get_param_string__(params):\n    params_string = []\n    for key in sorted(params.keys()):\n        if(\&q;REFUND\&q; in params[key] or \&q;|\&q; in params[key]):\n            respons_dict = {}\n            exit()\n        value = params[key]\n        params_string.append(&s;&s; if value == &s;null&s; else str(value))\n    return &s;|&s;.join(params_string)\n\n\n__pad__ = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)\n__unpad__ = lambda s: s[0:-ord(s[-1])]\n\n\ndef __encode__(to_encode, iv, key):\n    # Pad\n    to_encode = __pad__(to_encode)\n    # Encrypt\n    c = AES.new(key.encode(&s;utf-8&s;), AES.MODE_CBC, iv.encode(&s;utf-8&s;))\n    to_encode = c.encrypt(to_encode.encode(&s;utf-8&s;))\n    # Encode\n    to_encode = base64.b64encode(to_encode)\n    return to_encode.decode(\&q;UTF-8\&q;)\n\n\ndef __decode__(to_decode, iv, key):\n    # Decode\n    to_decode = base64.b64decode(to_decode)\n    # Decrypt\n    c = AES.new(key.encode(&s;utf-8&s;), AES.MODE_CBC, iv.encode(&s;utf-8&s;))\n    to_decode = c.decrypt(to_decode)\n    if type(to_decode) == bytes:\n        # convert bytes array to str.\n        to_decode = to_decode.decode()\n    # remove pad\n    return __unpad__(to_decode)\n\n\nif __name__ == \&q;__main__\&q;:\n    params = {\n        \&q;MID\&q;: \&q;mid\&q;,\n        \&q;ORDER_ID\&q;: \&q;order_id\&q;,\n        \&q;CUST_ID\&q;: \&q;cust_id\&q;,\n        \&q;TXN_AMOUNT\&q;: \&q;1\&q;,\n        \&q;CHANNEL_ID\&q;: \&q;WEB\&q;,\n        \&q;INDUSTRY_TYPE_ID\&q;: \&q;Retail\&q;,\n        \&q;WEBSITE\&q;: \&q;xxxxxxxxxxx\&q;\n    }\n\n    print(verify_checksum(\n        params, &s;xxxxxxxxxxxxxxxx&s;,\n        \&q;CD5ndX8VVjlzjWbbYoAtKQIlvtXPypQYOg0Fi2AUYKXZA5XSHiRF0FDj7vQu66S8MHx9NaDZ/uYm3WBOWHf+sDQAmTyxqUipA7i1nILlxrk=\&q;))\n\n    # print(generate_checksum(params, \&q;xxxxxxxxxxxxxxxx\&q;))&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Run the &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;Checksum.py&l;/span&g; file and if you see the following output then everything is working correctly.&l;/span&g;&l;/p&g;\n&l;p&g;&l;img src=\&q;https://api.codewithharry.com/media/videoSeriesFiles/courseFiles/python-django-tutorials-hindi-66/base64_gol0RlV.png\&q; /&g;&l;/p&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Now, we need to fetch the details of the user so that the Paytm can deduct the billing amount from the user&s;s account and transfer it to our Paytm merchant account. Open the views.py of the shop app and type the below code :&l;/span&g;&l;span style=\&q;font-size: 14pt;\&q;&g; &l;/span&g;&l;/p&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;   # return render(request, &s;shop/checkout.html&s;, {&s;thank&s;:thank, &s;id&s;: id})\n    #request paytm to transfer the amount to your account after payment by user\n    param_dict={\n\n            &s;MID&s;: &s;WorldP64425807474247&s;,\n            &s;ORDER_ID&s;: &s;order.order_id&s;,\n            &s;TXN_AMOUNT&s;: &s;1&s;,\n            &s;CUST_ID&s;: &s;email&s;,\n            &s;INDUSTRY_TYPE_ID&s;: &s;Retail&s;,\n            &s;WEBSITE&s;: &s;WEBSTAGING&s;,\n            &s;CHANNEL_ID&s;: &s;WEB&s;,\n            &s;CALLBACK_URL&s;:&s;http://127.0.0.1:8000/shop/handlepayment/&s;,\n\n    }\n    return  render(request, &s;shop/paytm.html&s;, {&s;param_dict&s;: param_dict})\n    return render(request, &s;shop/checkout.html&s;)&l;/code&g;&l;/pre&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Let&s;s understand the arguments passed in the param_dict dictionary in the above code.&l;/span&g;&l;/p&g;\n&l;ul&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Merchant id: It is the merchant id given to you by the Paytm while signing up for the Paytm merchant account.&l;/span&g;&l;/li&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Order id: It is the id of the user&s;s order. In the above code, we are fetching the order id from our database.&l;/span&g;&l;/li&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Customer id: In the above code, we are using the user&s;s email address as the customer id.&l;/span&g;&l;/li&g;\n&l;li&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Callback URL: It is the URL where you want the Paytm to show you the status of the payment.&l;/span&g;&l;/li&g;\n&l;/ul&g;\n&l;p&g;&l;span style=\&q;font-size: 14pt;\&q;&g;Now, we will create a new template to handle the param_dict dictionary that we&s;ve just created in the above step. Double click on the templates folder and create a new file named &l;span style=\&q;font-family: terminal, monaco, monospace;\&q;&g;\&q;paytm.html.\&q;&l;/span&g;&l;/span&g;&l;/p&g;\n&l;p&g;&a;nbsp;&l;/p&g;\n&l;h4&g;Code Checksum.py as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;# pip install pycryptodome\nimport base64\nimport string\nimport random\nimport hashlib\n\nfrom Crypto.Cipher import AES\n\n\nIV = \&q;@@@@&a;amp;&a;amp;&a;amp;&a;amp;####$$$$\&q;\nBLOCK_SIZE = 16\n\n\ndef generate_checksum(param_dict, merchant_key, salt=None):\n    params_string = __get_param_string__(param_dict)\n    salt = salt if salt else __id_generator__(4)\n    final_string = &s;%s|%s&s; % (params_string, salt)\n\n    hasher = hashlib.sha256(final_string.encode())\n    hash_string = hasher.hexdigest()\n\n    hash_string += salt\n\n    return __encode__(hash_string, IV, merchant_key)\n\ndef generate_refund_checksum(param_dict, merchant_key, salt=None):\n    for i in param_dict:\n        if(\&q;|\&q; in param_dict[i]):\n            param_dict = {}\n            exit()\n    params_string = __get_param_string__(param_dict)\n    salt = salt if salt else __id_generator__(4)\n    final_string = &s;%s|%s&s; % (params_string, salt)\n\n    hasher = hashlib.sha256(final_string.encode())\n    hash_string = hasher.hexdigest()\n\n    hash_string += salt\n\n    return __encode__(hash_string, IV, merchant_key)\n\n\ndef generate_checksum_by_str(param_str, merchant_key, salt=None):\n    params_string = param_str\n    salt = salt if salt else __id_generator__(4)\n    final_string = &s;%s|%s&s; % (params_string, salt)\n\n    hasher = hashlib.sha256(final_string.encode())\n    hash_string = hasher.hexdigest()\n\n    hash_string += salt\n\n    return __encode__(hash_string, IV, merchant_key)\n\n\ndef verify_checksum(param_dict, merchant_key, checksum):\n    # Remove checksum\n    if &s;CHECKSUMHASH&s; in param_dict:\n        param_dict.pop(&s;CHECKSUMHASH&s;)\n\n    # Get salt\n    paytm_hash = __decode__(checksum, IV, merchant_key)\n    salt = paytm_hash[-4:]\n    calculated_checksum = generate_checksum(param_dict, merchant_key, salt=salt)\n    return calculated_checksum == checksum\n\ndef verify_checksum_by_str(param_str, merchant_key, checksum):\n    # Remove checksum\n    #if &s;CHECKSUMHASH&s; in param_dict:\n        #param_dict.pop(&s;CHECKSUMHASH&s;)\n\n    # Get salt\n    paytm_hash = __decode__(checksum, IV, merchant_key)\n    salt = paytm_hash[-4:]\n    calculated_checksum = generate_checksum_by_str(param_str, merchant_key, salt=salt)\n    return calculated_checksum == checksum\n\n\n\ndef __id_generator__(size=6, chars=string.ascii_uppercase + string.digits + string.ascii_lowercase):\n    return &s;&s;.join(random.choice(chars) for _ in range(size))\n\n\ndef __get_param_string__(params):\n    params_string = []\n    for key in sorted(params.keys()):\n        if(\&q;REFUND\&q; in params[key] or \&q;|\&q; in params[key]):\n            respons_dict = {}\n            exit()\n        value = params[key]\n        params_string.append(&s;&s; if value == &s;null&s; else str(value))\n    return &s;|&s;.join(params_string)\n\n\n__pad__ = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * chr(BLOCK_SIZE - len(s) % BLOCK_SIZE)\n__unpad__ = lambda s: s[0:-ord(s[-1])]\n\n\ndef __encode__(to_encode, iv, key):\n    # Pad\n    to_encode = __pad__(to_encode)\n    # Encrypt\n    c = AES.new(key.encode(&s;utf-8&s;), AES.MODE_CBC, iv.encode(&s;utf-8&s;))\n    to_encode = c.encrypt(to_encode.encode(&s;utf-8&s;))\n    # Encode\n    to_encode = base64.b64encode(to_encode)\n    return to_encode.decode(\&q;UTF-8\&q;)\n\n\ndef __decode__(to_decode, iv, key):\n    # Decode\n    to_decode = base64.b64decode(to_decode)\n    # Decrypt\n    c = AES.new(key.encode(&s;utf-8&s;), AES.MODE_CBC, iv.encode(&s;utf-8&s;))\n    to_decode = c.decrypt(to_decode)\n    if type(to_decode) == bytes:\n        # convert bytes array to str.\n        to_decode = to_decode.decode()\n    # remove pad\n    return __unpad__(to_decode)\n\n\nif __name__ == \&q;__main__\&q;:\n    params = {\n        \&q;MID\&q;: \&q;mid\&q;,\n        \&q;ORDER_ID\&q;: \&q;order_id\&q;,\n        \&q;CUST_ID\&q;: \&q;cust_id\&q;,\n        \&q;TXN_AMOUNT\&q;: \&q;1\&q;,\n        \&q;CHANNEL_ID\&q;: \&q;WEB\&q;,\n        \&q;INDUSTRY_TYPE_ID\&q;: \&q;Retail\&q;,\n        \&q;WEBSITE\&q;: \&q;xxxxxxxxxxx\&q;\n    }\n\n    print(verify_checksum(\n        params, &s;xxxxxxxxxxxxxxxx&s;,\n        \&q;CD5ndX8VVjlzjWbbYoAtKQIlvtXPypQYOg0Fi2AUYKXZA5XSHiRF0FDj7vQu66S8MHx9NaDZ/uYm3WBOWHf+sDQAmTyxqUipA7i1nILlxrk=\&q;))\n\n    # print(generate_checksum(params, \&q;xxxxxxxxxxxxxxxx\&q;))\n&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h4&g;Code views.py as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;from django.shortcuts import render\nfrom .models import Product, Contact, Orders, OrderUpdate\nfrom math import ceil\nimport json\nfrom django.views.decorators.csrf import csrf_exempt\nfrom PayTm import Checksum\n# Create your views here.\nfrom django.http import HttpResponse\nMERCHANT_KEY = &s;Your-Merchant-Key-Here&s;\n\ndef index(request):\n    allProds = []\n    catprods = Product.objects.values(&s;category&s;, &s;id&s;)\n    cats = {item[&s;category&s;] for item in catprods}\n    for cat in cats:\n        prod = Product.objects.filter(category=cat)\n        n = len(prod)\n        nSlides = n // 4 + ceil((n / 4) - (n // 4))\n        allProds.append([prod, range(1, nSlides), nSlides])\n    params = {&s;allProds&s;:allProds}\n    return render(request, &s;shop/index.html&s;, params)\n\n\ndef about(request):\n    return render(request, &s;shop/about.html&s;)\n\n\ndef contact(request):\n    thank = False\n    if request.method==\&q;POST\&q;:\n        name = request.POST.get(&s;name&s;, &s;&s;)\n        email = request.POST.get(&s;email&s;, &s;&s;)\n        phone = request.POST.get(&s;phone&s;, &s;&s;)\n        desc = request.POST.get(&s;desc&s;, &s;&s;)\n        contact = Contact(name=name, email=email, phone=phone, desc=desc)\n        contact.save()\n        thank = True\n    return render(request, &s;shop/contact.html&s;, {&s;thank&s;: thank})\n\n\ndef tracker(request):\n    if request.method==\&q;POST\&q;:\n        orderId = request.POST.get(&s;orderId&s;, &s;&s;)\n        email = request.POST.get(&s;email&s;, &s;&s;)\n        try:\n            order = Orders.objects.filter(order_id=orderId, email=email)\n            if len(order)&a;gt;0:\n                update = OrderUpdate.objects.filter(order_id=orderId)\n                updates = []\n                for item in update:\n                    updates.append({&s;text&s;: item.update_desc, &s;time&s;: item.timestamp})\n                    response = json.dumps([updates, order[0].items_json], default=str)\n                return HttpResponse(response)\n            else:\n                return HttpResponse(&s;{}&s;)\n        except Exception as e:\n            return HttpResponse(&s;{}&s;)\n\n    return render(request, &s;shop/tracker.html&s;)\n\n\ndef search(request):\n    return render(request, &s;shop/search.html&s;)\n\n\ndef productView(request, myid):\n\n    # Fetch the product using the id\n    product = Product.objects.filter(id=myid)\n    return render(request, &s;shop/prodView.html&s;, {&s;product&s;:product[0]})\n\n\ndef checkout(request):\n    if request.method==\&q;POST\&q;:\n        items_json = request.POST.get(&s;itemsJson&s;, &s;&s;)\n        name = request.POST.get(&s;name&s;, &s;&s;)\n        amount = request.POST.get(&s;amount&s;, &s;&s;)\n        email = request.POST.get(&s;email&s;, &s;&s;)\n        address = request.POST.get(&s;address1&s;, &s;&s;) + \&q; \&q; + request.POST.get(&s;address2&s;, &s;&s;)\n        city = request.POST.get(&s;city&s;, &s;&s;)\n        state = request.POST.get(&s;state&s;, &s;&s;)\n        zip_code = request.POST.get(&s;zip_code&s;, &s;&s;)\n        phone = request.POST.get(&s;phone&s;, &s;&s;)\n        order = Orders(items_json=items_json, name=name, email=email, address=address, city=city,\n                       state=state, zip_code=zip_code, phone=phone, amount=amount)\n        order.save()\n        update = OrderUpdate(order_id=order.order_id, update_desc=\&q;The order has been placed\&q;)\n        update.save()\n        thank = True\n        id = order.order_id\n        # return render(request, &s;shop/checkout.html&s;, {&s;thank&s;:thank, &s;id&s;: id})\n        # Request paytm to transfer the amount to your account after payment by user\n        param_dict = {\n\n                &s;MID&s;: &s;Your-Merchant-Id-Here&s;,\n                &s;ORDER_ID&s;: str(order.order_id),\n                &s;TXN_AMOUNT&s;: str(amount),\n                &s;CUST_ID&s;: email,\n                &s;INDUSTRY_TYPE_ID&s;: &s;Retail&s;,\n                &s;WEBSITE&s;: &s;WEBSTAGING&s;,\n                &s;CHANNEL_ID&s;: &s;WEB&s;,\n                &s;CALLBACK_URL&s;:&s;http://127.0.0.1:8000/shop/handlerequest/&s;,\n\n        }\n        param_dict[&s;CHECKSUMHASH&s;] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)\n        return render(request, &s;shop/paytm.html&s;, {&s;param_dict&s;: param_dict})\n\n    return render(request, &s;shop/checkout.html&s;)\n\n\n@csrf_exempt\ndef handlerequest(request):\n    # paytm will send you post request here\n    form = request.POST\n    response_dict = {}\n    for i in form.keys():\n        response_dict[i] = form[i]\n        if i == &s;CHECKSUMHASH&s;:\n            checksum = form[i]\n\n    verify = Checksum.verify_checksum(response_dict, MERCHANT_KEY, checksum)\n    if verify:\n        if response_dict[&s;RESPCODE&s;] == &s;01&s;:\n            print(&s;order successful&s;)\n        else:\n            print(&s;order was not successful because&s; + response_dict[&s;RESPMSG&s;])\n    return render(request, &s;shop/paymentstatus.html&s;, {&s;response&s;: response_dict})\n&l;/code&g;&l;/pre&g;\n&l;h4&g;Code shop/urls.py as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path(\&q;\&q;, views.index, name=\&q;ShopHome\&q;),\n    path(\&q;about/\&q;, views.about, name=\&q;AboutUs\&q;),\n    path(\&q;contact/\&q;, views.contact, name=\&q;ContactUs\&q;),\n    path(\&q;tracker/\&q;, views.tracker, name=\&q;TrackingStatus\&q;),\n    path(\&q;search/\&q;, views.search, name=\&q;Search\&q;),\n    path(\&q;products/&a;lt;int:myid&a;gt;\&q;, views.productView, name=\&q;ProductView\&q;),\n    path(\&q;checkout/\&q;, views.checkout, name=\&q;Checkout\&q;),\n    path(\&q;handlerequest/\&q;, views.handlerequest, name=\&q;HandleRequest\&q;),\n\n]\n&l;/code&g;&l;/pre&g;\n&l;h4&g;Code shop/models.py as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-python\&q;&g;&l;code&g;from django.db import models\n\n# Create your models here.\nclass Product(models.Model):\n    product_id = models.AutoField\n    product_name = models.CharField(max_length=50)\n    category = models.CharField(max_length=50, default=\&q;\&q;)\n    subcategory = models.CharField(max_length=50, default=\&q;\&q;)\n    price = models.IntegerField(default=0)\n    desc = models.CharField(max_length=300)\n    pub_date = models.DateField()\n    image = models.ImageField(upload_to=&s;shop/images&s;, default=\&q;\&q;)\n\n    def __str__(self):\n        return self.product_name\n\n\nclass Contact(models.Model):\n    msg_id = models.AutoField(primary_key=True)\n    name = models.CharField(max_length=50)\n    email = models.CharField(max_length=70, default=\&q;\&q;)\n    phone = models.CharField(max_length=70, default=\&q;\&q;)\n    desc = models.CharField(max_length=500, default=\&q;\&q;)\n\n\n    def __str__(self):\n        return self.name\n\nclass Orders(models.Model):\n    order_id = models.AutoField(primary_key=True)\n    items_json = models.CharField(max_length=5000)\n    amount = models.IntegerField( default=0)\n    name = models.CharField(max_length=90)\n    email = models.CharField(max_length=111)\n    address = models.CharField(max_length=111)\n    city = models.CharField(max_length=111)\n    state = models.CharField(max_length=111)\n    zip_code = models.CharField(max_length=111)\n    phone = models.CharField(max_length=111, default=\&q;\&q;)\n\nclass OrderUpdate(models.Model):\n    update_id  = models.AutoField(primary_key=True)\n    order_id = models.IntegerField(default=\&q;\&q;)\n    update_desc = models.CharField(max_length=5000)\n    timestamp = models.DateField(auto_now_add=True)\n\n    def __str__(self):\n        return self.update_desc[0:7] + \&q;...\&q;\n&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h4&g;Code shop/templates/shop/paytm.html as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-html\&q;&g;&l;code&g;&a;lt;!DOCTYPE html&a;gt;\n&a;lt;html lang=\&q;en\&q;&a;gt;\n&a;lt;head&a;gt;\n    &a;lt;meta charset=\&q;UTF-8\&q;&a;gt;\n    &a;lt;title&a;gt;Paytm merchant payment page&a;lt;/title&a;gt;\n&a;lt;/head&a;gt;\n&a;lt;body&a;gt;\n&a;lt;h1&a;gt;Redirecting you to the merchant....&a;lt;/h1&a;gt;\n&a;lt;h1&a;gt;Please do not refresh your page....&a;lt;/h1&a;gt;\n&a;lt;form action=\&q;https://securegw-stage.paytm.in/theia/processTransaction\&q; method=\&q;post\&q; name=\&q;paytm\&q;&a;gt;\n    {% for key, value in param_dict.items %}\n    &a;lt;input type=\&q;hidden\&q; name=\&q;{{key}}\&q; value=\&q;{{value}}\&q;&a;gt;\n    {% endfor %}\n\n&a;lt;/form&a;gt;\n&a;lt;/body&a;gt;\n&a;lt;script&a;gt;\ndocument.paytm.submit()\n&a;lt;/script&a;gt;\n&a;lt;/html&a;gt;\n&l;/code&g;&l;/pre&g;\n&l;h4&g;Code shop/templates/shop/paymentstatus.html as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-html\&q;&g;&l;code&g;{% extends &s;shop/basic.html&s; %}\n{% block title%} My Awesome Cart Tracker{% endblock %}\n{% block body %}\n&a;lt;div class=\&q;container\&q;&a;gt;\n    {{response}}\n    &a;lt;div class=\&q;col my-4\&q;&a;gt;\n\n        &a;lt;h2&a;gt;Payment status regarding your order Id {{response.ORDERID}}&a;lt;/h2&a;gt;\n        {% if response.RESPCODE == &s;01&s; %}\n        ORDER SUCCESS\n        {% else %}\n        ORDER FAILURE\n        {% endif%}\n\n    &a;lt;/div&a;gt;\n\n&a;lt;/div&a;gt;\n{% endblock %}\n{% block js %}\n&a;lt;script&a;gt;\n&a;lt;/script&a;gt;\n{% endblock %}\n&l;/code&g;&l;/pre&g;\n&l;h4&g;Code templates/shop/checkout.html as described/written in the video&l;/h4&g;\n&l;pre class=\&q;language-html\&q;&g;&l;code&g;{% extends &s;shop/basic.html&s; %}\n{% block title%} Checkout - My Awesome Cart{% endblock %}\n{% block body %}\n&a;lt;div class=\&q;container\&q;&a;gt;\n    &a;lt;div class=\&q;col my-4\&q;&a;gt;\n        &a;lt;h2&a;gt;Step 1 - My Awesome Cart Express Checkout - Review Your Cart Items&a;lt;/h2&a;gt;\n        &a;lt;div class=\&q;my-4\&q;&a;gt;\n            &a;lt;ul class=\&q;list-group\&q; id=\&q;items\&q;&a;gt;\n            &a;lt;/ul&a;gt;\n\n            &a;lt;nav aria-label=\&q;breadcrumb\&q;&a;gt;\n  &a;lt;ol class=\&q;breadcrumb mt-3\&q;&a;gt;\n    &a;lt;li class=\&q;breadcrumb-item active\&q; aria-current=\&q;page\&q;&a;gt;Your Cart Total Is &a;lt;b&a;gt;Rs. &a;lt;span id=\&q;totalPrice\&q;&a;gt;&a;lt;/span&a;gt;&a;lt;/b&a;gt;. Enter your details below &a;amp; place your order. Thanks for using My Awesome Cart!&a;lt;/li&a;gt;\n  &a;lt;/ol&a;gt;\n&a;lt;/nav&a;gt;\n\n\n\n            \n        &a;lt;/div&a;gt;\n    &a;lt;/div&a;gt;\n    &a;lt;div class=\&q;col my-4\&q;&a;gt;\n        &a;lt;h2&a;gt;Step 2 - Enter Address &a;amp; Other Details:&a;lt;/h2&a;gt;\n        &a;lt;form method=\&q;post\&q; action=\&q;/shop/checkout/\&q;&a;gt;{% csrf_token %}\n            &a;lt;input type=\&q;hidden\&q; name=\&q;itemsJson\&q; id=\&q;itemsJson\&q;&a;gt;\n            &a;lt;input type=\&q;hidden\&q; name=\&q;amount\&q; id=\&q;amount\&q;&a;gt;\n            &a;lt;div class=\&q;form-row\&q;&a;gt;\n                &a;lt;div class=\&q;form-group col-md-6\&q;&a;gt;\n                    &a;lt;label for=\&q;inputname\&q;&a;gt;Name&a;lt;/label&a;gt;\n                    &a;lt;input type=\&q;text\&q; class=\&q;form-control\&q; id=\&q;name\&q; name=\&q;name\&q; placeholder=\&q;Name\&q;&a;gt;\n                &a;lt;/div&a;gt;\n                &a;lt;div class=\&q;form-group col-md-6\&q;&a;gt;\n                    &a;lt;label for=\&q;inputEmail4\&q;&a;gt;Email&a;lt;/label&a;gt;\n                    &a;lt;input type=\&q;email\&q; class=\&q;form-control\&q; id=\&q;email\&q; name=\&q;email\&q; placeholder=\&q;Email\&q;&a;gt;\n                &a;lt;/div&a;gt;\n            &a;lt;/div&a;gt;\n            &a;lt;div class=\&q;form-group\&q;&a;gt;\n                &a;lt;label for=\&q;inputAddress\&q;&a;gt;Address&a;lt;/label&a;gt;\n                &a;lt;input type=\&q;text\&q; class=\&q;form-control\&q; id=\&q;address1\&q; name=\&q;address1\&q; placeholder=\&q;1234 Main St\&q;&a;gt;\n            &a;lt;/div&a;gt;\n            &a;lt;div class=\&q;form-group\&q;&a;gt;\n                &a;lt;label for=\&q;inputAddress2\&q;&a;gt;Address line 2&a;lt;/label&a;gt;\n                &a;lt;input type=\&q;text\&q; class=\&q;form-control\&q; id=\&q;address2\&q; name=\&q;address2\&q; placeholder=\&q;Apartment, studio, or floor\&q;&a;gt;\n            &a;lt;/div&a;gt;\n            &a;lt;div class=\&q;form-row\&q;&a;gt;\n                &a;lt;div class=\&q;form-group col-md-6\&q;&a;gt;\n                    &a;lt;label for=\&q;inputCity\&q;&a;gt;City&a;lt;/label&a;gt;\n                    &a;lt;input type=\&q;text\&q; class=\&q;form-control\&q; id=\&q;city\&q; name=\&q;city\&q;&a;gt;\n                &a;lt;/div&a;gt;\n                &a;lt;div class=\&q;form-group col-md-4\&q;&a;gt;\n                    &a;lt;label for=\&q;inputState\&q;&a;gt;State&a;lt;/label&a;gt;\n                    &a;lt;input type=\&q;text\&q; class=\&q;form-control\&q; id=\&q;state\&q; name=\&q;state\&q;  placeholder=\&q;Enter State\&q;&a;gt;\n                &a;lt;/div&a;gt;\n                &a;lt;div class=\&q;form-group col-md-2\&q;&a;gt;\n                    &a;lt;label for=\&q;inputZip\&q;&a;gt;Zip&a;lt;/label&a;gt;\n                    &a;lt;input type=\&q;text\&q; class=\&q;form-control\&q; id=\&q;zip_code\&q; name=\&q;zip_code\&q;&a;gt;\n                &a;lt;/div&a;gt;\n            &a;lt;/div&a;gt;\n            &a;lt;div class=\&q;form-group\&q;&a;gt;\n                &a;lt;label for=\&q;inputZip\&q;&a;gt;Phone Number&a;lt;/label&a;gt;\n                &a;lt;input type=\&q;tel\&q; class=\&q;form-control\&q; id=\&q;phone\&q; name=\&q;phone\&q;&a;gt;\n            &a;lt;/div&a;gt;\n            &a;lt;button type=\&q;submit\&q; class=\&q;btn btn-primary\&q;&a;gt;Place Order&a;lt;/button&a;gt;\n        &a;lt;/form&a;gt;\n    &a;lt;/div&a;gt;\n&a;lt;/div&a;gt;\n{% endblock %}\n{% block js %}\n&a;lt;script&a;gt;\nif (localStorage.getItem(&s;cart&s;) == null) {\n    var cart = {};\n} else {\n    cart = JSON.parse(localStorage.getItem(&s;cart&s;));\n}\nconsole.log(cart);\nvar sum = 0;\nvar totalPrice = 0;\nif ($.isEmptyObject(cart)) {\n    //if object is empty\n    mystr = `&a;lt;p&a;gt;Your cart is empty, please add some items to your cart before checking out!&a;lt;/p&a;gt;`\n    $(&s;#items&s;).append(mystr);\n} else {\n    for (item in cart) {\n        let name = cart[item][1];\n        let qty = cart[item][0];\n        let itemPrice = cart[item][2];\n        sum = sum + qty;\n        totalPrice = totalPrice + qty* itemPrice;\n        mystr = `&a;lt;li class=\&q;list-group-item d-flex justify-content-between align-items-center\&q;&a;gt;\n                    ${name}\n                    &a;lt;span class=\&q;badge badge-primary badge-pill\&q;&a;gt;${qty}&a;lt;/span&a;gt;\n                &a;lt;/li&a;gt;`\n        $(&s;#items&s;).append(mystr);\n    }\n}\ndocument.getElementById(&s;cart&s;).innerHTML = sum;\ndocument.getElementById(&s;totalPrice&s;).innerHTML = totalPrice;\n$(&s;#itemsJson&s;).val(JSON.stringify(cart));\n{% if thank %}\nalert(&s;Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker&s;);\nlocalStorage.clear();\ndocument.location = \&q;/shop\&q;;\n{% endif %}\n$(&s;#amount&s;).val($(&s;#totalPrice&s;).html())\n&a;lt;/script&a;gt;\n{% endblock %}\n&l;/code&g;&l;/pre&g;&q;,&q;duration&q;:&q;&q;,&q;metaTags&q;:&q;&q;,&q;metaDesc&q;:&q;Integrating Payment Gateway: PayTM, UPI, Cards &a; NetBanking | Python Django Tutorials In Hindi #66&q;,&q;time&q;:&q;2021-05-17T21:09:16.109493&q;,&q;slug&q;:&q;python-django-tutorials-hindi-66&q;,&q;success&q;:true},&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:04:11 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;OPTIONS, GET&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;30788&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getvideo/python-django-tutorials-hindi-66&q;},&q;G.https://api.codewithharry.com/video/getcoursecontent/python-django-tutorials-hindi-66?&q;:{&q;body&q;:[{&q;title&q;:&q;Django Course Announcement | Python Django Tutorials In Hindi #0&q;,&q;slug&q;:&q;python-django-tutorials-hindi-0&q;},{&q;title&q;:&q;Django Installation &a; Getting Started | Python Django Tutorials In Hindi #1&q;,&q;slug&q;:&q;python-django-tutorials-hindi-1&q;},{&q;title&q;:&q;Creating Our First Django Project | Python Django Tutorials In Hindi #2&q;,&q;slug&q;:&q;python-django-tutorials-hindi-2&q;},{&q;title&q;:&q;How Django Websites Work | Python Django Tutorials In Hindi #3&q;,&q;slug&q;:&q;python-django-tutorials-hindi-3&q;},{&q;title&q;:&q;Our First Django Website | Python Django Tutorials In Hindi #4&q;,&q;slug&q;:&q;python-django-tutorials-hindi-4&q;},{&q;title&q;:&q;Views &a; Urls In Django| Python Django Tutorials In Hindi #5&q;,&q;slug&q;:&q;python-django-tutorials-hindi-5&q;},{&q;title&q;:&q;Django Exercise 1: Personal Navigator | Python Django Tutorials In Hindi #6&q;,&q;slug&q;:&q;python-django-tutorials-hindi-6&q;},{&q;title&q;:&q;Django Website: Laying The Pipeline | Python Django Tutorials In Hindi #7&q;,&q;slug&q;:&q;python-django-tutorials-hindi-7&q;},{&q;title&q;:&q;Django Templates | Python Django Tutorials In Hindi #8&q;,&q;slug&q;:&q;python-django-tutorials-hindi-8&q;},{&q;title&q;:&q;Creating Homepage of our TextUtils Website | Python Django Tutorials In Hindi #9&q;,&q;slug&q;:&q;python-django-tutorials-hindi-9&q;},{&q;title&q;:&q;Django Site: Coding The Backend | Python Django Tutorials In Hindi #10&q;,&q;slug&q;:&q;python-django-tutorials-hindi-10&q;},{&q;title&q;:&q;Django Exercise 1 Solution + Shoutouts | Python Django Tutorials In Hindi #11&q;,&q;slug&q;:&q;python-django-tutorials-hindi-11&q;},{&q;title&q;:&q;Adding More Features To TextUtils Website | Python Django Tutorials In Hindi #12&q;,&q;slug&q;:&q;python-django-tutorials-hindi-12&q;},{&q;title&q;:&q;Django Exercise 2: Revamping TextUtils | Python Django Tutorials In Hindi #13&q;,&q;slug&q;:&q;python-django-tutorials-hindi-13&q;},{&q;title&q;:&q;Adding Boostrap To Our Django Website | Python Django Tutorials In Hindi #14&q;,&q;slug&q;:&q;python-django-tutorials-hindi-14&q;},{&q;title&q;:&q;Fixing Bugs In Our TextUtils Website | Python Django Tutorials In Hindi #15&q;,&q;slug&q;:&q;python-django-tutorials-hindi-15&q;},{&q;title&q;:&q;Django CSRF Tokens &a; Post Request | Python Django Tutorials In Hindi #16&q;,&q;slug&q;:&q;python-django-tutorials-hindi-16&q;},{&q;title&q;:&q;Exercise 2 Solution + Shoutouts  | Python Django Tutorials In Hindi #17&q;,&q;slug&q;:&q;python-django-tutorials-hindi-17&q;},{&q;title&q;:&q;Wrapping Up TextUtils Website | Python Django Tutorials In Hindi #18&q;,&q;slug&q;:&q;python-django-tutorials-hindi-18&q;},{&q;title&q;:&q;Our Next Django Website | Python Django Tutorials In Hindi #19&q;,&q;slug&q;:&q;python-django-tutorials-hindi-19&q;},{&q;title&q;:&q;E Commerce Website In Django (Project Setup) | Python Django Tutorials In Hindi #20&q;,&q;slug&q;:&q;python-django-tutorials-hindi-20&q;},{&q;title&q;:&q;E-commerce Website: Creating Apps (Apps Vs Projects) | Python Django Tutorials In Hindi #21&q;,&q;slug&q;:&q;python-django-tutorials-hindi-21&q;},{&q;title&q;:&q;E-commerce Website: Adding Bootstrap, Templates &a; Static | Python Django Tutorials In Hindi #22&q;,&q;slug&q;:&q;python-django-tutorials-hindi-22&q;},{&q;title&q;:&q;E-commerce Website: Project Layout | Python Django Tutorials In Hindi #23&q;,&q;slug&q;:&q;python-django-tutorials-hindi-23&q;},{&q;title&q;:&q;Models In Our Django E commerce Website | Python Django Tutorials In Hindi #24&q;,&q;slug&q;:&q;python-django-tutorials-hindi-24&q;},{&q;title&q;:&q;Django Admin &a; Adding Data To The Database | Python Django Tutorials In Hindi #25&q;,&q;slug&q;:&q;python-django-tutorials-hindi-25&q;},{&q;title&q;:&q;Designing The Homepage Of Our E-Commerce Website | Python Django Tutorials In Hindi #26&q;,&q;slug&q;:&q;python-django-tutorials-hindi-26&q;},{&q;title&q;:&q;Adding Images &a; Changing Models In Django | Python Django Tutorials In Hindi #27&q;,&q;slug&q;:&q;python-django-tutorials-hindi-27&q;},{&q;title&q;:&q;Adding Media Directory In Django | Python Django Tutorials In Hindi #28&q;,&q;slug&q;:&q;python-django-tutorials-hindi-28&q;},{&q;title&q;:&q;Django Exercise 3: List the Products | Python Django Tutorials In Hindi #29&q;,&q;slug&q;:&q;python-django-tutorials-hindi-29&q;},{&q;title&q;:&q;Fetching Products Using Python manage.py shell | Python Django Tutorials In Hindi #30&q;,&q;slug&q;:&q;python-django-tutorials-hindi-30&q;},{&q;title&q;:&q;Template Inheritance In Django | Python Django Tutorials In Hindi #31&q;,&q;slug&q;:&q;python-django-tutorials-hindi-31&q;},{&q;title&q;:&q;Logic For Showing Products On Homepage | Python Django Tutorials In Hindi #32&q;,&q;slug&q;:&q;python-django-tutorials-hindi-32&q;},{&q;title&q;:&q;Showing Products On The Homepage | Python Django Tutorials In Hindi #33&q;,&q;slug&q;:&q;python-django-tutorials-hindi-33&q;},{&q;title&q;:&q;Showing Multiple Product Slides On Homepage | Python Django Tutorials In Hindi #34&q;,&q;slug&q;:&q;python-django-tutorials-hindi-34&q;},{&q;title&q;:&q;Category-Wise Product Display In E Commerce Website | Python Django Tutorials In Hindi #35&q;,&q;slug&q;:&q;python-django-tutorials-hindi-35&q;},{&q;title&q;:&q;Creating an Online Shopping Cart Using JavaScript | Python Django Tutorials In Hindi #36&q;,&q;slug&q;:&q;python-django-tutorials-hindi-36&q;},{&q;title&q;:&q;Exercise 3: Solution + Shoutouts | Python Django Tutorials In Hindi #37&q;,&q;slug&q;:&q;python-django-tutorials-hindi-37&q;},{&q;title&q;:&q;Improving Slider Logic &a; Adding Cart Items Count | Python Django Tutorials In Hindi #38&q;,&q;slug&q;:&q;python-django-tutorials-hindi-38&q;},{&q;title&q;:&q;Adding Bootstrap Row &a; Some CSS | Python Django Tutorials In Hindi #39&q;,&q;slug&q;:&q;python-django-tutorials-hindi-39&q;},{&q;title&q;:&q;Adding Cart PopOver &a; Other Pages Using Bootstrap | Python Django Tutorials In Hindi #40&q;,&q;slug&q;:&q;python-django-tutorials-hindi-40&q;},{&q;title&q;:&q;E Commerce Website: Creating Product Page | Python Django Tutorials In Hindi #41&q;,&q;slug&q;:&q;python-django-tutorials-hindi-41&q;},{&q;title&q;:&q;E Commerce Website: Creating Contact Page + Database | Python Django Tutorials In Hindi #42&q;,&q;slug&q;:&q;python-django-tutorials-hindi-42&q;},{&q;title&q;:&q;Exercise 3: Improving Cart Of Our E commerce Website | Python Django Tutorials In Hindi #43&q;,&q;slug&q;:&q;python-django-tutorials-hindi-43&q;},{&q;title&q;:&q;Creating Add and Remove Buttons For Items In Cart | Python Django Tutorials In Hindi #44&q;,&q;slug&q;:&q;python-django-tutorials-hindi-44&q;},{&q;title&q;:&q;Creating A Cart In Navigation Bar As Popover | Python Django Tutorials In Hindi #45&q;,&q;slug&q;:&q;python-django-tutorials-hindi-45&q;},{&q;title&q;:&q;Exercise 3: Solutions + Shoutouts | Python Django Tutorials In Hindi #46&q;,&q;slug&q;:&q;python-django-tutorials-hindi-46&q;},{&q;title&q;:&q;Adding Checkout &a; ClearCart Buttons | Python Django Tutorials In Hindi #47&q;,&q;slug&q;:&q;python-django-tutorials-hindi-47&q;},{&q;title&q;:&q;Creating The Checkout Page | Python Django Tutorials In Hindi #48&q;,&q;slug&q;:&q;python-django-tutorials-hindi-48&q;},{&q;title&q;:&q;Adding Items On Checkout Page | Python Django Tutorials In Hindi #49&q;,&q;slug&q;:&q;python-django-tutorials-hindi-49&q;},{&q;title&q;:&q;Creating Database Entry For Orders | Python Django Tutorials In Hindi #50&q;,&q;slug&q;:&q;python-django-tutorials-hindi-50&q;},{&q;title&q;:&q;Creating Order Tracker For Customers | Python Django Tutorials In Hindi #51&q;,&q;slug&q;:&q;python-django-tutorials-hindi-51&q;},{&q;title&q;:&q;Django Exercise 4: Display Prices | Python Django Tutorials In Hindi #52&q;,&q;slug&q;:&q;python-django-tutorials-hindi-52&q;},{&q;title&q;:&q;E-Commerce Website: Displaying Order Items In Tracker | Python Django Tutorials In Hindi #53&q;,&q;slug&q;:&q;python-django-tutorials-hindi-53&q;},{&q;title&q;:&q;Django Solution To Exercise 4: Display Prices  | Python Django Tutorials In Hindi #54&q;,&q;slug&q;:&q;python-django-tutorials-hindi-54&q;},{&q;title&q;:&q;Merging Blog App Into The Shop UI | Python Django Tutorials In Hindi #55&q;,&q;slug&q;:&q;python-django-tutorials-hindi-55&q;},{&q;title&q;:&q;Django Website TextUtils: Pull Requests | Python Django Tutorials In Hindi #56&q;,&q;slug&q;:&q;python-django-tutorials-hindi-56&q;},{&q;title&q;:&q;Django Website My Awesome Cart: Pull Requests | Python Django Tutorials In Hindi #57&q;,&q;slug&q;:&q;python-django-tutorials-hindi-57&q;},{&q;title&q;:&q;My Awesome Cart: Creating The Blog | Python Django Tutorials In Hindi #58&q;,&q;slug&q;:&q;python-django-tutorials-hindi-58&q;},{&q;title&q;:&q;Creating Models For Blog In Our E-Commerce Website | Python Django Tutorials In Hindi #59&q;,&q;slug&q;:&q;python-django-tutorials-hindi-59&q;},{&q;title&q;:&q;Django Exercise 5: BlogPosts | Python Django Tutorials In Hindi #60&q;,&q;slug&q;:&q;python-django-tutorials-hindi-60&q;},{&q;title&q;:&q;Creating a Django Post Page For Displaying Blog Content | Python Django Tutorials In Hindi #61&q;,&q;slug&q;:&q;python-django-tutorials-hindi-61&q;},{&q;title&q;:&q;Designing The Blog Home Page | Python Django Tutorials In Hindi #62&q;,&q;slug&q;:&q;python-django-tutorials-hindi-62&q;},{&q;title&q;:&q;Django Exercise 5: Solution + Shoutouts | Python Django Tutorials In Hindi #63&q;,&q;slug&q;:&q;python-django-tutorials-hindi-63&q;},{&q;title&q;:&q;Linking Django Blog Posts To Blog Home | Python Django Tutorials In Hindi #64&q;,&q;slug&q;:&q;python-django-tutorials-hindi-64&q;},{&q;title&q;:&q;Integrating Facebook Like, Comments &a; Shares In Django Blog | Python Django Tutorials In Hindi #65&q;,&q;slug&q;:&q;python-django-tutorials-hindi-65&q;},{&q;title&q;:&q;Integrating Payment Gateway: PayTM, UPI, Cards &a; NetBanking | Python Django Tutorials In Hindi #66&q;,&q;slug&q;:&q;python-django-tutorials-hindi-66&q;},{&q;title&q;:&q;Creating Product Search Feature In Our E Commerce Website | Python Django Tutorials In Hindi #67&q;,&q;slug&q;:&q;python-django-tutorials-hindi-67&q;},{&q;title&q;:&q;Fixing A Bug In Django E Commerce Website Tracker | Python Django Tutorials In Hindi #68&q;,&q;slug&q;:&q;python-django-tutorials-hindi-68&q;},{&q;title&q;:&q;Reset Forgotten Admin Password In Django| Python Django Tutorials In Hindi #69&q;,&q;slug&q;:&q;python-django-tutorials-hindi-69&q;},{&q;title&q;:&q;Hosting Django Website On Ubuntu VPS | Python Django Tutorials In Hindi #70&q;,&q;slug&q;:&q;python-django-tutorials-hindi-70&q;},{&q;title&q;:&q;Creating A New Django Blog (Setup + Introduction) | Python Django Tutorials In Hindi #71&q;,&q;slug&q;:&q;python-django-tutorials-hindi-71&q;},{&q;title&q;:&q;Django Blog: Project Setup &a; URLConfs | Python Django Tutorials In Hindi #72&q;,&q;slug&q;:&q;python-django-tutorials-hindi-72&q;},{&q;title&q;:&q;Django Blog: Creating Django Apps &a; Properly Managing Them | Python Django Tutorials In Hindi #73&q;,&q;slug&q;:&q;python-django-tutorials-hindi-73&q;},{&q;title&q;:&q;Django Blog: Adding HTML Templates | Python Django Tutorials In Hindi #74&q;,&q;slug&q;:&q;python-django-tutorials-hindi-74&q;},{&q;title&q;:&q;Installing Django 3 for our Django Blog | Python Django Tutorials In Hindi #75&q;,&q;slug&q;:&q;python-django-tutorials-hindi-75&q;},{&q;title&q;:&q;Django 3 Blog: Creating Migrations &a; Superusers | Python Django Tutorials In Hindi #76&q;,&q;slug&q;:&q;python-django-tutorials-hindi-76&q;},{&q;title&q;:&q;Django 3 Blog: Creating \&q;Contact Us\&q; Model | Python Django Tutorials In Hindi #77&q;,&q;slug&q;:&q;python-django-tutorials-hindi-77&q;},{&q;title&q;:&q;Django 3 Blog: Handling Post Request in a Django View | Python Django Tutorials In Hindi #78&q;,&q;slug&q;:&q;python-django-tutorials-hindi-78&q;},{&q;title&q;:&q;Django Mesasges Framework: Showing Messages in Django blog | Python Django Tutorials In Hindi #79&q;,&q;slug&q;:&q;python-django-tutorials-hindi-79&q;},{&q;title&q;:&q;Django 3 Blog: Designing Blog Page &a; Displaying Blog Posts | Python Django Tutorials In Hindi #80&q;,&q;slug&q;:&q;python-django-tutorials-hindi-80&q;},{&q;title&q;:&q;Django 3 Blog: Creating Blog Model to Store Blog Posts | Python Django Tutorials In Hindi #81&q;,&q;slug&q;:&q;python-django-tutorials-hindi-81&q;},{&q;title&q;:&q;Django 3 Blog: Designing the BlogPost Page | Python Django Tutorials In Hindi #82&q;,&q;slug&q;:&q;python-django-tutorials-hindi-82&q;},{&q;title&q;:&q;Django 3 Blog: Creating Search Functionality | Python Django Tutorials In Hindi #83&q;,&q;slug&q;:&q;python-django-tutorials-hindi-83&q;},{&q;title&q;:&q;Django 3 Blog: Improving Search Functionality | Python Django Tutorials In Hindi #84&q;,&q;slug&q;:&q;python-django-tutorials-hindi-84&q;},{&q;title&q;:&q;Django 3 Blog: Authentication &a; Authorization Tutorial | Python Django Tutorials In Hindi #85&q;,&q;slug&q;:&q;python-django-tutorials-hindi-85&q;},{&q;title&q;:&q;Django 3 Blog: Creating Users in Django | Python Django Tutorials In Hindi #86&q;,&q;slug&q;:&q;python-django-tutorials-hindi-86&q;},{&q;title&q;:&q;Django 3 Blog: Validating SignUp Form | Python Django Tutorials In Hindi #87&q;,&q;slug&q;:&q;python-django-tutorials-hindi-87&q;},{&q;title&q;:&q;Django 3 Blog: Login &a; Logout Endpoints | Python Django Tutorials In Hindi #88&q;,&q;slug&q;:&q;python-django-tutorials-hindi-88&q;},{&q;title&q;:&q;Django 3 Blog: Creating Django template for Login &a; Logout | Python Django Tutorials In Hindi #89&q;,&q;slug&q;:&q;python-django-tutorials-hindi-89&q;},{&q;title&q;:&q;Django 3 Blog: Creating Blog Comments in Django | Python Django Tutorials In Hindi #90&q;,&q;slug&q;:&q;python-django-tutorials-hindi-90&q;},{&q;title&q;:&q;Django 3 Blog: Creating Comment Model, Template &a; Migrations | Python Django Tutorials In Hindi #91&q;,&q;slug&q;:&q;python-django-tutorials-hindi-91&q;},{&q;title&q;:&q;Django 3 Blog: Creating APIs for Posting Comments on Blog | Python Django Tutorials In Hindi #92&q;,&q;slug&q;:&q;python-django-tutorials-hindi-92&q;},{&q;title&q;:&q;Django 3 Blog: Rendering Blog Comments on Our Template | Python Django Tutorials In Hindi #93&q;,&q;slug&q;:&q;python-django-tutorials-hindi-93&q;},{&q;title&q;:&q;Django 3 Blog: Restricting Comment Posting to Logged in User | Python Django Tutorials In Hindi #94&q;,&q;slug&q;:&q;python-django-tutorials-hindi-94&q;},{&q;title&q;:&q;Django 3 Blog: Adding Replies to Comments on Our Blog | Python Django Tutorials In Hindi #95&q;,&q;slug&q;:&q;python-django-tutorials-hindi-95&q;},{&q;title&q;:&q;Django 3 Blog: Displaying Replies Below Corresponding Comment | Python Django Tutorials In Hindi #96&q;,&q;slug&q;:&q;python-django-tutorials-hindi-96&q;},{&q;title&q;:&q;Django 3 Blog: Designing Replies Below Comments &a; Other Fixes | Python Django Tutorials In Hindi #97&q;,&q;slug&q;:&q;python-django-tutorials-hindi-97&q;},{&q;title&q;:&q;Django 3 Blog: Rendering HTML inside the Blog Post | Python Django Tutorials In Hindi #98&q;,&q;slug&q;:&q;python-django-tutorials-hindi-98&q;},{&q;title&q;:&q;Using TinyMCE Editor For Editing Blog Post Content | Python Django Tutorials In Hindi #99&q;,&q;slug&q;:&q;python-django-tutorials-hindi-99&q;},{&q;title&q;:&q;Integrating TinyMCE Editor in Django Admin | Python Django Tutorials In Hindi #100&q;,&q;slug&q;:&q;python-django-tutorials-hindi-100&q;},{&q;title&q;:&q;Adding \&q;Post Views\&q; (View Counter) to iCoder Django 3 Blog|  Python Django Tutorials In Hindi #101&q;,&q;slug&q;:&q;python-django-tutorials-hindi-101&q;}],&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:04:11 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;OPTIONS, GET&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;13874&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getcoursecontent/python-django-tutorials-hindi-66&q;},&q;G.https://api.codewithharry.com/video/getcomments/python-django-tutorials-hindi-66/0/999999?&q;:{&q;body&q;:[{&q;comment&q;:&q;Bhai Patym se customer email jo send kiye the wapas kaise le sakte h.?\r\n&q;,&q;username&q;:&q;dan&q;,&q;sno&q;:2798,&q;time&q;:&q;2020-11-19T11:49:17.459717&q;,&q;replycount&q;:0},{&q;comment&q;:&q;sir isme muje razorpay use karna plz sir video bannao&q;,&q;username&q;:&q;kingrazz&q;,&q;sno&q;:2689,&q;time&q;:&q;2020-10-29T03:10:25.149703&q;,&q;replycount&q;:0},{&q;comment&q;:&q;It shows Duplicate Order Id respmsg and TXN_FAILURE how to handle this ? plz give any solution\r\n&q;,&q;username&q;:&q;mahrshiy&q;,&q;sno&q;:2547,&q;time&q;:&q;2020-09-29T14:29:11.139146&q;,&q;replycount&q;:0},{&q;comment&q;:&q;hello harry bhai views.py me from PayTm import Checksum No module named &s;PayTm&s; error bata raha he.i tried to install package paytm but the package installation is failing.please help&q;,&q;username&q;:&q;asarmah&q;,&q;sno&q;:1588,&q;time&q;:&q;2020-07-22T15:26:30.110596&q;,&q;replycount&q;:0},{&q;comment&q;:&q; from Crypto.Cipher import AES\r\nModuleNotFoundError: No module named &s;Crypto&s;\r\n \r\nHarry bhain ye error aa ra h ...\r\n&q;,&q;username&q;:&q;tejas_jha&q;,&q;sno&q;:1158,&q;time&q;:&q;2020-06-08T08:42:36.617611&q;,&q;replycount&q;:1}],&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:04:11 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;GET, OPTIONS&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;1023&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getcomments/python-django-tutorials-hindi-66/0/999999&q;}}</script></body><!-- This page was prerendered with Angular Universal -->
+<!-- Mirrored from www.codewithharry.com/videos/python-django-tutorials-hindi-66/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 14:40:02 GMT -->
+</html>

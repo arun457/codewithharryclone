@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from www.codewithharry.com/videos/learn-java-in-one-video-in-hindi-2019/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 13:50:18 GMT -->
+<head>
+  <meta charset="utf-8">
+  <title>Java tutorial in hindi - CodeWithHarry</title>
+  <base >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v87/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <script data-ad-client="ca-pub-9655830461045889" async="" src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-60726752-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-60726752-3');
+  </script>
+<link rel="stylesheet" href="../../styles.bc31d58d1fffbdf64e6b.css"><style ng-transition="serverApp">.content[_ngcontent-sc76]{min-height:calc(100vh - 56px - 80px)}</style><style ng-transition="serverApp">[_nghost-sc73]{position:relative;display:block;pointer-events:none}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{transition:350ms linear;display:block;position:absolute;top:5px;left:0}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]   .ngx-spinner-icon[_ngcontent-sc73]{width:14px;height:14px;border:2px solid transparent;border-top-color:inherit;border-left-color:inherit;border-radius:50%;-webkit-animation:.4s linear infinite loading-bar-spinner;animation:.4s linear infinite loading-bar-spinner}[_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{transition:width 350ms;position:absolute;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}[dir=rtl]   [_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{right:0;left:unset}[fixed=true][_nghost-sc73]{z-index:10002}[fixed=true][_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{position:fixed}[fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{position:fixed;top:10px;left:10px}[dir=rtl]   [fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{right:10px;left:unset}@-webkit-keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}</style><style ng-transition="serverApp">.brandLogo[_ngcontent-sc74]{max-width:39px;margin:0 13px}li[_ngcontent-sc74]   a.nav-link[_ngcontent-sc74]{color:#fff}.notificationImg[_ngcontent-sc74]{width:30px;filter:invert(1)}.notification-bell[_ngcontent-sc74]{position:absolute;right:0}.dropdown-toggle[_ngcontent-sc74]{font-weight:700}.dropdown-menu-notify[_ngcontent-sc74]{overflow-y:scroll;overflow-x:hidden;max-height:400px;top:60px;right:-1px;left:unset;width:460px;box-shadow:0 5px 7px -1px #c1c1c1;padding:0}ul[_ngcontent-sc74]   ul[_ngcontent-sc74]   a[_ngcontent-sc74]{background:transparent}.dropdown-menu-notify[_ngcontent-sc74]:before{content:"";position:absolute;top:-20px;right:12px;border:10px solid transparent;border-bottom-color:#fff}.head-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:3px 3px 0 0}.footer-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:0 0 3px 3px}.notification-box-notify[_ngcontent-sc74]{padding:10px 0}.bg-gray-notify[_ngcontent-sc74]{background-color:#eee}@media (max-width:640px){.dropdown-menu-notify[_ngcontent-sc74]{top:50px;left:-16px;width:290px}.nav-notify[_ngcontent-sc74]{display:block}.nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74], .nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74]   a[_ngcontent-sc74]{padding-left:0}.message-notify[_ngcontent-sc74]{font-size:13px}}.loginError[_ngcontent-sc74]{color:red;padding:3px 2px}div.alert[_ngcontent-sc74]{margin:0}input.ng-touched.ng-invalid[_ngcontent-sc74], textarea.ng-touched.ng-invalid[_ngcontent-sc74]{border-color:red}.forgot[_ngcontent-sc74]{font-size:14px;color:#000;text-align:left;text-decoration:underline;cursor:pointer;padding:16px 0}.googleAuth[_ngcontent-sc74]{width:46%;cursor:pointer;border:1px solid #000;border-radius:3px;background:#60a3dd;margin-top:1px}.or[_ngcontent-sc74]{font-weight:500;font-size:19px}.modal-header[_ngcontent-sc74]{display:flex;align-items:center;justify-content:center;flex-direction:column}.modal-header[_ngcontent-sc74]   span[_ngcontent-sc74]{position:absolute;top:15px;right:20px}.navbar-brand[_ngcontent-sc74]{margin:0;padding:0}</style><style ng-transition="serverApp">footer[_ngcontent-sc75]{color:#fff}</style><style ng-transition="serverApp">div.code-toolbar{position:relative}div.code-toolbar>.toolbar{position:absolute;top:.3em;right:.2em;transition:opacity .3s ease-in-out;opacity:0}div.code-toolbar:focus-within>.toolbar,div.code-toolbar:hover>.toolbar{opacity:1}div.code-toolbar>.toolbar .toolbar-item{display:inline-block}div.code-toolbar>.toolbar a{cursor:pointer}div.code-toolbar>.toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}div.code-toolbar>.toolbar a,div.code-toolbar>.toolbar button,div.code-toolbar>.toolbar span{color:#bbb;font-size:.8em;padding:0 .5em;background:#f5f2f0;background:hsla(0,0%,87.8%,.2);box-shadow:0 2px 0 0 rgba(0,0,0,.2);border-radius:.5em}div.code-toolbar>.toolbar a:focus,div.code-toolbar>.toolbar a:hover,div.code-toolbar>.toolbar button:focus,div.code-toolbar>.toolbar button:hover,div.code-toolbar>.toolbar span:focus,div.code-toolbar>.toolbar span:hover{color:inherit;text-decoration:none}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}code[class*=language-],pre[class*=language-]{max-height:614px}.commentContainer{overflow-x:auto}.content-holder{list-style:none;padding:0}.content-holder a{color:#000;text-decoration:none}.content-holder li:hover{background-color:#efeff0}.content-holder-item{padding:23px 12px;font-size:16px;cursor:pointer}li.active{background-color:#d6d6d6}.bg-black{background-color:#000}#content-box{max-height:85vh;overflow-y:scroll}#course-content-box{background:#fff;align-self:flex-start;height:20px;position:sticky;top:0}.bg-lgrey{background-color:#e7e7e9}.tab-pane{min-height:344px}.nav-link{font-weight:700;color:#000}.commentReplies{background-color:#e7e7e9;margin:18px 3px}.commentReplies img{margin:8px 14px}#toggleCourse{display:none}.openCourseHeight{height:76vh!important}.plusIcon{display:none}@media only screen and (max-width:400px){.nav-link{font-size:16px;padding:9px 6px}#course-content-box{height:57px}}@media only screen and (max-width:560px){img.rounded-circle{height:0;visibility:hidden}}@media only screen and (max-width:768px){#course-content-box{height:46px;transition:height .4s;position:static}#content-box{height:70vh;visibility:hidden}#toggle-button{visibility:visible}#video-box{z-index:1}#sticky-d{position:sticky;top:0;z-index:1}#toggleCourse{display:inline}.other{margin-left:-15px;margin-right:-15px}.plusIcon{display:inline-block;width:24px;height:24px}}#video-box2{font-size:14pt;font-family:helvetica}#video-box2 img{cursor:pointer}#video-box2 pre code{font-size:16px}.commentContainer pre{font-size:14pt;font-family:helvetica}#video-box2 h6,h1,h2,h3,h4,h5{font-family:Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.tab-pane{min-height:100vh}div.toolbar-item button{color:#fff!important;border:2px solid #fff!important;margin-right:23px}@media screen and (max-width:768px){div.toolbar-item button{margin-right:0}}#previewModal .modal-dialog{max-width:80%}.h-0{height:0}@media screen and (max-width:768px){div.toolbar-item button{margin-right:0}#video-box2 pre code{font-size:10px}.mt-48{margin-top:48px}}pre[class*=language-]{font-size:6pt}img{max-width:100%;height:auto}#video-box2{word-wrap:break-word}.commentError{font-size:10pt;margin:8px}#qna>h2{margin:43px}.showReplies{color:#00f;cursor:pointer;font-size:14px;padding:8px 16px}.advh{height:300px;width:100%;margin:auto}h2,h3,h4,h5,h6{margin:25px 0 9px}.commentPre{overflow-x:auto;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}table{max-width:90vw}td,tr{max-width:30vw!important}</style><meta name="description" content="Learn Java in hindi"><style ng-transition="serverApp"></style></head>
+
+<body>
+  <app-root _nghost-sc76="" ng-version="11.2.11"><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><ngx-loading-bar _ngcontent-sc76="" _nghost-sc73="" fixed="true" style="color:red;"><!----></ngx-loading-bar><app-header _ngcontent-sc76="" _nghost-sc74=""><!----><nav _ngcontent-sc74="" class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-sc74="" routerlink="/" class="navbar-brand" href="../../index.html"><img _ngcontent-sc74="" height="39px" width="39px" src="../../assets/img/logo.png" alt="CodeWithHarry" class="brandLogo"></a><button _ngcontent-sc74="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-sc74="" class="navbar-toggler-icon"></span></button><div _ngcontent-sc74="" id="navbarSupportedContent" class="collapse navbar-collapse"><ul _ngcontent-sc74="" class="navbar-nav mr-auto"><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/" class="nav-link" href="../../index.html">Home</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/videos" class="nav-link" href="../index.html">Videos</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/blog" class="nav-link" href="../../blog/index.html">Blog</a></li><li _ngcontent-sc74="" class="nav-item font-weight-bold"><a _ngcontent-sc74="" routerlink="/contact" class="nav-link" href="../../contact/index.html">Contact Me</a></li></ul><form _ngcontent-sc74="" novalidate="" class="form-inline my-2 my-lg-0 mr-3 ng-untouched ng-pristine ng-valid"><input _ngcontent-sc74="" type="text" placeholder="Search" aria-label="Search" name="query" class="form-control mr-sm-2 ng-untouched ng-pristine ng-valid" value=""><button _ngcontent-sc74="" type="submit" class="btn btn-danger my-2 my-sm-0">Search</button></form><div _ngcontent-sc74="" class="mx-0"><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-danger mr-2">Login</button><button _ngcontent-sc74="" type="button" data-toggle="modal" data-target="#signupModal" class="btn btn-danger">SignUp</button></div><!----><!----></div></nav><div _ngcontent-sc74="" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleLogin.png" alt="Login with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="loginModalTitle" class="modal-title">Login via username</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="username">Username</label><input _ngcontent-sc74="" type="text" id="username" placeholder="Enter your username" name="username" pattern="[a-zA-Z0-9 ]*" maxlength="10" minlength="2" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="loginpassword">Password</label><input _ngcontent-sc74="" type="password" id="loginpassword" placeholder="Enter your password" name="loginpassword" required="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><button _ngcontent-sc74="" type="submit" id="loginsubmit" class="btn btn-danger mt-2" disabled=""><!----> Login</button></form><!----><!----><!----><div _ngcontent-sc74="" class="forgot"><span _ngcontent-sc74="">Forgot Password?</span></div></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div><div _ngcontent-sc74="" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true" class="modal fade"><div _ngcontent-sc74="" role="document" class="modal-dialog"><div _ngcontent-sc74="" class="modal-content"><div _ngcontent-sc74="" class="modal-header"><img _ngcontent-sc74="" height="42.75px" width="25%" src="../../assets/img/googleSignUp.png" alt="Signup with Google" class="googleAuth mx-2"><div _ngcontent-sc74="" class="or mx-3"> or </div><h5 _ngcontent-sc74="" id="signupModal" class="modal-title">SignUp for an account</h5><button _ngcontent-sc74="" type="button" data-dismiss="modal" aria-label="Close" class="close"><span _ngcontent-sc74="" aria-hidden="true">×</span></button></div><div _ngcontent-sc74="" class="modal-body"><form _ngcontent-sc74="" novalidate="" method="post" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="uname">Username</label><input _ngcontent-sc74="" type="text" id="signupUserName" placeholder="Enter your username" name="signupUserName" pattern="[a-zA-Z0-9_ ]*" maxlength="10" minlength="4" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><small _ngcontent-sc74="" id="unamehelp" class="form-text text-muted px-1"> Your unique username must 4 - 10 characters (only lowecase letters, numbers &amp; underscores allowed) with no spaces </small></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupName">Name</label><input _ngcontent-sc74="" type="text" id="signupName" name="signupName" placeholder="Enter your Name" maxlength="30" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="email">Your Email</label><div _ngcontent-sc74="" class="mx-0"><div _ngcontent-sc74="" class="col-md-8 px-0"><input _ngcontent-sc74="" type="email" placeholder="Enter your Email" id="signupEmail" name="signupEmail" required="" email="" maxlength="40" class="form-control ng-untouched ng-pristine ng-invalid" value=""><!----><!----></div><div _ngcontent-sc74="" class="col-md-4 my-1 px-0"><button _ngcontent-sc74="" type="button" id="otpbtn" class="btn btn-danger btn-sm mt-2" disabled=""><!----> Send OTP</button></div></div></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="otp">Enter OTP</label><input _ngcontent-sc74="" type="number" id="signupOTP" placeholder="Enter OTP" name="signupOTP" required="" ngmodel="" class="form-control ng-untouched ng-pristine ng-invalid" value=""></div><div _ngcontent-sc74="" class="form-group"><label _ngcontent-sc74="" for="signupPassword1">Choose a password (At least 4 characters)</label><input _ngcontent-sc74="" type="password" id="signupPassword1" name="signupPassword1" placeholder="Choose a password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><div _ngcontent-sc74="" class="form-group mb-0"><label _ngcontent-sc74="" for="signupPassword2">Retype your password</label><input _ngcontent-sc74="" type="password" id="signupPassword2" name="signupPassword2" placeholder="Retype your password" minlength="4" maxlength="20" ngmodel="" class="form-control ng-untouched ng-pristine ng-valid" value=""></div><!----><!----><!----><!----><button _ngcontent-sc74="" type="submit" class="btn btn-danger mt-4" disabled=""><!----> SignUp</button></form></div><div _ngcontent-sc74="" class="modal-footer"><button _ngcontent-sc74="" type="button" data-dismiss="modal" class="btn btn-secondary">Close</button></div></div></div></div></app-header><div _ngcontent-sc76="" class="content"><router-outlet _ngcontent-sc76=""></router-outlet><app-video-page><div class="container-fluid"><div id="sticky-d" class="row"><div id="video-box" class="col-md-9 bg-black px-0"><div class="container videoContainer embed-responsive embed-responsive-16by9 px-3"><iframe allowfullscreen="" class="embed-responsive-item" src="https://www.youtube.com/embed/rV_3Lewxx6o"></iframe><!----></div><!----></div><div id="course-content-box" class="col-md-3 px-0"><div class="row mx-0 py-2 px-3 bg-lgrey"><h5 class="my-0"> Course Content </h5><img height="25px" width="25px" alt="" class="plusIcon mx-2" src="../../assets/img/plus.png"><button id="togglePlayer" class="btn btn-sm btn-danger mx-3">Hide  Player</button></div><div id="content-box" class=""><ul class="content-holder"><li class="content-holder-item"><input type="checkbox"> 1. Learn JavaScript In One Video In Hindi (2018) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 2. Learn Python In Hindi In One Video - हिंदी में (Latest Tutorial) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 3. Learn Php In One Video In Hindi - हिंदी में (Latest PHP Tutorial 2018) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 4. 15 Minute Python Tutorial For Beginners In Hindi (Full &amp; Complete Crash Course) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 5. Learn Bootstrap In Hindi In One Video - हिंदी में (Latest Tutorial 2019) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 6. Learn HTML In One Video <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 7. Learn jQuery In Hindi In One Video - हिंदी में (Latest Tutorial 2018) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 8. Create A Responsive Website Using HTML, CSS And Bootstrap 4 In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 9. Login And Registration Form Using Php &amp; MySQL [Php Login System In Hindi] <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 10. C Programming Tutorial For Beginners: Learn C In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 11. JavaScript Registration Form Validation - हिंदी में (Latest Tutorial 2019) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 12. CSS 3 Tutorial For Beginners: Learn CSS In One Video In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 13. C++ Tutorial For Beginners: Learn C Plus Plus In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 14. Learn Python Programming For Free | Python Programming Tutorial In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item active"><input type="checkbox"> 15. Java tutorial in hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 16. Android Development Tutorial in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 17. Web Scraping Tutorial using Python and BeautifulSoup <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 18. Git &amp; GitHub Tutorial For Beginners In Hindi - हिंदी में (2019) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 19. Login And Registration Form Using Php &amp; MySQL [Php Login System In Hindi] <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 20. Linux Tutorial For Beginners in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 21. Numpy Tutorial in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 22. Php Tutorial for Beginners in Hindi with MySQL Project <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 23. Learn JavaScript In One Video In Hindi (2020) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 24. C Language Tutorial For Beginners (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 25. How To Make a WordPress Website | Wordpress Tutorial for Beginners | Elementor Tutorial In Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 26. Python Tutorial For Beginners In Hindi (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 27. Python Programming Course in Hindi (Advanced) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 28. Android Application Development Tutorial in Hindi With Notes <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 29. React Tutorial in Hindi <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 30. HTML Tutorial For Beginners In Hindi (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><li class="content-holder-item"><input type="checkbox"> 31. CSS Tutorial In Hindi (With Notes) <div class="mx-3"><i class="far fa-play-circle"></i> Free YouTube Video </div></li><!----></ul><!----></div></div><hr></div><div id="video-box2" class="col-md-9 bg-black px-0"><div class="other bg-light"><ul id="myTab" role="tablist" class="nav nav-tabs"><li role="presentation" class="nav-item"><a id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true" class="nav-link active">Overview</a></li><li role="presentation" class="nav-item"><a id="qna-tab" data-toggle="tab" href="#qna" role="tab" aria-controls="qna" aria-selected="false" class="nav-link">Q&amp;A</a></li><li role="presentation" class="nav-item"><a id="resources-tab" data-toggle="tab" href="#resources" role="tab" aria-controls="resources" aria-selected="false" class="nav-link">Files</a></li><li role="presentation" class="nav-item"><a id="announcements-tab" data-toggle="tab" href="#announcements" role="tab" aria-controls="announcements" aria-selected="false" class="nav-link">Announcements</a></li></ul><div id="myTabContent" class="tab-content"><div id="overview" role="tabpanel" aria-labelledby="overview-tab" class="tab-pane fade show mx-4 mt-3 active"><div class="container clearfix py-0 px-0"><h3 class="my-2"> Java tutorial in hindi<a target="_blank" href="https://www.codewithharry.com/dashboard/videos/learn-java-in-one-video-in-hindi-2019"><!----></a></h3><!----><div class="contentBox"><div><h4>Java Notes For Quick Reference!</h4>
+<p>1. // [comment]<br>Single line comment.</p>
+<p>2. /* [comment] */<br>Multi line comment.</p>
+<p>3. public<br>This can be imported publically.</p>
+<p>4. import [object].*<br>Imports everything in object.</p>
+<p>5. static<br>Going to be shared by every [object].</p>
+<p>6. final<br>Cannot be changed; common to be defined with all uppercase.</p>
+<p>7. double<br>Integer with numbers that can have decimals.</p>
+<p>8. ;<br>Put after every command.</p>
+<p>9. String<br>Just a string of characters.</p>
+<p>10. Private<br>Can only be changed by a method.</p>
+<p>11. int<br>Can store numbers from 2^-31 to 2^31.</p>
+<p>12. fields are attributes</p>
+<p>13. boolean<br>Can have true or false as the value.</p>
+<p>14. { }<br>These are used to start and end a function, class, etc.</p>
+<p>15. byte<br>These can store from -127 - 128.</p>
+<p>16. long<br>Can store numbers from 2^127 to 2^-127.</p>
+<p>17. char<br>Just lets you put in one chracter.</p>
+<p>18. double<br>64-bit number with decimals.</p>
+<p>19. float<br>32-bit number with decimals.</p>
+<p>20. protected<br>Can only be accessed by other code in the package.</p>
+<p>21. Scanner<br>This lets you get user input.</p>
+<p>22. new [object constructor]<br>This will let you create a new object.</p>
+<p>23. System.in<br>This lets you get data from the keyboard.</p>
+<p>24. public [class]()<br>This will be the constructor, you use it to create new objects.</p>
+<p>25. super()<br>This will create the superclass (the class it's inheriting).</p>
+<p>26. extends [class]<br>Makes the object a subclass of [object], [object] must be a superclass.</p>
+<p>27. ++<br>Will increment the amount.</p>
+<p>28. --<br>Will decrement the amount.</p>
+<p>29. += [amount]<br>Increment by [amount]</p>
+<p>30. -= [amount]<br>Decrement by [amount]</p>
+<p>31. *= [amount]<br>Multiply by [amount]</p>
+<p>32. /= [amount]<br>Divide by [amount]</p>
+<p>33. System.out.println([text])<br>Will print something to the output console.</p>
+<p>34. +<br>Can be used for concatenation. (ex. "6" + [var_here])</p>
+<p>35. public static void main(String[] args)<br>This is your main function and your project will start in here.</p>
+<p>36. System.out.print([text])<br>This prints stuff but there is no line break. (/n)</p>
+<p>37. \n<br>Called a line break; will print a new line.</p>
+<p>38. \t<br>This will print a tab.</p>
+<p>39. if ([condition])<br>This will make it so if [condition] is true then it'll keep going.</p>
+<p>40. &amp;&amp;<br>This means and.</p>
+<p>41. !<br>This means not.</p>
+<p>42. ||<br>This means or.</p>
+<p>43. ==<br>This means equal to.</p>
+<p>44. &lt;<br>This means less than.</p>
+<p>45. &gt;<br>This means greater than.</p>
+<p>46. &gt;=<br>This means greater than or equal to.</p>
+<p>47. [inputVarHere].hasNextLine()<br>This will return if there is a next line in the input.</p>
+<p>48. this<br>Refer to the class that you are in.</p>
+<p>49. [caller].next[datatype]()<br>This will get the [datatype] that you somehow inputted.</p>
+<p>50. Create getters and setters<br>This will create the get methods and set methods for every checked variable.</p>
+<p>51. [caller].hasNext[datatype]()<br>This will return if it has the correct datatype within the input.</p>
+<p>52. overloading<br>If you have different parameters you can call them whatever way you want.</p>
+<p>53. parameters<br>These are the inputs of your function.</p>
+<p>54. ([datatype])[variable]<br>This will convert [variable] into [datatype]. Also known as casting.</p>
+<p>55. Math.random()<br>Generate an extremely percise string of numbers between 0 and 1.</p>
+<p>56. Primitives<br>Just the basic data types which are not objects.</p>
+<p>57. [x].toString()<br>Will convert [x] into a string.</p>
+<p>58. [number].parse[numbertype]([string])<br>This will parse [number] into the [numbertype] with [string].</p>
+<p>59. ^<br>Return true if there is one true and one false.</p>
+<p>60. !=<br>Not equal too. (NEQ)</p>
+<p>61. ([condition]) ? [amount] : [var]<br>This will be like a shortcut way to an if statement.</p>
+<p>62. switch([variable])<br>This will do stuff with specific cases. (e.g. switch(hi){ case 2: (do stuff)})</p>
+<p>63. case [value]:<br>This will do stuff if the case is the case.</p>
+<p>64. break<br>Put that when you want to leave the loop/switch; should be at end of case.</p>
+<p>65. default [value]:<br>This will do stuff if none of the cases in the switch statement was made.</p>
+<p>66. for ([number]; [condition]; [operation])<br>This will start at [number] and then do [operation] until [condition] is met.</p>
+<p>67. continue<br>This will just go back to the enclosing loop before reaching other code.</p>
+<p>68. while ([condition])<br>This will basically do something while [condition] is true.</p>
+<p>69. void<br>This means no return type.</p>
+<p>70. return<br>This will return something when you call it to where it was called from .</p>
+<p>71. do { } while ([condition])<br>Guarantees it will execute once even if [condition] isn't met.</p>
+<p>72. printf("%[type] stuff here bah bla", [variable here])<br>This will let you use [variable here] with %s being where.</p>
+<p>73. System.out.printf([text])<br>Another way to print? // didn't quite get but ok then</p>
+<p>74. [type] [returntype] [name]([parameters]) {<br>This is a way to create a method.</p>
+<p>75. [type][[indexes]]<br>This will create an array with [indexes] amount of indexes; default infinite.</p>
+<p>76. int[] something = new int[20];<br>This will just make an array of ints with 20 ints in it.</p>
+<p>77. for ([object] [nameOfObject] : [arrayOfObject]) {<br>This will iterate through all of the arrayOfObject with object in use incrementing by 1 until done.</p>
+<p>78. [object][[1]][[2]][[3]] [name] = {[value] [value] [value] \n [value] [value] [value]}<br>[1] is how many down in array, [2] how many accross in array, [3] how many groups</p>
+<p>79. .length<br>This will get how long something is, text, amount of indexes in array, etc.</p>
+<p>80. Arrays.copy0f([array], indexes);<br>This will copy the array and how many indexes into another array.</p>
+<p>81. Arrays.toString([array])<br>Convert the whole array into one huge string.</p>
+<p>82. Arrays.binarySearch([array], [object])<br>This will search for [object] in [array].</p><h4>Code as described/written in the video</h4>
+<pre class="language-java"><code>package com.codewithharry;
+
+import java.util.Scanner;
+
+public class Main {
+
+    static int sum(int a, int b){
+        return a+b;
+    }
+
+    public static void main(String[] args) {
+	 // Write your code here
+//        System.out.println("Hello World");
+     /* Variables
+     Just Like:
+        -Water - Bucket
+        -Masala - box
+        -Lunch - LunchBox
+     In Java:
+     Variables are containers which store data values
+     String, int, float, char, boolean
+     How to declare variables:
+     syntax - &lt;dataType&gt; &lt;variableName&gt; = &lt;value&gt;;
+      */
+     String name = "Harry";
+     String channel = "CodeWithHarry";
+//     System.out.println(name);
+//     System.out.println(name.length());
+//     System.out.println(name.toUpperCase());
+//     System.out.println(name.toLowerCase());
+//     System.out.println(name + " from\" " + channel);
+//     System.out.println(name + " from\\ " + channel);
+//     System.out.println(name + " from\t " + channel);
+//     System.out.println(name + " from\n " + channel);
+
+//        System.out.println(name.contains("Har"));
+//        System.out.println(name.charAt(2));
+//        System.out.println(name.endsWith("ry"));
+//        System.out.println(name.indexOf("rry"));
+
+        int numb1 = 4, numb2 = 7;
+//        System.out.println(Math.max(numb1, numb2));
+//        System.out.println(Math.min(numb1, numb2));
+//        System.out.println(Math.sqrt(36));
+//        System.out.println(Math.abs(-36));
+//        System.out.println(Math.abs(6));
+//        System.out.println(Math.random());
+//        System.out.println(4+(8-4)*Math.random());
+//        System.out.println(4+(8-4)*Math.random());
+//        System.out.println(4+(8-4)*Math.random());
+//        System.out.println(4+(8-4)*Math.random());
+//        System.out.println(4+(8-4)*Math.random());
+
+
+     int a = 45, x=56, y=67;
+     float b = 45.22f;
+     boolean isAdult = false;
+//     System.out.println(x);
+//     System.out.println(b);
+//     System.out.println(isAdult);
+
+    /* Rules for constructing name of variables in Java
+        1. Can contain digits, underscores, dollar signs, letters
+        2. Should begin with a letter, $ or _
+        3. Java is case sensitive language which means that
+           harry and Harry are two different variables altogether.
+        4. Should not contain whitespaces
+        5. You cannot use reserved keywords from Java
+     */
+    /*
+    Two types of Java Data Types:
+        1. Primitive - byte (1 byte), short (2 bytes), int(4 bytes), long (8 bytes), float(4 bytes),
+           double (8 bytes), boolean(1 bit), char (2 bytes).
+        2. Non Primitive or Reference Data Type -
+    */
+    byte u = -56;
+    double d = 45.635435345d;
+//    System.out.println(d);
+    char grade = 'A';
+//    System.out.println(grade);
+
+    /* Operators in Java
+
+        Operand, operator, Operand  =  Result
+        4           +           7   =  11
+
+        Types of operators in Java
+        Arithmetic operators
+        Assignment operators
+        Logical Operators
+        Comparison Operators
+     */
+    int num1 = 45, num2=78;
+    num1 += 3;
+    num2 -= 8;
+    // Explore these operators - *=, /=, %=
+//        System.out.print("The value of num1 + num2 is ");
+//        System.out.println(num1 + num2);
+//
+//        System.out.print("The value of num1 - num2 is ");
+//        System.out.println(num1 - num2);
+//
+//        System.out.print("The value of num1 * num2 is ");
+//        System.out.println(num1 * num2);
+//
+//        System.out.print("The value of num1 / num2 is ");
+//        System.out.println(num1 / num2);
+//
+//        System.out.print("The value of num1 % num2 is ");
+//        System.out.println(num1 % num2);
+//        System.out.println(num2++);
+//        System.out.println(++num1);
+//        System.out.println(num1--);
+//        System.out.println(--num1);
+
+    /*
+    * Comparison Operators:
+    * 1. == : checks for equality of two values
+    * 2. != : checks if two values are not equal
+    * 3. &lt;
+    * 4. &gt;
+    * 5. &lt;=
+    * 6. &gt;=
+    *
+    * Logical Operators:
+    * 1. &amp;&amp; - Logical and operator - returns true only if both conditions are true
+    * 2. || - Logical or operator - returns true if any one condition is true
+    * 3. ! - Logical not - Reverse the result from true to false and vice versa
+    * */
+
+    // Taking user input in Java
+//        Scanner scan = new Scanner(System.in);
+//        System.out.println("Enter Your Age");
+//        int age = scan.nextInt();
+//        System.out.println(input);
+
+    // If-else conditionals
+//        if(age&gt;20){
+//
+//            System.out.println("You are an adult");
+//        }
+//        else if(age&gt;5){
+//            System.out.println("You are not a kid");
+//
+//        }
+//        else{
+//            System.out.println("You are a kid");
+//        }
+    //   Switch statement in Java
+
+//        switch (age){
+//            case 12:
+//                System.out.println("You are 12 years old");
+//                break;
+//            case 56:
+//                System.out.println("You are 56 years old");
+//                break;
+//            case 16:
+//                System.out.println("You are 16 years old");
+//                break;
+//            default:
+//                System.out.println("You did not match any of the cases");
+//        }
+    // Quick Quiz: print sunday to saturday based on numbers 1 to 7 typed by the user
+
+        // Loops
+        /*
+        While Loop
+        while(condition){
+            // This code will keep executing until the condition is true
+        }
+         */
+//        int i = 0;
+//        while(i&lt;100){
+//            System.out.println(i);
+//            i += 1;
+//        }
+
+        /*
+        Do While Loop
+        do{
+            // This code will keep executing until the condition is true
+        }while(condition)
+         */
+//        int j = 0;
+//        do{
+//            System.out.println(j);
+//            j += 1;
+//        }while(j&gt;100);
+
+        /*
+        For Loop
+        for(st1;st2;st3){
+            //Code to be executed
+            }
+         */
+//
+//        for(int i=0;i&lt;=10;i++){
+//            if(i==2){
+//                continue;
+//            }
+////            else{
+////                System.out.println(i);
+////            }
+//            System.out.println(i);
+//        }
+
+    // Java Arrays
+//        int [] marks = {1,2,3,5};
+//        marks[3] = 34; // this will update marks[3]
+//        System.out.println(marks[0]);
+//        System.out.println(marks[3]);
+//
+//        // Classical way to iterate an array
+//        for(int i=0;i&lt;marks.length;i++){
+//            System.out.println(marks[i]);
+//        }
+//        System.out.println("This is for each loop:");
+//
+//        // For each loop
+//        for(int value:marks){
+//            System.out.println(value);
+//        }
+//
+//        int [][] matrix = {{1,2,3},
+//                            {4,5,6}};
+//        System.out.println(matrix[0][1]);
+//
+//        String [] cars = {"Maruti Harry", "Maruti", "Suzuki", "Innova", "Ford Titanium"};
+//        for(String value:cars){
+//            System.out.println(value);
+//        }
+
+        // Try - Catch
+//        String [] cars = {"Maruti Harry", "Maruti", "Suzuki", "Innova", "Ford Titanium"};
+//
+//        try{
+//            System.out.println(cars[3]);
+//        }
+//        catch(Exception e){
+//            System.out.println(e);
+//        }
+//
+//        System.out.println("Masoom");
+//        System.out.println(sum(5, 7));
+
+        float number_1, number_2;
+        System.out.println("Enter first number");
+
+        Scanner scan = new Scanner(System.in);
+        number_1 = scan.nextFloat();
+
+        System.out.println("Enter second number");
+//        Scanner scan2 = new Scanner(System.in);
+        number_2 = scan.nextFloat();
+        System.out.print("You have Entered ");
+        System.out.print(number_1);
+        System.out.print(" and ");
+        System.out.println(number_2);
+        String prompt = "Enter 0 for addition, 1 for " +
+                        "subtraction, 2 for multiplication and 3 for division";
+        System.out.println(prompt);
+        int input = scan.nextInt();
+        switch (input){
+            case 0:
+                System.out.println("Adding these numbers");
+                System.out.print("The result is: ");
+                System.out.println(number_1 + number_2);
+                break;
+
+            case 1:
+                System.out.println("Subtracting these numbers");
+                System.out.print("The result is: ");
+                System.out.println(number_1 - number_2);
+                break;
+
+            case 2:
+                System.out.println("Multiplying these numbers");
+                System.out.print("The result is: ");
+                System.out.println(number_1 * number_2);
+                break;
+
+            case 3:
+                System.out.println("Dividing these numbers");
+                System.out.print("The result is: ");
+                System.out.println(number_1 / number_2);
+                break;
+
+            default:
+                System.out.println("Invalid input");
+
+        }
+
+
+    }
+}
+
+</code></pre></div><!----><!----><!----></div><div class="advh mb-2"><app-adsense adtype="advh" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><!----><!----><!----><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="8999979664" data-ad-format="auto" data-full-width-responsive="true" class="adsbygoogle" style="display: block;"></ins></div><!----></div></app-adsense></div><!----><div class="my-4 d-flex justify-content-between"><a class="btn btn-danger" href="../learn-python-in-one-video-in-hindi-2019/index.html">← Previous </a><a class="btn btn-danger" href="../android-development-tutorial-in-one-video-hindi/index.html">Next →</a></div></div><!----></div><div id="qna" role="tabpanel" aria-labelledby="qna-tab" class="tab-pane fade mx-4 mt-3"><h3>You need to be logged in to post a comment!</h3><!----><!----><div class="container my-4 px-0"><h3>Comments</h3><!----><!----><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>tanishqs </b><span class="badge badge-secondary"> Mar 30, 2021</span><br><div class="commentPre">package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	    System.out.println("Hello World");
+    }
+}
+
+Error: Could not find or load main class com.company.Main
+Caused by: java.lang.ClassNotFoundException: com.company.Main
+
+Getting this error pls help
+</div></div><!----><div class="collapse" id="openReply3524"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>swapnil21 </b><span class="badge badge-secondary"> Jan 27, 2021</span><br><div class="commentPre">Very good tutorial. Excellent Video</div></div><!----><div class="collapse" id="openReply3219"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>naresh </b><span class="badge badge-secondary"> Jul 16, 2020</span><br><div class="commentPre">Great Tutorial</div></div><!----><div class="collapse" id="openReply1537"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>rvengineer </b><span class="badge badge-secondary"> Jun 10, 2020</span><br><div class="commentPre">Thank u Harry bro !  U can made it very easy for me.</div></div><!----><div class="collapse" id="openReply1181"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><div class="comments"><div class="row mt-4"><div class="col-sm-3 col-lg-1 col-xl-1"><img width="25%" src="../../assets/img/comment.png" class="w-100 d-block mx-auto rounded-circle"></div><div class="col-md-8 col-lg-10 col-xl-10 commentContainer"><div class="my-2 mx-2"><b>MadhavNetam </b><span class="badge badge-secondary"> May 13, 2020</span><br><div class="commentPre">sir is website me ek prbablem hai jab bhi main comment karta hu to date sahi sahi nhi rahta hai kyo </div></div><!----><div class="collapse" id="openReply943"><form novalidate="" class="ng-untouched ng-pristine ng-invalid"><textarea type="text" maxlength="250" placeholder="Write a reply..." name="reply" minlength="4" required="" class="form-control my-2 ng-untouched ng-pristine ng-invalid" value=""></textarea><button type="submit" class="btn btn-sm btn-danger" disabled="">Reply</button><!----></form></div><!----><!----></div></div></div><!----><!----></div></div><div id="resources" role="tabpanel" aria-labelledby="resources-tab" class="tab-pane fade mx-4 mt-3"><div class="container px-0"><h4>Resources</h4><div>No resource files associated with this project</div><!----><ol><!----></ol></div></div><div id="announcements" role="tabpanel" aria-labelledby="announcements-tab" class="tab-pane fade mx-4 mt-3"><div class="container"><h4>Course Announcements</h4><p> Any Course related announcements will be posted here </p></div></div></div></div></div></div></app-video-page><!----></div><app-footer _ngcontent-sc76="" _nghost-sc75=""><footer _ngcontent-sc75="" class="container-fluid bg-dark my-0 py-3 text-light"><p _ngcontent-sc75="" class="mb-0 text-center">Copyright © 2020-2021 CodeWithHarry.com</p></footer></app-footer></app-root>
+<script src="../../runtime.7b63b9fd40098a2e8207.js" defer=""></script><script src="../../polyfills.00096ed7d93ed26ee6df.js" defer=""></script><script src="../../scripts.2558b03aa1b9660ed84d.js" defer=""></script><script src="../../main.bd8a3a7a366ac101c3dc.js" defer=""></script>
+
+
+<script id="serverApp-state" type="application/json">{&q;G.https://api.codewithharry.com/video/getvideo/learn-java-in-one-video-in-hindi-2019?&q;:{&q;body&q;:{&q;title&q;:&q;Java tutorial in hindi&q;,&q;videoId&q;:&q;rV_3Lewxx6o&q;,&q;announcements&q;:&q;&q;,&q;content&q;:&q;&l;h4&g;Java Notes For Quick Reference!&l;/h4&g;\r\n&l;p&g;1. // [comment]&l;br /&g;Single line comment.&l;/p&g;\r\n&l;p&g;2. /* [comment] */&l;br /&g;Multi line comment.&l;/p&g;\r\n&l;p&g;3. public&l;br /&g;This can be imported publically.&l;/p&g;\r\n&l;p&g;4. import [object].*&l;br /&g;Imports everything in object.&l;/p&g;\r\n&l;p&g;5. static&l;br /&g;Going to be shared by every [object].&l;/p&g;\r\n&l;p&g;6. final&l;br /&g;Cannot be changed; common to be defined with all uppercase.&l;/p&g;\r\n&l;p&g;7. double&l;br /&g;Integer with numbers that can have decimals.&l;/p&g;\r\n&l;p&g;8. ;&l;br /&g;Put after every command.&l;/p&g;\r\n&l;p&g;9. String&l;br /&g;Just a string of characters.&l;/p&g;\r\n&l;p&g;10. Private&l;br /&g;Can only be changed by a method.&l;/p&g;\r\n&l;p&g;11. int&l;br /&g;Can store numbers from 2^-31 to 2^31.&l;/p&g;\r\n&l;p&g;12. fields are attributes&l;/p&g;\r\n&l;p&g;13. boolean&l;br /&g;Can have true or false as the value.&l;/p&g;\r\n&l;p&g;14. { }&l;br /&g;These are used to start and end a function, class, etc.&l;/p&g;\r\n&l;p&g;15. byte&l;br /&g;These can store from -127 - 128.&l;/p&g;\r\n&l;p&g;16. long&l;br /&g;Can store numbers from 2^127 to 2^-127.&l;/p&g;\r\n&l;p&g;17. char&l;br /&g;Just lets you put in one chracter.&l;/p&g;\r\n&l;p&g;18. double&l;br /&g;64-bit number with decimals.&l;/p&g;\r\n&l;p&g;19. float&l;br /&g;32-bit number with decimals.&l;/p&g;\r\n&l;p&g;20. protected&l;br /&g;Can only be accessed by other code in the package.&l;/p&g;\r\n&l;p&g;21. Scanner&l;br /&g;This lets you get user input.&l;/p&g;\r\n&l;p&g;22. new [object constructor]&l;br /&g;This will let you create a new object.&l;/p&g;\r\n&l;p&g;23. System.in&l;br /&g;This lets you get data from the keyboard.&l;/p&g;\r\n&l;p&g;24. public [class]()&l;br /&g;This will be the constructor, you use it to create new objects.&l;/p&g;\r\n&l;p&g;25. super()&l;br /&g;This will create the superclass (the class it&s;s inheriting).&l;/p&g;\r\n&l;p&g;26. extends [class]&l;br /&g;Makes the object a subclass of [object], [object] must be a superclass.&l;/p&g;\r\n&l;p&g;27. ++&l;br /&g;Will increment the amount.&l;/p&g;\r\n&l;p&g;28. --&l;br /&g;Will decrement the amount.&l;/p&g;\r\n&l;p&g;29. += [amount]&l;br /&g;Increment by [amount]&l;/p&g;\r\n&l;p&g;30. -= [amount]&l;br /&g;Decrement by [amount]&l;/p&g;\r\n&l;p&g;31. *= [amount]&l;br /&g;Multiply by [amount]&l;/p&g;\r\n&l;p&g;32. /= [amount]&l;br /&g;Divide by [amount]&l;/p&g;\r\n&l;p&g;33. System.out.println([text])&l;br /&g;Will print something to the output console.&l;/p&g;\r\n&l;p&g;34. +&l;br /&g;Can be used for concatenation. (ex. \&q;6\&q; + [var_here])&l;/p&g;\r\n&l;p&g;35. public static void main(String[] args)&l;br /&g;This is your main function and your project will start in here.&l;/p&g;\r\n&l;p&g;36. System.out.print([text])&l;br /&g;This prints stuff but there is no line break. (/n)&l;/p&g;\r\n&l;p&g;37. \\n&l;br /&g;Called a line break; will print a new line.&l;/p&g;\r\n&l;p&g;38. \\t&l;br /&g;This will print a tab.&l;/p&g;\r\n&l;p&g;39. if ([condition])&l;br /&g;This will make it so if [condition] is true then it&s;ll keep going.&l;/p&g;\r\n&l;p&g;40. &a;amp;&a;amp;&l;br /&g;This means and.&l;/p&g;\r\n&l;p&g;41. !&l;br /&g;This means not.&l;/p&g;\r\n&l;p&g;42. ||&l;br /&g;This means or.&l;/p&g;\r\n&l;p&g;43. ==&l;br /&g;This means equal to.&l;/p&g;\r\n&l;p&g;44. &a;lt;&l;br /&g;This means less than.&l;/p&g;\r\n&l;p&g;45. &a;gt;&l;br /&g;This means greater than.&l;/p&g;\r\n&l;p&g;46. &a;gt;=&l;br /&g;This means greater than or equal to.&l;/p&g;\r\n&l;p&g;47. [inputVarHere].hasNextLine()&l;br /&g;This will return if there is a next line in the input.&l;/p&g;\r\n&l;p&g;48. this&l;br /&g;Refer to the class that you are in.&l;/p&g;\r\n&l;p&g;49. [caller].next[datatype]()&l;br /&g;This will get the [datatype] that you somehow inputted.&l;/p&g;\r\n&l;p&g;50. Create getters and setters&l;br /&g;This will create the get methods and set methods for every checked variable.&l;/p&g;\r\n&l;p&g;51. [caller].hasNext[datatype]()&l;br /&g;This will return if it has the correct datatype within the input.&l;/p&g;\r\n&l;p&g;52. overloading&l;br /&g;If you have different parameters you can call them whatever way you want.&l;/p&g;\r\n&l;p&g;53. parameters&l;br /&g;These are the inputs of your function.&l;/p&g;\r\n&l;p&g;54. ([datatype])[variable]&l;br /&g;This will convert [variable] into [datatype]. Also known as casting.&l;/p&g;\r\n&l;p&g;55. Math.random()&l;br /&g;Generate an extremely percise string of numbers between 0 and 1.&l;/p&g;\r\n&l;p&g;56. Primitives&l;br /&g;Just the basic data types which are not objects.&l;/p&g;\r\n&l;p&g;57. [x].toString()&l;br /&g;Will convert [x] into a string.&l;/p&g;\r\n&l;p&g;58. [number].parse[numbertype]([string])&l;br /&g;This will parse [number] into the [numbertype] with [string].&l;/p&g;\r\n&l;p&g;59. ^&l;br /&g;Return true if there is one true and one false.&l;/p&g;\r\n&l;p&g;60. !=&l;br /&g;Not equal too. (NEQ)&l;/p&g;\r\n&l;p&g;61. ([condition]) ? [amount] : [var]&l;br /&g;This will be like a shortcut way to an if statement.&l;/p&g;\r\n&l;p&g;62. switch([variable])&l;br /&g;This will do stuff with specific cases. (e.g. switch(hi){ case 2: (do stuff)})&l;/p&g;\r\n&l;p&g;63. case [value]:&l;br /&g;This will do stuff if the case is the case.&l;/p&g;\r\n&l;p&g;64. break&l;br /&g;Put that when you want to leave the loop/switch; should be at end of case.&l;/p&g;\r\n&l;p&g;65. default [value]:&l;br /&g;This will do stuff if none of the cases in the switch statement was made.&l;/p&g;\r\n&l;p&g;66. for ([number]; [condition]; [operation])&l;br /&g;This will start at [number] and then do [operation] until [condition] is met.&l;/p&g;\r\n&l;p&g;67. continue&l;br /&g;This will just go back to the enclosing loop before reaching other code.&l;/p&g;\r\n&l;p&g;68. while ([condition])&l;br /&g;This will basically do something while [condition] is true.&l;/p&g;\r\n&l;p&g;69. void&l;br /&g;This means no return type.&l;/p&g;\r\n&l;p&g;70. return&l;br /&g;This will return something when you call it to where it was called from .&l;/p&g;\r\n&l;p&g;71. do { } while ([condition])&l;br /&g;Guarantees it will execute once even if [condition] isn&s;t met.&l;/p&g;\r\n&l;p&g;72. printf(\&q;%[type] stuff here bah bla\&q;, [variable here])&l;br /&g;This will let you use [variable here] with %s being where.&l;/p&g;\r\n&l;p&g;73. System.out.printf([text])&l;br /&g;Another way to print? // didn&s;t quite get but ok then&l;/p&g;\r\n&l;p&g;74. [type] [returntype] [name]([parameters]) {&l;br /&g;This is a way to create a method.&l;/p&g;\r\n&l;p&g;75. [type][[indexes]]&l;br /&g;This will create an array with [indexes] amount of indexes; default infinite.&l;/p&g;\r\n&l;p&g;76. int[] something = new int[20];&l;br /&g;This will just make an array of ints with 20 ints in it.&l;/p&g;\r\n&l;p&g;77. for ([object] [nameOfObject] : [arrayOfObject]) {&l;br /&g;This will iterate through all of the arrayOfObject with object in use incrementing by 1 until done.&l;/p&g;\r\n&l;p&g;78. [object][[1]][[2]][[3]] [name] = {[value] [value] [value] \\n [value] [value] [value]}&l;br /&g;[1] is how many down in array, [2] how many accross in array, [3] how many groups&l;/p&g;\r\n&l;p&g;79. .length&l;br /&g;This will get how long something is, text, amount of indexes in array, etc.&l;/p&g;\r\n&l;p&g;80. Arrays.copy0f([array], indexes);&l;br /&g;This will copy the array and how many indexes into another array.&l;/p&g;\r\n&l;p&g;81. Arrays.toString([array])&l;br /&g;Convert the whole array into one huge string.&l;/p&g;\r\n&l;p&g;82. Arrays.binarySearch([array], [object])&l;br /&g;This will search for [object] in [array].&l;/p&g;&l;h4&g;Code as described/written in the video&l;/h4&g;\r\n&l;pre class=&s;language-java&s;&g;&l;code&g;package com.codewithharry;\r\n\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n\r\n    static int sum(int a, int b){\r\n        return a+b;\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n\t // Write your code here\r\n//        System.out.println(\&q;Hello World\&q;);\r\n     /* Variables\r\n     Just Like:\r\n        -Water - Bucket\r\n        -Masala - box\r\n        -Lunch - LunchBox\r\n     In Java:\r\n     Variables are containers which store data values\r\n     String, int, float, char, boolean\r\n     How to declare variables:\r\n     syntax - &a;lt;dataType&a;gt; &a;lt;variableName&a;gt; = &a;lt;value&a;gt;;\r\n      */\r\n     String name = \&q;Harry\&q;;\r\n     String channel = \&q;CodeWithHarry\&q;;\r\n//     System.out.println(name);\r\n//     System.out.println(name.length());\r\n//     System.out.println(name.toUpperCase());\r\n//     System.out.println(name.toLowerCase());\r\n//     System.out.println(name + \&q; from\\\&q; \&q; + channel);\r\n//     System.out.println(name + \&q; from\\\\ \&q; + channel);\r\n//     System.out.println(name + \&q; from\\t \&q; + channel);\r\n//     System.out.println(name + \&q; from\\n \&q; + channel);\r\n\r\n//        System.out.println(name.contains(\&q;Har\&q;));\r\n//        System.out.println(name.charAt(2));\r\n//        System.out.println(name.endsWith(\&q;ry\&q;));\r\n//        System.out.println(name.indexOf(\&q;rry\&q;));\r\n\r\n        int numb1 = 4, numb2 = 7;\r\n//        System.out.println(Math.max(numb1, numb2));\r\n//        System.out.println(Math.min(numb1, numb2));\r\n//        System.out.println(Math.sqrt(36));\r\n//        System.out.println(Math.abs(-36));\r\n//        System.out.println(Math.abs(6));\r\n//        System.out.println(Math.random());\r\n//        System.out.println(4+(8-4)*Math.random());\r\n//        System.out.println(4+(8-4)*Math.random());\r\n//        System.out.println(4+(8-4)*Math.random());\r\n//        System.out.println(4+(8-4)*Math.random());\r\n//        System.out.println(4+(8-4)*Math.random());\r\n\r\n\r\n     int a = 45, x=56, y=67;\r\n     float b = 45.22f;\r\n     boolean isAdult = false;\r\n//     System.out.println(x);\r\n//     System.out.println(b);\r\n//     System.out.println(isAdult);\r\n\r\n    /* Rules for constructing name of variables in Java\r\n        1. Can contain digits, underscores, dollar signs, letters\r\n        2. Should begin with a letter, $ or _\r\n        3. Java is case sensitive language which means that\r\n           harry and Harry are two different variables altogether.\r\n        4. Should not contain whitespaces\r\n        5. You cannot use reserved keywords from Java\r\n     */\r\n    /*\r\n    Two types of Java Data Types:\r\n        1. Primitive - byte (1 byte), short (2 bytes), int(4 bytes), long (8 bytes), float(4 bytes),\r\n           double (8 bytes), boolean(1 bit), char (2 bytes).\r\n        2. Non Primitive or Reference Data Type -\r\n    */\r\n    byte u = -56;\r\n    double d = 45.635435345d;\r\n//    System.out.println(d);\r\n    char grade = &s;A&s;;\r\n//    System.out.println(grade);\r\n\r\n    /* Operators in Java\r\n\r\n        Operand, operator, Operand  =  Result\r\n        4           +           7   =  11\r\n\r\n        Types of operators in Java\r\n        Arithmetic operators\r\n        Assignment operators\r\n        Logical Operators\r\n        Comparison Operators\r\n     */\r\n    int num1 = 45, num2=78;\r\n    num1 += 3;\r\n    num2 -= 8;\r\n    // Explore these operators - *=, /=, %=\r\n//        System.out.print(\&q;The value of num1 + num2 is \&q;);\r\n//        System.out.println(num1 + num2);\r\n//\r\n//        System.out.print(\&q;The value of num1 - num2 is \&q;);\r\n//        System.out.println(num1 - num2);\r\n//\r\n//        System.out.print(\&q;The value of num1 * num2 is \&q;);\r\n//        System.out.println(num1 * num2);\r\n//\r\n//        System.out.print(\&q;The value of num1 / num2 is \&q;);\r\n//        System.out.println(num1 / num2);\r\n//\r\n//        System.out.print(\&q;The value of num1 % num2 is \&q;);\r\n//        System.out.println(num1 % num2);\r\n//        System.out.println(num2++);\r\n//        System.out.println(++num1);\r\n//        System.out.println(num1--);\r\n//        System.out.println(--num1);\r\n\r\n    /*\r\n    * Comparison Operators:\r\n    * 1. == : checks for equality of two values\r\n    * 2. != : checks if two values are not equal\r\n    * 3. &a;lt;\r\n    * 4. &a;gt;\r\n    * 5. &a;lt;=\r\n    * 6. &a;gt;=\r\n    *\r\n    * Logical Operators:\r\n    * 1. &a;&a; - Logical and operator - returns true only if both conditions are true\r\n    * 2. || - Logical or operator - returns true if any one condition is true\r\n    * 3. ! - Logical not - Reverse the result from true to false and vice versa\r\n    * */\r\n\r\n    // Taking user input in Java\r\n//        Scanner scan = new Scanner(System.in);\r\n//        System.out.println(\&q;Enter Your Age\&q;);\r\n//        int age = scan.nextInt();\r\n//        System.out.println(input);\r\n\r\n    // If-else conditionals\r\n//        if(age&a;gt;20){\r\n//\r\n//            System.out.println(\&q;You are an adult\&q;);\r\n//        }\r\n//        else if(age&a;gt;5){\r\n//            System.out.println(\&q;You are not a kid\&q;);\r\n//\r\n//        }\r\n//        else{\r\n//            System.out.println(\&q;You are a kid\&q;);\r\n//        }\r\n    //   Switch statement in Java\r\n\r\n//        switch (age){\r\n//            case 12:\r\n//                System.out.println(\&q;You are 12 years old\&q;);\r\n//                break;\r\n//            case 56:\r\n//                System.out.println(\&q;You are 56 years old\&q;);\r\n//                break;\r\n//            case 16:\r\n//                System.out.println(\&q;You are 16 years old\&q;);\r\n//                break;\r\n//            default:\r\n//                System.out.println(\&q;You did not match any of the cases\&q;);\r\n//        }\r\n    // Quick Quiz: print sunday to saturday based on numbers 1 to 7 typed by the user\r\n\r\n        // Loops\r\n        /*\r\n        While Loop\r\n        while(condition){\r\n            // This code will keep executing until the condition is true\r\n        }\r\n         */\r\n//        int i = 0;\r\n//        while(i&a;lt;100){\r\n//            System.out.println(i);\r\n//            i += 1;\r\n//        }\r\n\r\n        /*\r\n        Do While Loop\r\n        do{\r\n            // This code will keep executing until the condition is true\r\n        }while(condition)\r\n         */\r\n//        int j = 0;\r\n//        do{\r\n//            System.out.println(j);\r\n//            j += 1;\r\n//        }while(j&a;gt;100);\r\n\r\n        /*\r\n        For Loop\r\n        for(st1;st2;st3){\r\n            //Code to be executed\r\n            }\r\n         */\r\n//\r\n//        for(int i=0;i&a;lt;=10;i++){\r\n//            if(i==2){\r\n//                continue;\r\n//            }\r\n////            else{\r\n////                System.out.println(i);\r\n////            }\r\n//            System.out.println(i);\r\n//        }\r\n\r\n    // Java Arrays\r\n//        int [] marks = {1,2,3,5};\r\n//        marks[3] = 34; // this will update marks[3]\r\n//        System.out.println(marks[0]);\r\n//        System.out.println(marks[3]);\r\n//\r\n//        // Classical way to iterate an array\r\n//        for(int i=0;i&a;lt;marks.length;i++){\r\n//            System.out.println(marks[i]);\r\n//        }\r\n//        System.out.println(\&q;This is for each loop:\&q;);\r\n//\r\n//        // For each loop\r\n//        for(int value:marks){\r\n//            System.out.println(value);\r\n//        }\r\n//\r\n//        int [][] matrix = {{1,2,3},\r\n//                            {4,5,6}};\r\n//        System.out.println(matrix[0][1]);\r\n//\r\n//        String [] cars = {\&q;Maruti Harry\&q;, \&q;Maruti\&q;, \&q;Suzuki\&q;, \&q;Innova\&q;, \&q;Ford Titanium\&q;};\r\n//        for(String value:cars){\r\n//            System.out.println(value);\r\n//        }\r\n\r\n        // Try - Catch\r\n//        String [] cars = {\&q;Maruti Harry\&q;, \&q;Maruti\&q;, \&q;Suzuki\&q;, \&q;Innova\&q;, \&q;Ford Titanium\&q;};\r\n//\r\n//        try{\r\n//            System.out.println(cars[3]);\r\n//        }\r\n//        catch(Exception e){\r\n//            System.out.println(e);\r\n//        }\r\n//\r\n//        System.out.println(\&q;Masoom\&q;);\r\n//        System.out.println(sum(5, 7));\r\n\r\n        float number_1, number_2;\r\n        System.out.println(\&q;Enter first number\&q;);\r\n\r\n        Scanner scan = new Scanner(System.in);\r\n        number_1 = scan.nextFloat();\r\n\r\n        System.out.println(\&q;Enter second number\&q;);\r\n//        Scanner scan2 = new Scanner(System.in);\r\n        number_2 = scan.nextFloat();\r\n        System.out.print(\&q;You have Entered \&q;);\r\n        System.out.print(number_1);\r\n        System.out.print(\&q; and \&q;);\r\n        System.out.println(number_2);\r\n        String prompt = \&q;Enter 0 for addition, 1 for \&q; +\r\n                        \&q;subtraction, 2 for multiplication and 3 for division\&q;;\r\n        System.out.println(prompt);\r\n        int input = scan.nextInt();\r\n        switch (input){\r\n            case 0:\r\n                System.out.println(\&q;Adding these numbers\&q;);\r\n                System.out.print(\&q;The result is: \&q;);\r\n                System.out.println(number_1 + number_2);\r\n                break;\r\n\r\n            case 1:\r\n                System.out.println(\&q;Subtracting these numbers\&q;);\r\n                System.out.print(\&q;The result is: \&q;);\r\n                System.out.println(number_1 - number_2);\r\n                break;\r\n\r\n            case 2:\r\n                System.out.println(\&q;Multiplying these numbers\&q;);\r\n                System.out.print(\&q;The result is: \&q;);\r\n                System.out.println(number_1 * number_2);\r\n                break;\r\n\r\n            case 3:\r\n                System.out.println(\&q;Dividing these numbers\&q;);\r\n                System.out.print(\&q;The result is: \&q;);\r\n                System.out.println(number_1 / number_2);\r\n                break;\r\n\r\n            default:\r\n                System.out.println(\&q;Invalid input\&q;);\r\n\r\n        }\r\n\r\n\r\n    }\r\n}\r\n\r\n&l;/code&g;&l;/pre&g;&q;,&q;duration&q;:&q;&q;,&q;metaTags&q;:&q;java tutorial, java in hindi&q;,&q;metaDesc&q;:&q;Learn Java in hindi&q;,&q;time&q;:&q;2021-05-17T21:09:20.941744&q;,&q;slug&q;:&q;learn-java-in-one-video-in-hindi-2019&q;,&q;success&q;:true},&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:05:23 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;GET, OPTIONS&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;17210&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getvideo/learn-java-in-one-video-in-hindi-2019&q;},&q;G.https://api.codewithharry.com/video/getcomments/learn-java-in-one-video-in-hindi-2019/0/999999?&q;:{&q;body&q;:[{&q;comment&q;:&q;package com.company;\r\n\r\npublic class Main {\r\n\r\n    public static void main(String[] args) {\r\n\t    System.out.println(\&q;Hello World\&q;);\r\n    }\r\n}\r\n\r\nError: Could not find or load main class com.company.Main\r\nCaused by: java.lang.ClassNotFoundException: com.company.Main\r\n\r\nGetting this error pls help\r\n&q;,&q;username&q;:&q;tanishqs&q;,&q;sno&q;:3524,&q;time&q;:&q;2021-03-30T17:49:18.709989&q;,&q;replycount&q;:0},{&q;comment&q;:&q;Very good tutorial. Excellent Video&q;,&q;username&q;:&q;swapnil21&q;,&q;sno&q;:3219,&q;time&q;:&q;2021-01-27T05:26:44.731622&q;,&q;replycount&q;:0},{&q;comment&q;:&q;Great Tutorial&q;,&q;username&q;:&q;naresh&q;,&q;sno&q;:1537,&q;time&q;:&q;2020-07-16T12:48:42.135975&q;,&q;replycount&q;:0},{&q;comment&q;:&q;Thank u Harry bro !  U can made it very easy for me.&q;,&q;username&q;:&q;rvengineer&q;,&q;sno&q;:1181,&q;time&q;:&q;2020-06-10T13:50:43.422865&q;,&q;replycount&q;:0},{&q;comment&q;:&q;sir is website me ek prbablem hai jab bhi main comment karta hu to date sahi sahi nhi rahta hai kyo &q;,&q;username&q;:&q;MadhavNetam&q;,&q;sno&q;:943,&q;time&q;:&q;2020-05-13T15:49:06.706953&q;,&q;replycount&q;:0}],&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:05:18 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;GET, OPTIONS&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;1028&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getcomments/learn-java-in-one-video-in-hindi-2019/0/999999&q;},&q;G.https://api.codewithharry.com/video/getcoursecontent/learn-java-in-one-video-in-hindi-2019?&q;:{&q;body&q;:[{&q;title&q;:&q;Learn JavaScript In One Video In Hindi (2018)&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn Python In Hindi In One Video - हिंदी में (Latest Tutorial)&q;,&q;slug&q;:&q;learn-python-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn Php In One Video In Hindi - हिंदी में (Latest PHP Tutorial 2018)&q;,&q;slug&q;:&q;learn-php-in-one-video-in-hindi&q;},{&q;title&q;:&q;15 Minute Python Tutorial For Beginners In Hindi (Full &a; Complete Crash Course)&q;,&q;slug&q;:&q;learn-python-in-one-video-in-15-min-hindi&q;},{&q;title&q;:&q;Learn Bootstrap In Hindi In One Video - हिंदी में (Latest Tutorial 2019)&q;,&q;slug&q;:&q;learn-bootstrap-in-one-video&q;},{&q;title&q;:&q;Learn HTML In One Video&q;,&q;slug&q;:&q;learn-html-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn jQuery In Hindi In One Video - हिंदी में (Latest Tutorial 2018)&q;,&q;slug&q;:&q;learn-jquery-in-one-video-in-hindi&q;},{&q;title&q;:&q;Create A Responsive Website Using HTML, CSS And Bootstrap 4 In Hindi&q;,&q;slug&q;:&q;learn-responsive-html-css3-bootstrap-website-in-one-video-in-hindi&q;},{&q;title&q;:&q;Login And Registration Form Using Php &a; MySQL [Php Login System In Hindi]&q;,&q;slug&q;:&q;php-mysql-login-system-in-one-video&q;},{&q;title&q;:&q;C Programming Tutorial For Beginners: Learn C In Hindi&q;,&q;slug&q;:&q;learn-c-in-one-video-in-hindi&q;},{&q;title&q;:&q;JavaScript Registration Form Validation - हिंदी में (Latest Tutorial 2019)&q;,&q;slug&q;:&q;complete-form-validation-using-javascript-in-hindi-in-one-video&q;},{&q;title&q;:&q;CSS 3 Tutorial For Beginners: Learn CSS In One Video In Hindi&q;,&q;slug&q;:&q;learn-css-in-one-video-in-hindi&q;},{&q;title&q;:&q;C++ Tutorial For Beginners: Learn C Plus Plus In Hindi&q;,&q;slug&q;:&q;learn-c-plus-plus-in-one-video-in-hindi&q;},{&q;title&q;:&q;Learn Python Programming For Free | Python Programming Tutorial In Hindi&q;,&q;slug&q;:&q;learn-python-in-one-video-in-hindi-2019&q;},{&q;title&q;:&q;Java tutorial in hindi&q;,&q;slug&q;:&q;learn-java-in-one-video-in-hindi-2019&q;},{&q;title&q;:&q;Android Development Tutorial in Hindi&q;,&q;slug&q;:&q;android-development-tutorial-in-one-video-hindi&q;},{&q;title&q;:&q;Web Scraping Tutorial using Python and BeautifulSoup&q;,&q;slug&q;:&q;python-web-scraping-tutorial-in-hindi&q;},{&q;title&q;:&q;Git &a; GitHub Tutorial For Beginners In Hindi - हिंदी में (2019)&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-7&q;},{&q;title&q;:&q;Login And Registration Form Using Php &a; MySQL [Php Login System In Hindi]&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-9&q;},{&q;title&q;:&q;Linux Tutorial For Beginners in Hindi&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-12&q;},{&q;title&q;:&q;Numpy Tutorial in Hindi&q;,&q;slug&q;:&q;learn-javascript-in-one-video-in-13&q;},{&q;title&q;:&q;Php Tutorial for Beginners in Hindi with MySQL Project&q;,&q;slug&q;:&q;learn-php-in-one-video-in-hindi-2020&q;},{&q;title&q;:&q;Learn JavaScript In One Video In Hindi (2020)&q;,&q;slug&q;:&q;javascript-tutorial-in-hindi-in-one-video-2020&q;},{&q;title&q;:&q;C Language Tutorial For Beginners (With Notes)&q;,&q;slug&q;:&q;c-tutorial-in-hindi-with-notes&q;},{&q;title&q;:&q;How To Make a WordPress Website | Wordpress Tutorial for Beginners | Elementor Tutorial In Hindi&q;,&q;slug&q;:&q;wordpress-tutorial-in-hindi&q;},{&q;title&q;:&q;Python Tutorial For Beginners In Hindi (With Notes)&q;,&q;slug&q;:&q;python-tutorial-easy-for-beginners&q;},{&q;title&q;:&q;Python Programming Course in Hindi (Advanced)&q;,&q;slug&q;:&q;python-tutorial-advanced&q;},{&q;title&q;:&q;Android Application Development Tutorial in Hindi With Notes&q;,&q;slug&q;:&q;android-tutorial-in-hindi-with-notes&q;},{&q;title&q;:&q;React Tutorial in Hindi&q;,&q;slug&q;:&q;react-tutorial-in-hindi&q;},{&q;title&q;:&q;HTML Tutorial For Beginners In Hindi (With Notes)&q;,&q;slug&q;:&q;html-tutorial-for-beginners&q;},{&q;title&q;:&q;CSS Tutorial In Hindi (With Notes)&q;,&q;slug&q;:&q;css-in-one-video&q;}],&q;headers&q;:{&q;date&q;:[&q;Sun, 01 Aug 2021 00:05:18 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;OPTIONS, GET&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;3596&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/video/getcoursecontent/learn-java-in-one-video-in-hindi-2019&q;}}</script></body><!-- This page was prerendered with Angular Universal -->
+<!-- Mirrored from www.codewithharry.com/videos/learn-java-in-one-video-in-hindi-2019/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 13:50:25 GMT -->
+</html>
